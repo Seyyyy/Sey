@@ -9,7 +9,7 @@
   <br />
 </div>
 <div align="center">
-    <a href="https://circleci.com/gh/shoshiro-furube/Boilerplate">
+    <a href="https://circleci.com/gh/shoshiro-furube/workflows/Boilerplate">
     <img alt="CircleCI" src="https://flat.badgen.net/circleci/github/shoshiro-furube/Boilerplate">
     </a>
     <a href="https://github.com/Microsoft/TypeScript">
