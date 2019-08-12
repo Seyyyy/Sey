@@ -1,5 +1,5 @@
 {
-  "name": "Boilerplate",
+  "name": "Sey",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -11,7 +11,8 @@
     "@material-ui/core": "^4.3.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-router-dom": "^5.0.1"
+    "react-router-dom": "^5.0.1",
+    "styled-components": "^4.3.2"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
@@ -23,12 +24,15 @@
     "@types/node": "^12.7.1",
     "@types/react": "^16.9.1",
     "@types/react-dom": "^16.8.5",
+    "@types/react-router-dom": "^4.3.4",
+    "@types/styled-components": "^4.1.18",
     "babel-loader": "^8.0.6",
     "core-js": "^3.2.0",
     "html-webpack-plugin": "^3.2.0",
     "typescript": "^3.5.3",
     "webpack": "^4.39.1",
     "webpack-cli": "^3.3.6",
-    "webpack-dev-server": "^3.8.0"
+    "webpack-dev-server": "^3.8.0",
+    "yarn": "^1.17.3"
   }
 }

@@ -1,9 +1,17 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+// import Home from './components/home'
+import LoadHome from './components/loadHome'
+
+const Home = React.lazy(() => import('./components/home'));
 
 function App() {
   return (
-    <div>App</div>
+    <React.Fragment>
+      <React.Suspense fallback={<LoadHome />}>
+        <Home />
+      </React.Suspense>
+    </React.Fragment>
   )
 }
 

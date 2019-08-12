@@ -9,6 +9,11 @@
 # production
 /dist
 
+#docker
+/Dockerfile
+/docker-compose.yml
+./.dockerignore
+
 # misc
 .DS_Store
 .env.local
