@@ -6,8 +6,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     height: 100%;
     width: 100%;
-    background-color: #2a2a2a;
-    background-image: url("../../static/img/psyche.png");
+    // background-color: #2a2a2a;
     background-size: cover;
     background-attachment: fixed;
   }

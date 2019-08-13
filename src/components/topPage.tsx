@@ -4,18 +4,21 @@ import withStyles, { WithStyles } from '@material-ui/core/styles/withStyles'
 import { createStyles } from '@material-ui/core'
 import { Theme } from '@material-ui/core/styles/createMuiTheme'
 import Top from '../elements/top'
+import { url } from 'inspector';
 
 const styles = (theme: Theme) =>
 createStyles({
     root:{
-        // backgroundColor: "#2a2a2c",
-        // position: "relative",
-        // width: "100%",
-        // height: "200px",
-        // [theme.breakpoints.up('md')]: {
-        //     width: "100%",
-        //     height: "940px",
-        // }
+        backgroundImage: "url(../../static/img/psyche.png)",
+        backgroundSize: "cover",
+        backgroundColor: "#AAAAAA",
+        position: "relative",
+        width: "100%",
+        height: "100%",
+        [theme.breakpoints.up('md')]: {
+            width: "100%",
+            height: "100%",
+        }
     },
     home:{
         // backgroundColor: "#efefef",
