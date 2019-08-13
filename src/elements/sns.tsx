@@ -10,8 +10,8 @@ createStyles({
         // width: "30px",
         // display: "block",
         position: "absolute",
-        bottom: "3%",
-        right: "3%"
+        bottom: "5%",
+        right: "4%"
     },
     items:{
         justifyContent: "center",
