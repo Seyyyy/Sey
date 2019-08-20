@@ -17,9 +17,10 @@ module.exports = {
       template: path.resolve(__dirname, 'src/index.html'),
       title: 'Sey'
     }),
-    new CopyWebpackPlugin([
-      path.resolve(__dirname, 'static')
-    ])
+    new CopyWebpackPlugin([{
+      from: path.resolve(__dirname, 'static'),
+      to: 'static'
+    }])
   ],
   module: {
     rules: [
