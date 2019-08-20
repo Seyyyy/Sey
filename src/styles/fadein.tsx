@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 const fadeIn = styled.div`
     animation-name: fadein;
-    animation-duration: 0.7s;
+    animation-duration: 1s;
     animation-timing-function: eace;
     
     @keyframes fadein{

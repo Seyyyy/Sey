@@ -3,52 +3,31 @@ import Grid from '@material-ui/core/Grid'
 import withStyles, { WithStyles } from '@material-ui/core/styles/withStyles'
 import { createStyles } from '@material-ui/core'
 import { Theme } from '@material-ui/core/styles/createMuiTheme'
-import Top from '../elements/top'
+import Sns from '../elements/sns'
+import { createMuiTheme } from '@material-ui/core'
+
+const theme = createMuiTheme()
 
 const styles = (theme: Theme) =>
 createStyles({
     root:{
-        backgroundImage: "url(../../static/img/psyche.png)",
-        backgroundSize: "cover",
-        backgroundColor: "#AAAAAA",
         zIndex: 1,
         position: "relative",
-        width: "100%",
-        height: "100%",
-        [theme.breakpoints.up('md')]: {
-            width: "100%",
-            height: "100%",
-        }
+        width: "100vw",
+        height: "100vh",
     },
-    home:{
-        // backgroundColor: "#efefef",
-        position: "relative",
-        width: "100%",
-        height: "400px",
-        [theme.breakpoints.up('md')]: {
-            width: "100%",
-            height: "830px",
-        }
-    },
-    about:{
-        backgroundColor: "#2a2a2c",
-        position: "relative",
-        width: "100%",
-        height: "400px",
-        [theme.breakpoints.up('md')]: {
-            width: "100%",
-            height: "940px",
-        }
-    },
-    illustlation:{
-        backgroundColor: "#efefef",
-        position: "relative",
-        width: "100%",
-        height: "400px",
-        [theme.breakpoints.up('md')]: {
-            width: "100%",
-            height: "940px",
-        }
+    title: {
+        position: "absolute",
+        width: "auto",
+        height: "50vh",
+        [theme.breakpoints.down("sm")]:{
+            height: "43vh"
+        },
+        top: 0,
+        bottom: 0,
+        right: 0,
+        left: 0,
+        margin: "auto"
     }
 })
 
@@ -57,7 +36,10 @@ function Home(props: WithStyles<typeof styles>){
 
     return(
         <Grid className={classes.root}>
-            <Grid className={classes.home}><Top /></Grid>
+            <img className={classes.title} src="/static/icons/title.png"/>
+            <Grid>
+                <Sns />
+            </Grid>
         </Grid>
     )
 }

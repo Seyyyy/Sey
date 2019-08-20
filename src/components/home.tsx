@@ -1,17 +1,23 @@
 import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Toppage from './topPage'
-import Menu from './menu'
 import GlobalStyle from './../styles/globalStyle'
-import Drawer from './../elements/drawer'
 import Fadein from '../styles/fadein'
+import Drawer from '../elements/drawer'
+import Animation from '../components/Animation'
+import Illustration from '../components/Illustration'
+import NoMatch from '../components/noMatch'
 
 function RouteToppage(){
   return <Fadein><Toppage /></Fadein>
 }
 
-function RouteMenu(){
-  return <Fadein><Menu /></Fadein>
+function RouteAnimation(){
+  return <Fadein><Animation /></Fadein>
+}
+
+function RouteIllustration(){
+  return <Fadein><Illustration /></Fadein>
 }
 
 function Home() {
@@ -19,10 +25,12 @@ function Home() {
     <BrowserRouter>
       <GlobalStyle />
       <Drawer />
-          <Switch>
-            <Route path="/" exact component={RouteToppage} />
-            <Route path="/Menu" exact component={RouteMenu} />
-          </Switch>
+        <Switch>
+          <Route path="/" exact component={RouteToppage} />
+          <Route path="/Animation" exact component={RouteAnimation} />
+          <Route path="/Illustration" exact component={RouteIllustration} />
+          <Route component={NoMatch} />
+        </Switch>
     </BrowserRouter>
   )
 }
