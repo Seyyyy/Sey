@@ -7,13 +7,6 @@ import { createMuiTheme } from '@material-ui/core'
 const theme = createMuiTheme()
 
 const useStyles = makeStyles({
-    root: {
-        position: "absolute",
-        background: "rgba(0, 0, 0, 0.6)",
-        width: "100vw",
-        height: "auto",
-        minHeight: "100vh"
-    },
     title:{
         position: "relative",
         width: "100vw",
@@ -42,13 +35,11 @@ function Illustration(){
 
     return (
         <React.Fragment>
-            <Grid className={classes.root}>
-                <Grid className={classes.title}>
-                    <a className={classes.a}>Illustration</a>
-                </Grid>
-                <Grid className={classes.main}>
-                    <Card />
-                </Grid>
+            <Grid className={classes.title}>
+                <a className={classes.a}>Illustration</a>
+            </Grid>
+            <Grid className={classes.main}>
+                <Card />
             </Grid>
         </React.Fragment>
     )

@@ -3,7 +3,7 @@ import Grid from '@material-ui/core/Grid'
 import withStyles, { WithStyles } from '@material-ui/core/styles/withStyles'
 import { createStyles } from '@material-ui/core'
 import { Theme } from '@material-ui/core/styles/createMuiTheme'
-import Sns from '../elements/sns'
+import Menu from '../elements/menu'
 import { createMuiTheme } from '@material-ui/core'
 
 const theme = createMuiTheme()
@@ -18,16 +18,25 @@ createStyles({
     },
     title: {
         position: "absolute",
-        width: "auto",
-        height: "50vh",
-        [theme.breakpoints.down("sm")]:{
-            height: "43vh"
-        },
-        top: 0,
-        bottom: 0,
-        right: 0,
-        left: 0,
-        margin: "auto"
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%, -50%)",
+        width: "250px",
+        height: "431px"
+    },
+    imgSize: {
+        width: "100%"
+    },
+    titleText: {
+        textAlign: "center",
+        font: "Bold 70px Gill Sans",
+        letterSpacing: "1.8px",
+        color: "#FFFFFF",
+        textTransform: "capitalize"
+    },
+    Menu: {
+        position: "absolute",
+        bottom: "2vh"
     }
 })
 
@@ -36,9 +45,12 @@ function Home(props: WithStyles<typeof styles>){
 
     return(
         <Grid className={classes.root}>
-            <img className={classes.title} src="/static/icons/title.png"/>
-            <Grid>
-                <Sns />
+            <Grid className={classes.title}>
+                <img className={classes.imgSize} src="/static/icons/kyoryu_w.svg"/>
+                <p className={classes.titleText}>Sey</p>
+            </Grid>
+            <Grid className={classes.Menu}>
+                <Menu />
             </Grid>
         </Grid>
     )
