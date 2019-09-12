@@ -1,6 +1,9 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
+import { createMuiTheme } from '@material-ui/core'
+
+const theme = createMuiTheme()
 
 const useStyles = makeStyles({
     root: {
@@ -10,18 +13,29 @@ const useStyles = makeStyles({
         transform: "translate(-50%, -50%)",
         width: "652px",
         height: "476px",
+        [theme.breakpoints.down('xs')]:{
+            top: "40%",
+            width: "80%",
+            height: "auto"
+        }
     },
     title: {
         textAlign: "center",
         font: "Bold 40px Arial",
         letterSpacing: "0.8px",
-        color: "#FFFFFF"
+        color: "#FFFFFF",
+        [theme.breakpoints.down('xs')]:{
+            font: "Bold 20px Arial"
+        }
     },
     text: {
         textAlign: "center",
         font: "Bold 16px Arial",
         letterSpacing: "0.4px",
-        color: "#FFFFFF"
+        color: "#FFFFFF",
+        [theme.breakpoints.down('xs')]:{
+            font: "Bold 8px Arial"
+        }
     }
 })
 
