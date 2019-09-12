@@ -21,7 +21,7 @@ const useStyles = makeStyles({
         marginTop: "5vh",
         marginBottom: "5vh"
     },
-    a: {
+    a:{
         fontFamily: "Arial",
         fontSize: "70px",
         fontWeight: "bold",
