@@ -14,7 +14,8 @@ import Grid from '@material-ui/core/Grid'
 const useStyles = makeStyles({
   menu: {
     position: "absolute",
-    bottom: "2vh"
+    bottom: "2vh",
+    zIndex: 2
   }
 })
 
@@ -40,9 +41,6 @@ function Home() {
   return (
     <BrowserRouter>
       <GlobalStyle />
-      <Grid className={classes.menu}>
-        <Menu />
-      </Grid>
         <Switch>
           <Route path="/" exact component={RouteToppage} />
           <Route path="/Animation" exact component={RouteAnimation} />
@@ -50,6 +48,9 @@ function Home() {
           <Route path="/About" exact component={RouteAbout} />
           <Route component={NoMatch} />
         </Switch>
+        <Grid className={classes.menu}>
+          <Menu />
+        </Grid>
     </BrowserRouter>
   )
 }

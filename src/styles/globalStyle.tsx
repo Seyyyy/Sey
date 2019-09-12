@@ -14,7 +14,7 @@ const GlobalStyle = createGlobalStyle`
       #131313CC 88%, 
       #000000 100%
       ),
-    url("/static/img/home.jpg");
+    url("/static/img/sky.jpg");
     background-position: center center;
     background-color: #000000;
     background-size: cover;

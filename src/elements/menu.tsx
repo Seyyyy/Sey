@@ -3,12 +3,14 @@ import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
 import { createMuiTheme } from '@material-ui/core'
 import { Link as RouterLink} from "react-router-dom"
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 
 const theme = createMuiTheme()
 
 const useStyles = makeStyles({
     root: {
-        width: "100vw"
+        width: "100vw",
+        zIndex: 1
     },
     menuGrid: {
         display: "flex",
@@ -17,7 +19,9 @@ const useStyles = makeStyles({
     },
     gridItem: {
         marginLeft: "4vw",
-        marginRight: "4vw"
+        marginRight: "4vw",
+        marginTop: "auto",
+        marginBottom: "auto"
         // display: "flex",
         // justifyContent: "center"
     },
@@ -26,7 +30,16 @@ const useStyles = makeStyles({
         font: "Regular 25px/29px Arial",
         letterSpacing: "0.5px",
         color: "#FFFFFF",
-        textTransform: "capitalize"
+        textTransform: "capitalize",
+        textDecoration: "none"
+    },
+    activeMenuText: {
+        textAlign: "center",
+        font: "Regular 25px/29px Arial",
+        letterSpacing: "0.5px",
+        color: "#FFFFFF",
+        textTransform: "capitalize",
+        textDecoration: "line-through"
     },
     linkStyle: {
         textDecoration: "none"
@@ -41,24 +54,16 @@ function Menu(){
             <Grid className={classes.root}>
                 <Grid container className={classes.menuGrid}>
                     <Grid item className={classes.gridItem}>
-                        <RouterLink className={classes.linkStyle} to="/">
-                            <p className={classes.menuText}>Home</p>
-                        </RouterLink>
+                        <MenuLink label="Home" to="/" activeOnlyWhenExact={true}/>
                     </Grid>
                     <Grid item className={classes.gridItem}>
-                        <RouterLink className={classes.linkStyle} to="/About">
-                            <p className={classes.menuText}>About</p>
-                        </RouterLink>
+                        <MenuLink label="About" to="/About" activeOnlyWhenExact={true}/>
                     </Grid>
                     <Grid item className={classes.gridItem}>
-                        <RouterLink className={classes.linkStyle} to="/Illustration">
-                            <p className={classes.menuText}>Illustration</p>
-                        </RouterLink>
+                        <MenuLink label="Illustration" to="/Illustration" activeOnlyWhenExact={true}/>
                     </Grid>
                     <Grid item className={classes.gridItem}>
-                        <RouterLink className={classes.linkStyle} to="/Animation">
-                            <p className={classes.menuText}>Animation</p>
-                        </RouterLink>
+                        <MenuLink label="Animation" to="/Animation" activeOnlyWhenExact={true}/>
                     </Grid>
                     <Grid item className={classes.gridItem}>
                         <a className={classes.linkStyle} href="https://twitter.com/eurekano">
@@ -68,6 +73,30 @@ function Menu(){
                 </Grid>
             </Grid>
         </React.Fragment>
+    )
+}
+
+type MenuLink = {
+    label: string
+    to: string
+    activeOnlyWhenExact: boolean
+}
+
+const MenuLink: React.FC<MenuLink> = ({children, label, to, activeOnlyWhenExact}) =>{
+    const classes = useStyles()
+
+    return(
+        <Route
+        path={to}
+        exact={activeOnlyWhenExact}
+        children={({ match }) => (
+            <RouterLink 
+            className={match ? classes.activeMenuText : classes.menuText} 
+            to={to}>
+                {label}
+            </RouterLink>
+        )}
+      />
     )
 }
 

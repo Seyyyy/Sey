@@ -3,7 +3,6 @@ import Grid from '@material-ui/core/Grid'
 import withStyles, { WithStyles } from '@material-ui/core/styles/withStyles'
 import { createStyles } from '@material-ui/core'
 import { Theme } from '@material-ui/core/styles/createMuiTheme'
-import Menu from '../elements/menu'
 import { createMuiTheme } from '@material-ui/core'
 
 const theme = createMuiTheme()
@@ -18,7 +17,7 @@ createStyles({
     },
     title: {
         position: "absolute",
-        top: "50%",
+        top: "55%",
         left: "50%",
         transform: "translate(-50%, -50%)",
         width: "250px",
@@ -48,9 +47,6 @@ function Home(props: WithStyles<typeof styles>){
             <Grid className={classes.title}>
                 <img className={classes.imgSize} src="/static/icons/kyoryu_w.svg"/>
                 <p className={classes.titleText}>Sey</p>
-            </Grid>
-            <Grid className={classes.Menu}>
-                <Menu />
             </Grid>
         </Grid>
     )
