@@ -21,7 +21,11 @@ createStyles({
         left: "50%",
         transform: "translate(-50%, -50%)",
         width: "250px",
-        height: "431px"
+        height: "431px",
+        [theme.breakpoints.down('xs')]:{
+            width: "150px",
+            height: "auto"
+        }
     },
     imgSize: {
         width: "100%"
