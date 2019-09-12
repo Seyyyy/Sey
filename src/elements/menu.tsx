@@ -31,7 +31,11 @@ const useStyles = makeStyles({
         letterSpacing: "0.5px",
         color: "#FFFFFF",
         textTransform: "capitalize",
-        textDecoration: "none"
+        textDecoration: "none",
+        WebkitUserSelect: "none",
+        MozUserSelect: "none",
+        msUserSelect: "none",
+        userSelect: "none"
     },
     activeMenuText: {
         textAlign: "center",
@@ -39,7 +43,12 @@ const useStyles = makeStyles({
         letterSpacing: "0.5px",
         color: "#FFFFFF",
         textTransform: "capitalize",
-        textDecoration: "line-through"
+        textDecoration: "line-through",
+        pointerEvents: "none",
+        WebkitUserSelect: "none",
+        MozUserSelect: "none",
+        msUserSelect: "none",
+        userSelect: "none"
     },
     linkStyle: {
         textDecoration: "none"
@@ -92,7 +101,8 @@ const MenuLink: React.FC<MenuLink> = ({children, label, to, activeOnlyWhenExact}
         children={({ match }) => (
             <RouterLink 
             className={match ? classes.activeMenuText : classes.menuText} 
-            to={to}>
+            to={to}
+            >
                 {label}
             </RouterLink>
         )}
