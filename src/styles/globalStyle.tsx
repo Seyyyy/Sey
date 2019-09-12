@@ -3,8 +3,13 @@ import { createGlobalStyle } from 'styled-components'
 const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
-    height: 100%;
-    width: 100%;
+    background-color: #000000;
+  }
+  div #globalStyle {
+    position: absolute;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
     // background-image: url("/static/img/home.jpg");
     background: linear-gradient(
       #5454541C 0%, 

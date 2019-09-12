@@ -41,6 +41,7 @@ function Home() {
   return (
     <BrowserRouter>
       <GlobalStyle />
+      <div id="globalStyle" />
         <Switch>
           <Route path="/" exact component={RouteToppage} />
           <Route path="/Animation" exact component={RouteAnimation} />
