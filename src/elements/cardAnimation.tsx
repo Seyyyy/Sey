@@ -8,6 +8,9 @@ import CardMedia from '@material-ui/core/CardMedia'
 import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
 import configs from '../config/configsAnimation'
+import { createMuiTheme } from '@material-ui/core'
+
+const theme = createMuiTheme()
 
 const useStyles = makeStyles({
   card: {
@@ -21,6 +24,10 @@ const useStyles = makeStyles({
   gridItem: {
     display: "flex",
     justifyContent: "center",
+    [theme.breakpoints.down('xs')]:{
+      marginRight: "5%",
+      marginLeft: "5%"
+    }
   }
 })
 
