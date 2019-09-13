@@ -14,7 +14,7 @@ const useStyles = makeStyles({
         width: "652px",
         height: "476px",
         [theme.breakpoints.down('xs')]:{
-            top: "40%",
+            top: "50%",
             width: "80%",
             height: "auto"
         }
