@@ -1,6 +1,7 @@
 import React from "react"
 import { makeStyles } from "@material-ui/core/styles"
 import Drawer from "@material-ui/core/Drawer"
+import Divider from "@material-ui/core/Divider"
 import Button from "@material-ui/core/Button"
 import List from "@material-ui/core/List"
 import ListItem from "@material-ui/core/ListItem"
@@ -12,7 +13,7 @@ const theme =createMuiTheme()
 
 const useStyles = makeStyles({
   list: {
-    // width: 250
+    marginTop: "10vh"
   },
   fullList: {
     width: "auto"
@@ -25,8 +26,8 @@ const useStyles = makeStyles({
     position: "absolute",
     right: "5vw",
     top: "5vh",
-    zIndex: 5,
-    [theme.breakpoints.down("sm")]:{
+    zIndex: 1,
+    [theme.breakpoints.down("xs")]:{
         right: "3vw",
         top: "3vh"
     }
@@ -34,27 +35,38 @@ const useStyles = makeStyles({
   imgSize: {
     width: "50px",
     height: "50px",
-    [theme.breakpoints.down("sm")]:{
+    [theme.breakpoints.down("xs")]:{
         width: "30px",
         height: "auto"
     }
   },
   listFont: {
-    fontSize: "25px",
-    letterSpacing: "5px"
+    fontSize: "Regular 25px/29px Arial",
+    letterSpacing: "0.5px",
+    color: "#FFFFFF",
+    textTransform: "capitalize",
+    textDecoration: "none",
+    WebkitUserSelect: "none",
+    MozUserSelect: "none",
+    msUserSelect: "none",
+    userSelect: "none"
   },
   listBar: {
       width: "600px",
       height: "60px",
-      backgroundColor: "#1a1a1a",
+      backgroundColor: "#00000000",
       color: "#eaeaea",
-      marginTop: "10vh",
+      marginTop: "2vh",
       [theme.breakpoints.down("sm")]:{
-          width: "100vw",
+          width: "70vw",
           height: "auto"
       }
   },
   linkStyle: {
+    textDecoration: "none",
+  },
+  divider: {
+    backgroundColor: "#ffffff88"
   }
 })
 
@@ -96,16 +108,32 @@ export default function Drawers() {
                 <ListItemText className={classes.listFont} primary={"Home"} />
             </ListItem>
         </RouterLink>
-        <RouterLink className={classes.linkStyle} to="/Animation">
-            <ListItem className={classes.listBar} button key={"Animation"}>
-                <ListItemText className={classes.listFont} primary={"Animation"} />
+        <Divider className={classes.divider} />
+        <RouterLink className={classes.linkStyle} to="/About">
+            <ListItem className={classes.listBar} button key={"About"}>
+                <ListItemText className={classes.listFont} primary={"About"} />
             </ListItem>
         </RouterLink>
+        <Divider className={classes.divider} />
         <RouterLink className={classes.linkStyle} to="/Illustration">
             <ListItem className={classes.listBar} button key={"Illustration"}>
                 <ListItemText className={classes.listFont} primary={"Illustration"} />
             </ListItem>
         </RouterLink>
+        <Divider className={classes.divider} />
+        <RouterLink className={classes.linkStyle} to="/Animation">
+            <ListItem className={classes.listBar} button key={"Animation"}>
+                <ListItemText className={classes.listFont} primary={"Animation"} />
+            </ListItem>
+        </RouterLink>
+        <Divider className={classes.divider} />
+        {/* <RouterLink className={classes.linkStyle} to="/Animation"> */}
+            <ListItem className={classes.listBar} button key={"twitter"}>
+              <a className={classes.linkStyle} href="https://twitter.com/eurekano">
+                <ListItemText className={classes.listFont} primary={"Twitter"} />
+              </a>
+            </ListItem>
+        {/* </RouterLink> */}
       </List>
     </div>
   )
@@ -115,7 +143,7 @@ export default function Drawers() {
       <Button onClick={toggleDrawer("left", true)}>
           <img className={classes.imgSize} src="/static/icons/menu_w.png" />
       </Button>
-      <Drawer PaperProps={{style: {background: "transparent", boxShadow: "none"}}} open={state.left} onClose={toggleDrawer("left", false)}>
+      <Drawer PaperProps={{style: {backgroundColor: "#00000055"}}} open={state.left} onClose={toggleDrawer("left", false)}>
         {sideList("left")}
       </Drawer>
     </div>

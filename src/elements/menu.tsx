@@ -4,18 +4,22 @@ import { makeStyles } from '@material-ui/core/styles'
 import { createMuiTheme } from '@material-ui/core'
 import { Link as RouterLink} from "react-router-dom"
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import Drawer from './drawer'
 
 const theme = createMuiTheme()
 
 const useStyles = makeStyles({
     root: {
         width: "100vw",
-        zIndex: 1
+        zIndex: 1,
     },
     menuGrid: {
         display: "flex",
         justifyContent: "center",
-        margin: 0
+        margin: 0,
+        [theme.breakpoints.down("xs")]:{
+            display: "none"
+        }
     },
     gridItem: {
         marginLeft: "4vw",
@@ -52,6 +56,12 @@ const useStyles = makeStyles({
     },
     linkStyle: {
         textDecoration: "none"
+    },
+    drawer: {
+        display: "none",
+        [theme.breakpoints.down("xs")]:{
+            display: "block"
+        }
     }
 })
 
@@ -80,6 +90,9 @@ function Menu(){
                         </a>
                     </Grid>
                 </Grid>
+            </Grid>
+            <Grid className={classes.drawer}>
+                <Drawer />
             </Grid>
         </React.Fragment>
     )
