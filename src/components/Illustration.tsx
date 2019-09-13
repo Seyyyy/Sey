@@ -11,7 +11,7 @@ const useStyles = makeStyles({
         position: "absolute",
         width: "100vw",
         height: "auto",
-        paddingTop: "10vh"
+        paddingTop: "16vh"
     },
     title:{
         position: "relative",

@@ -5,11 +5,11 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     background-color: #000000;
     background: linear-gradient(
-      #5454541C 0%, 
-      #4747473F 31%, 
-      #212121A5 66%, 
-      #131313CC 88%, 
-      #000000 100%
+      #272727EE 0%,
+      #272727AA 20%,
+      #27272722 50%,
+      #27272766 70%,
+      #111111AA 100%
       ),
     url("/static/img/sky.jpg");
     background-position: center center;

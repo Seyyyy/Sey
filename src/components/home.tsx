@@ -14,7 +14,7 @@ import Grid from '@material-ui/core/Grid'
 const useStyles = makeStyles({
   menu: {
     position: "absolute",
-    bottom: "2vh",
+    top: "2vh",
     zIndex: 2
   }
 })

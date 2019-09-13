@@ -17,7 +17,7 @@ createStyles({
     },
     title: {
         position: "absolute",
-        top: "55%",
+        top: "57%",
         left: "50%",
         transform: "translate(-50%, -50%)",
         width: "250px",
