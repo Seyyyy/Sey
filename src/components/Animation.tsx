@@ -21,15 +21,6 @@ const useStyles = makeStyles({
         marginTop: "5vh",
         marginBottom: "5vh"
     },
-    a:{
-        fontFamily: "Arial",
-        fontSize: "70px",
-        fontWeight: "bold",
-        color: "#eeeeee",
-        [theme.breakpoints.down("sm")]:{
-            fontSize: "40px"   
-        }
-    },
     main: {
         position: "relative",
         marginTop: "20vh"

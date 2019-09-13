@@ -25,7 +25,7 @@ const useStyles = makeStyles({
         letterSpacing: "0.8px",
         color: "#FFFFFF",
         [theme.breakpoints.down('xs')]:{
-            font: "Bold 20px Arial"
+            font: "Bold 30px Arial"
         }
     },
     text: {
@@ -34,7 +34,7 @@ const useStyles = makeStyles({
         letterSpacing: "0.4px",
         color: "#FFFFFF",
         [theme.breakpoints.down('xs')]:{
-            font: "Bold 8px Arial"
+            font: "Bold 14px Arial"
         }
     }
 })
