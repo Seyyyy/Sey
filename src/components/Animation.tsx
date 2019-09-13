@@ -10,8 +10,26 @@ const useStyles = makeStyles({
     root :{
         position: "absolute",
         width: "100vw",
+        height: "100vh",
+        paddingTop: "10vh",
+        overflow: "scroll",
+        background: "linear-gradient(#5454541C 0%,\
+            #4747473F 31%,\
+            transparent 66%,\
+            transparent 88%,\
+            transparent 100%\
+            )"
+    },
+    scrollOpacity: {
+        position: "absolute",
+        width: "100vw",
         height: "auto",
-        paddingTop: "10vh"
+        background: "linear-gradient(#5454541C 0%,\
+            #4747473F 31%,\
+            transparent 66%,\
+            transparent 88%,\
+            transparent 100%\
+            )"
     },
     title:{
         position: "relative",
@@ -32,11 +50,12 @@ function Animation(){
 
     return (
         <React.Fragment>
-                <Grid className={classes.root}>
-                    <Grid className={classes.main}>
-                        <Card />
-                    </Grid>
+            <Grid className={classes.scrollOpacity} />
+            <Grid className={classes.root}>
+                <Grid className={classes.main}>
+                    <Card />
                 </Grid>
+            </Grid>
         </React.Fragment>
     )
 }
