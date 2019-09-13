@@ -4,13 +4,6 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     background-color: #000000;
-  }
-  div #globalStyle {
-    position: absolute;
-    margin: 0;
-    height: 100vh;
-    width: 100vw;
-    // background-image: url("/static/img/home.jpg");
     background: linear-gradient(
       #5454541C 0%, 
       #4747473F 31%, 
@@ -23,7 +16,6 @@ const GlobalStyle = createGlobalStyle`
     background-color: #000000;
     background-size: cover;
     background-attachment: fixed;
-    
   }
   html {
     scroll-behavior: smooth;
