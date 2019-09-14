@@ -3,7 +3,7 @@ import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
 import { createMuiTheme } from '@material-ui/core'
 import { Link as RouterLink} from "react-router-dom"
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 import Drawer from './drawer'
 
 const theme = createMuiTheme()
