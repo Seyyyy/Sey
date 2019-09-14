@@ -11,7 +11,6 @@ const useStyles = makeStyles({
         position: "absolute",
         width: "100vw",
         height: "auto",
-        // paddingTop: "16vh"
         top: "50vh",
         transform: "translate(0, -40vh)"
     },
