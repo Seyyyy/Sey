@@ -26,8 +26,6 @@ const useStyles = makeStyles({
         marginRight: "4vw",
         marginTop: "auto",
         marginBottom: "auto"
-        // display: "flex",
-        // justifyContent: "center"
     },
     menuText: {
         textAlign: "center",
@@ -104,7 +102,7 @@ type MenuLink = {
     activeOnlyWhenExact: boolean
 }
 
-const MenuLink: React.FC<MenuLink> = ({children, label, to, activeOnlyWhenExact}) =>{
+const MenuLink: React.FC<MenuLink> = ({label, to, activeOnlyWhenExact}) =>{
     const classes = useStyles()
 
     return(
