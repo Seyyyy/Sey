@@ -1,0 +1,9 @@
+dev:
+  build: .
+  ports:
+    - "8080:8080"
+  tty: true
+  volumes: 
+    - ./:/app
+  command: "npm install"
+  command: "npm run dev"
