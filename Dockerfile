@@ -1,8 +1,15 @@
 FROM node:lts
 
-WORKDIR /app
-COPY ./ /app
-
 EXPOSE 8080
 
-CMD ["npm", "install"]
+RUN mkdir /app_name 
+
+ENV APP_ROOT /app_name 
+WORKDIR $APP_ROOT
+
+ADD ./package.json $APP_ROOT/package.json
+ADD ./package-lock.json $APP_ROOT/package-lock.json 
+
+RUN npm install
+
+ADD . $APP_ROOT

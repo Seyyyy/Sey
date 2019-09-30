@@ -4,6 +4,6 @@ dev:
     - "8080:8080"
   tty: true
   volumes: 
-    - ./:/app
-  command: "npm install"
+    - .:/app_name
+    - /app_name/node_modules
   command: "npm run dev"
