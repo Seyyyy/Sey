@@ -3,18 +3,24 @@ version: 2.1
 orbs:
  percy: percy/agent@0.1.2
 
+executors:
+  default:
+    docker:
+      -image: circleci/node:lts
+
 jobs:
- run_tests:
-   parallelism: 3
-   steps:
-     - attach_workspace:
-         at: .
-     - run: echo "$PERCY_TOKEN"
+  run_tests:
+    executor: default
+    parallelism: 3
+    steps:
+      - attach_workspace:
+          at: .
+      - run: echo "$PERCY_TOKEN"
 
 workflows:
- test:
-   jobs:
-     - run_tests
-     - percy/finalize_all:
-         requires:
-           - run_tests
+  test:
+    jobs:
+      - run_tests
+      - percy/finalize_all:
+          requires:
+            - run_tests
