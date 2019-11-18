@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "webpack-dev-server --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js"
+    "build": "webpack --config webpack.prod.js",
+    "VRTest": "percy exec -- node puppeteer/screenshot.js"
   },
   "dependencies": {
     "@material-ui/core": "^4.6.0",
@@ -21,6 +22,7 @@
     "@babel/preset-env": "^7.7.1",
     "@babel/preset-react": "^7.7.0",
     "@babel/preset-typescript": "^7.7.2",
+    "@percy/puppeteer": "^1.0.8",
     "@types/node": "^12.12.7",
     "@types/react": "^16.9.11",
     "@types/react-dom": "^16.9.4",
@@ -31,6 +33,7 @@
     "core-js": "^3.4.0",
     "html-webpack-plugin": "^3.2.0",
     "npm-run-all": "^4.1.5",
+    "puppeteer": "^2.0.0",
     "typescript": "^3.7.2",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",

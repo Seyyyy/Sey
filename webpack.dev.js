@@ -23,7 +23,7 @@ module.exports = {
     stats: 'errors-only',
     inline: true,
     hot: true,
-    host: "0.0.0.0",
+    // host: "0.0.0.0",
     port: 8080
   },
   module: {
