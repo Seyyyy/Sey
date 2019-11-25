@@ -24,7 +24,7 @@
     "@babel/preset-typescript": "^7.7.2",
     "@percy/puppeteer": "^1.0.8",
     "@types/node": "^12.12.12",
-    "@types/react": "^16.9.11",
+    "@types/react": "^16.9.13",
     "@types/react-dom": "^16.9.4",
     "@types/react-router-dom": "^5.1.2",
     "@types/styled-components": "^4.4.0",
