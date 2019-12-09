@@ -38,6 +38,6 @@
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.8.2",
-    "yarn": "^1.19.2"
+    "yarn": "^1.21.0"
   }
 }
