@@ -21,7 +21,7 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.7.4",
     "@babel/preset-env": "^7.7.6",
     "@babel/preset-react": "^7.7.4",
-    "@babel/preset-typescript": "^7.7.4",
+    "@babel/preset-typescript": "^7.7.7",
     "@percy/puppeteer": "^1.0.8",
     "@types/node": "^12.12.17",
     "@types/react": "^16.9.16",
