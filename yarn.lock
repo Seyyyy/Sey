@@ -815,7 +815,7 @@
     globals "^11.1.0"
     lodash "^4.17.13"
 
-"@babel/types@^7.7.0", "@babel/types@^7.7.4", "@babel/types@^7.8.0":
+"@babel/types@^7.7.0", "@babel/types@^7.8.0":
   version "7.8.0"
   resolved "https://registry.yarnpkg.com/@babel/types/-/types-7.8.0.tgz#1a2039a028057a2c888b668d94c98e61ea906e7f"
   integrity sha512-1RF84ehyx9HH09dMMwGWl3UTWlVoCPtqqJPjGuC4JzMe1ZIVDJ2DT8mv3cPv/A7veLD6sgR7vi95lJqm+ZayIg==
@@ -2283,10 +2283,10 @@ core-js-compat@^3.6.2:
     browserslist "^4.8.3"
     semver "7.0.0"
 
-core-js@^3.6.3:
-  version "3.6.3"
-  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.6.3.tgz#cebda69dd069bf90066414d2b2425ffd1f3dcd79"
-  integrity sha512-DOO9b18YHR+Wk5kJ/c5YFbXuUETreD4TrvXb6edzqZE3aAEd0eJIAWghZ9HttMuiON8SVCnU3fqA4rPxRDD1HQ==
+core-js@^3.6.4:
+  version "3.6.4"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.6.4.tgz#440a83536b458114b9cb2ac1580ba377dc470647"
+  integrity sha512-4paDGScNgZP2IXXilaffL9X7968RuvwlkK3xWtZRVqgd8SYNiVKRJvkFd1aqqEuPfN7E68ZHEp9hDj6lHj4Hyw==
 
 core-util-is@1.0.2, core-util-is@~1.0.0:
   version "1.0.2"
