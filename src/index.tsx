@@ -6,24 +6,41 @@ import Home from './components/home'
 import Work from './components/work'
 import About from './components/about'
 import Contact from './components/contact'
+import Fade from './animations/fade'
 import { ThemeProvider } from '@material-ui/core/styles'
 import theme from './GlobalTheme'
 import CssBaseline from '@material-ui/core/CssBaseline'
 
 const RouteHome = () => {
-  return <Home />
+  return (
+    <Fade>
+      <Home />
+    </Fade>
+  )
 }
 
 const RouteWork = () => {
-  return <Work />
+  return (
+    <Fade>
+      <Work />
+    </Fade>
+  )
 }
 
 const RouteAbout = () => {
-  return <About />
+  return (
+    <Fade>
+      <About />
+    </Fade>
+  )
 }
 
 const RouteContact = () => {
-  return <Contact />
+  return (
+    <Fade>
+      <Contact />
+    </Fade>
+  )
 }
 
 const App = () => {
