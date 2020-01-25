@@ -5,7 +5,7 @@ import Fab from '@material-ui/core/Fab'
 import KyoryuIcon from '@material-ui/core/SvgIcon'
 import KyoryuSVG from '../../static/icons/kyoryu.svg'
 import { makeStyles } from '@material-ui/core/styles'
-import theme from '../globalTheme'
+import theme from '../GlobalTheme'
 
 const useStyles = makeStyles({
   root: {

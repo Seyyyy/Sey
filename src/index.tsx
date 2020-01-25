@@ -6,7 +6,7 @@ import Work from './components/work'
 import About from './components/about'
 import Contact from './components/contact'
 import { ThemeProvider } from '@material-ui/core/styles'
-import theme from './globalTheme'
+import theme from './GlobalTheme'
 import CssBaseline from '@material-ui/core/CssBaseline'
 
 const RouteHome = () => {
