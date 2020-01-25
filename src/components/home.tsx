@@ -35,6 +35,7 @@ const useStyles = makeStyles({
     textDecoration: 'none',
   },
   button: {
+    marginBottom: '30px',
     color: theme.palette.primary.main,
     size: 'large',
     backgroundColor: theme.palette.primary.contrastText,
@@ -64,6 +65,28 @@ const Work = () => {
   )
 }
 
+const About = () => {
+  const classes = useStyles()
+  return (
+    <RouterLink className={classes.link} to="/about">
+      <Fab className={classes.button} variant={'extended'}>
+        about
+      </Fab>
+    </RouterLink>
+  )
+}
+
+const Contact = () => {
+  const classes = useStyles()
+  return (
+    <RouterLink className={classes.link} to="/contact">
+      <Fab className={classes.button} variant={'extended'}>
+        contact
+      </Fab>
+    </RouterLink>
+  )
+}
+
 const Home = () => {
   const classes = useStyles()
 
@@ -73,7 +96,8 @@ const Home = () => {
         <Kyoryu />
         <Grid className={classes.title}>Sey</Grid>
         <Work />
-        <Grid></Grid>
+        <About />
+        <Contact />
       </Grid>
     </React.Fragment>
   )

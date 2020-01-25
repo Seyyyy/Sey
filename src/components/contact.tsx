@@ -1,11 +1,11 @@
 import React from 'react'
 
-const About = () => {
+const Contact = () => {
   return (
     <React.Fragment>
-      <div>about</div>
+      <div>contact</div>
     </React.Fragment>
   )
 }
 
-export default About
+export default Contact
