@@ -23,10 +23,6 @@ const useStyles = makeStyles({
   },
   logo: {
     margin: '0 auto',
-    // backgroundImage: 'url("images/kpt_logo.svg")',
-    // backgroundRepeat: 'no-repeat',
-    // backgroundSize: 'contain',
-    // backgroundPosition: 'center',
     width: '30vw',
     height: '30vh',
     color: theme.palette.primary.contrastText,
@@ -43,7 +39,7 @@ const Home = () => {
           className={classes.logo}
           component={KyoryuSVG}
           viewBox={'0 0 94.89 76.39'}
-        />{' '}
+        />
         {/* svgアイコンのviewboxと同値に設定 */}
         <Grid className={classes.title}>Sey</Grid>
         <Grid></Grid>
