@@ -1,7 +1,5 @@
 import React from 'react'
-import { Link as RouterLink } from 'react-router-dom'
 import Grid from '@material-ui/core/Grid'
-import Fab from '@material-ui/core/Fab'
 import KyoryuIcon from '@material-ui/core/SvgIcon'
 import KyoryuSVG from '../../static/icons/kyoryu.svg'
 import { makeStyles } from '@material-ui/core/styles'
@@ -35,9 +33,9 @@ const useStyles = makeStyles({
     textDecoration: 'none',
   },
   button: {
-    marginBottom: '30px',
+    marginBottom: '40px',
+    width: '120px',
     color: theme.palette.primary.main,
-    size: 'large',
     backgroundColor: theme.palette.primary.contrastText,
   },
 })
@@ -54,39 +52,6 @@ const Kyoryu = () => {
   )
 }
 
-const Work = () => {
-  const classes = useStyles()
-  return (
-    <RouterLink className={classes.link} to="/work">
-      <Fab className={classes.button} variant={'extended'}>
-        work
-      </Fab>
-    </RouterLink>
-  )
-}
-
-const About = () => {
-  const classes = useStyles()
-  return (
-    <RouterLink className={classes.link} to="/about">
-      <Fab className={classes.button} variant={'extended'}>
-        about
-      </Fab>
-    </RouterLink>
-  )
-}
-
-const Contact = () => {
-  const classes = useStyles()
-  return (
-    <RouterLink className={classes.link} to="/contact">
-      <Fab className={classes.button} variant={'extended'}>
-        contact
-      </Fab>
-    </RouterLink>
-  )
-}
-
 const Home = () => {
   const classes = useStyles()
 
@@ -95,9 +60,6 @@ const Home = () => {
       <Grid className={classes.root}>
         <Kyoryu />
         <Grid className={classes.title}>Sey</Grid>
-        <Work />
-        <About />
-        <Contact />
       </Grid>
     </React.Fragment>
   )

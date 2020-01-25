@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import Header from './components/elements/header'
 import Home from './components/home'
 import Work from './components/work'
 import About from './components/about'
@@ -30,6 +31,7 @@ const App = () => {
     <BrowserRouter>
       <ThemeProvider theme={theme}>
         <CssBaseline />
+        <Header />
         <Switch>
           <Route path="/" exact component={RouteHome} />
           <Route path="/work" exact component={RouteWork} />
