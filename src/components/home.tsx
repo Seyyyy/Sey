@@ -1,57 +1,24 @@
 import React from 'react'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import Toppage from './topPage'
-import GlobalStyle from './../styles/globalStyle'
-import Fadein from '../styles/fadein'
-import Animation from '../components/Animation'
-import Illustration from '../components/Illustration'
-import About from '../components/About'
-import NoMatch from '../components/noMatch'
-import { makeStyles } from '@material-ui/core/styles'
-import Menu from '../elements/menu'
 import Grid from '@material-ui/core/Grid'
+import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles({
-  menu: {
-    position: "absolute",
-    top: "2vh",
-    zIndex: 2
-  }
+  root: {
+    width: '100vw',
+    height: '100vh',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+  },
 })
 
-function RouteToppage(){
-  return <Fadein><Toppage /></Fadein>
-}
-
-function RouteAbout(){
-  return <Fadein><About /></Fadein>
-}
-
-function RouteAnimation(){
-  return <Fadein><Animation /></Fadein>
-}
-
-function RouteIllustration(){
-  return <Fadein><Illustration /></Fadein>
-}
-
-function Home() {
+const Home = () => {
   const classes = useStyles()
 
   return (
-    <BrowserRouter>
-      <GlobalStyle />
-        <Switch>
-          <Route path="/" exact component={RouteToppage} />
-          <Route path="/Animation" exact component={RouteAnimation} />
-          <Route path="/Illustration" exact component={RouteIllustration} />
-          <Route path="/About" exact component={RouteAbout} />
-          <Route component={NoMatch} />
-        </Switch>
-        <Grid className={classes.menu}>
-          <Menu />
-        </Grid>
-    </BrowserRouter>
+    <React.Fragment>
+      <Grid className={classes.root}></Grid>
+    </React.Fragment>
   )
 }
 
