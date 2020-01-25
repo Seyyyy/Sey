@@ -6,6 +6,7 @@ import theme from '../../GlobalTheme'
 
 const useStyles = makeStyles({
   root: {
+    position: 'absolute',
     width: '100vw',
     zIndex: 1,
     display: 'flex',
