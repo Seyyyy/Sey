@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Home from './components/home'
 import Work from './components/work'
 import { ThemeProvider } from '@material-ui/core/styles'
-import theme from './GlobalTheme'
+import theme from './globalTheme'
 import CssBaseline from '@material-ui/core/CssBaseline'
 
 const RouteHome = () => {
