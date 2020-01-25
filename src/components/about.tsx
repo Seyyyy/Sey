@@ -32,6 +32,8 @@ const useStyles = makeStyles({
   paragraph: {
     color: theme.palette.primary.contrastText,
     fontSize: theme.typography.fontSize,
+    marginRight: '10px',
+    marginLeft: '10px',
   },
 })
 
@@ -58,7 +60,7 @@ const Paragraph = () => {
   return (
     <Grid className={classes.container}>
       <p className={classes.paragraph}>
-        趣味 : Webフロント &amp; イラスト &amp; RPGゲーム &amp; Vtuber
+        趣味 : Webフロント/バック &amp; イラスト &amp; RPGゲーム &amp; Vtuber
       </p>
       <p className={classes.paragraph}>
         スキル : HTML CSS JavaScript Ruby RoR React Unity

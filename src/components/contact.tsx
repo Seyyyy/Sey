@@ -1,5 +1,6 @@
 import React from 'react'
 import Grid from '@material-ui/core/Grid'
+import TextField from '@material-ui/core/TextField'
 import { makeStyles } from '@material-ui/core'
 import theme from '../GlobalTheme'
 
@@ -33,6 +34,10 @@ const useStyles = makeStyles({
     color: theme.palette.primary.contrastText,
     fontSize: theme.typography.fontSize,
   },
+  textField: {
+    width: '400px',
+    // backgroundColor: theme.palette.primary.dark
+  },
 })
 
 const SubTitle = () => {
@@ -44,6 +49,37 @@ const SubTitle = () => {
   )
 }
 
+const MailForm = () => {
+  const classes = useStyles()
+  return (
+    <Grid className={classes.container}>
+      <Grid className={classes.container}>
+        <TextField
+          className={classes.textField}
+          variant="filled"
+          label="Name"
+        />
+      </Grid>
+      <Grid className={classes.container}>
+        <TextField
+          className={classes.textField}
+          variant="filled"
+          label="Your Email Address"
+        />
+      </Grid>
+      <Grid className={classes.container}>
+        <TextField
+          className={classes.textField}
+          variant="filled"
+          label="Message"
+          multiline
+          rows="10"
+        />
+      </Grid>
+    </Grid>
+  )
+}
+
 const Contact = () => {
   const classes = useStyles()
 
@@ -51,6 +87,7 @@ const Contact = () => {
     <React.Fragment>
       <Grid className={classes.root}>
         <SubTitle />
+        <MailForm />
       </Grid>
     </React.Fragment>
   )
