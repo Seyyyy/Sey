@@ -28,16 +28,6 @@ const useStyles = makeStyles({
     textIndent: '20px',
     color: theme.palette.primary.contrastText,
   },
-  link: {
-    margin: '0 auto',
-    textDecoration: 'none',
-  },
-  button: {
-    marginBottom: '40px',
-    width: '120px',
-    color: theme.palette.primary.main,
-    backgroundColor: theme.palette.primary.contrastText,
-  },
 })
 
 const Kyoryu = () => {
