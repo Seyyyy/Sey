@@ -1,5 +1,7 @@
 import React from 'react'
 import Grid from '@material-ui/core/Grid'
+import KyoryuIcon from '@material-ui/core/SvgIcon'
+import KyoryuSVG from '../../static/icons/kyoryu.svg'
 import { makeStyles } from '@material-ui/core/styles'
 import theme from '../GlobalTheme'
 
@@ -27,6 +29,7 @@ const useStyles = makeStyles({
     // backgroundPosition: 'center',
     width: '30vw',
     height: '30vh',
+    color: theme.palette.primary.contrastText,
   },
 })
 
@@ -36,7 +39,12 @@ const Home = () => {
   return (
     <React.Fragment>
       <Grid className={classes.root}>
-        <Grid></Grid>
+        <KyoryuIcon
+          className={classes.logo}
+          component={KyoryuSVG}
+          viewBox={'0 0 94.89 76.39'}
+        />{' '}
+        {/* svgアイコンのviewboxと同値に設定 */}
         <Grid className={classes.title}>Sey</Grid>
         <Grid></Grid>
         <Grid></Grid>

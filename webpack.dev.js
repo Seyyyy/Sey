@@ -6,16 +6,16 @@ module.exports = {
   entry: path.resolve(__dirname, 'src'),
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'app.bundle.js'
+    filename: 'app.bundle.js',
   },
   resolve: {
-    extensions: ['.js', '.ts', '.tsx']
+    extensions: ['.js', '.ts', '.tsx'],
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/index.html'),
-      title: 'Sey'
-    })
+      title: 'Sey',
+    }),
   ],
   devServer: {
     historyApiFallback: true,
@@ -24,19 +24,23 @@ module.exports = {
     inline: true,
     hot: true,
     // host: "0.0.0.0",
-    port: 8080
+    port: 8080,
   },
   module: {
     rules: [
       {
         test: /\.(ts|tsx|js|jsx)$/,
         exclude: /node_modules/,
-        use: 'babel-loader'
+        use: 'babel-loader',
       },
       {
-        test: /\.(png|jpg|jpeg|gif|svg|ttf|otf|woff)$/,
-        use: 'file-loader'
-      }
-    ]
-  }
+        test: /\.(png|jpg|jpeg|gif|ttf|otf|woff)$/,
+        use: 'file-loader',
+      },
+      {
+        test: /\.svg$/,
+        use: ['@svgr/webpack'],
+      },
+    ],
+  },
 }
