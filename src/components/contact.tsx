@@ -33,10 +33,11 @@ const useStyles = makeStyles({
   paragraph: {
     color: theme.palette.primary.contrastText,
     fontSize: theme.typography.fontSize,
+    marginRight: '10px',
+    marginLeft: '10px',
   },
   textField: {
     width: '400px',
-    // backgroundColor: theme.palette.primary.dark
   },
 })
 
@@ -45,6 +46,21 @@ const SubTitle = () => {
   return (
     <Grid className={classes.container}>
       <Grid className={classes.subTitle}>Contact</Grid>
+    </Grid>
+  )
+}
+
+const Paragraph = () => {
+  const classes = useStyles()
+  return (
+    <Grid className={classes.container}>
+      <p className={classes.paragraph}>
+        ・サークルやコミュニティなどへのお誘いは大歓迎です！(喜びます)
+      </p>
+      <p className={classes.paragraph}>・TwitterでDMくださっても大丈夫です！</p>
+      <p className={classes.paragraph}>
+        ・お仕事やご依頼はお受けしてません。(まだ自信がない、、)
+      </p>
     </Grid>
   )
 }
@@ -87,6 +103,7 @@ const Contact = () => {
     <React.Fragment>
       <Grid className={classes.root}>
         <SubTitle />
+        <Paragraph />
         <MailForm />
       </Grid>
     </React.Fragment>
