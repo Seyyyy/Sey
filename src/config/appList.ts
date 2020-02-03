@@ -1,17 +1,17 @@
 const apps = [
   {
-    img: '/static/img/kyoryu.png',
-    alt: 'Kyoryu',
-    title: 'Kyoryu',
-    description: '新しいタブを開いた時に現れるKyoryuのchorome拡張',
-    ref: 'https://github.com/Seyyyy/Kyoryu',
+    img: '/static/images/portfolio.png',
+    alt: 'Apps',
+    title: 'Apps',
+    description: 'いままで作成したアプリケーション',
+    ref: 'https://github.com/Seyyyy/',
   },
   {
-    img: '/static/img/totomimi.png',
-    alt: 'トトリとミミ',
-    title: 'トトリとミミ',
-    description: '圧倒的トトミミ推し(一応動きます)',
-    ref: '',
+    img: '/static/images/work_thumb.gif',
+    alt: 'Illust&Photo',
+    title: 'Illust & Photo',
+    description: '趣味で作成してきたイラストと写真',
+    ref: 'https://sey.myportfolio.com/work',
   },
 ]
 
