@@ -1,57 +1,58 @@
 import React from 'react'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import Toppage from './topPage'
-import GlobalStyle from './../styles/globalStyle'
-import Fadein from '../styles/fadein'
-import Animation from '../components/Animation'
-import Illustration from '../components/Illustration'
-import About from '../components/About'
-import NoMatch from '../components/noMatch'
-import { makeStyles } from '@material-ui/core/styles'
-import Menu from '../elements/menu'
 import Grid from '@material-ui/core/Grid'
+import KyoryuIcon from '@material-ui/core/SvgIcon'
+import KyoryuSVG from '../../static/icons/kyoryu.svg'
+import { makeStyles } from '@material-ui/core/styles'
+import theme from '../GlobalTheme'
 
 const useStyles = makeStyles({
-  menu: {
-    position: "absolute",
-    top: "2vh",
-    zIndex: 2
-  }
+  root: {
+    width: '100vw',
+    height: '100vh',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+  },
+  logo: {
+    margin: '0 auto',
+    width: '250px',
+    height: '250px',
+    color: theme.palette.primary.contrastText,
+  },
+  title: {
+    margin: '0 auto',
+    marginTop: '30px',
+    marginBottom: '30px',
+    fontSize: '60px',
+    fontWeight: 800,
+    letterSpacing: '20px',
+    textIndent: '20px',
+    color: theme.palette.primary.contrastText,
+  },
 })
 
-function RouteToppage(){
-  return <Fadein><Toppage /></Fadein>
+const Kyoryu = () => {
+  const classes = useStyles()
+  return (
+    <KyoryuIcon
+      className={classes.logo}
+      component={KyoryuSVG}
+      viewBox={'0 0 94.89 76.39'}
+    />
+    /* svgアイコンのviewboxと同値に設定 */
+  )
 }
 
-function RouteAbout(){
-  return <Fadein><About /></Fadein>
-}
-
-function RouteAnimation(){
-  return <Fadein><Animation /></Fadein>
-}
-
-function RouteIllustration(){
-  return <Fadein><Illustration /></Fadein>
-}
-
-function Home() {
+const Home = () => {
   const classes = useStyles()
 
   return (
-    <BrowserRouter>
-      <GlobalStyle />
-        <Switch>
-          <Route path="/" exact component={RouteToppage} />
-          <Route path="/Animation" exact component={RouteAnimation} />
-          <Route path="/Illustration" exact component={RouteIllustration} />
-          <Route path="/About" exact component={RouteAbout} />
-          <Route component={NoMatch} />
-        </Switch>
-        <Grid className={classes.menu}>
-          <Menu />
-        </Grid>
-    </BrowserRouter>
+    <React.Fragment>
+      <Grid className={classes.root}>
+        <Kyoryu />
+        <Grid className={classes.title}>Sey</Grid>
+      </Grid>
+    </React.Fragment>
   )
 }
 

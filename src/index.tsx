@@ -1,19 +1,62 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import LoadHome from './components/loadHome'
-import Fadein from './styles/fadein'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import Header from './components/elements/header'
+import Home from './components/home'
+import Work from './components/work'
+import About from './components/about'
+import Contact from './components/contact'
+import Fade from './animations/fade'
+import { ThemeProvider } from '@material-ui/core/styles'
+import theme from './GlobalTheme'
+import CssBaseline from '@material-ui/core/CssBaseline'
 
-const Home = React.lazy(() => import('./components/home'));
-
-function App() {
+const RouteHome = () => {
   return (
-    <React.Fragment>
-      <React.Suspense fallback={<LoadHome />}>
-        <Fadein>
-          <Home />
-        </Fadein>
-      </React.Suspense>
-    </React.Fragment>
+    <Fade>
+      <Home />
+    </Fade>
+  )
+}
+
+const RouteWork = () => {
+  return (
+    <Fade>
+      <Work />
+    </Fade>
+  )
+}
+
+const RouteAbout = () => {
+  return (
+    <Fade>
+      <About />
+    </Fade>
+  )
+}
+
+const RouteContact = () => {
+  return (
+    <Fade>
+      <Contact />
+    </Fade>
+  )
+}
+
+const App = () => {
+  return (
+    <BrowserRouter>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Header />
+        <Switch>
+          <Route path="/" exact component={RouteHome} />
+          <Route path="/work" exact component={RouteWork} />
+          <Route path="/about" exact component={RouteAbout} />
+          <Route path="/contact" exact component={RouteContact} />
+        </Switch>
+      </ThemeProvider>
+    </BrowserRouter>
   )
 }
 
