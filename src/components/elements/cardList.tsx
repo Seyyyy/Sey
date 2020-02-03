@@ -44,7 +44,7 @@ const CardList: React.FC<CardList> = ({ list }) => {
   return (
     <Grid container spacing={0} className={classes.root}>
       {list.map(obj => (
-        <Grid item md={4} sm={12} className={classes.gridItem}>
+        <Grid item key={obj.ref} md={4} sm={12} className={classes.gridItem}>
           <Card className={classes.card}>
             <CardActionArea>
               <a href={obj.ref}>
