@@ -2,6 +2,8 @@ import React from 'react'
 import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core'
 import theme from '../GlobalTheme'
+import CardList from './elements/cardList'
+import apps from '../config/appList'
 
 const useStyles = makeStyles({
   root: {
@@ -51,6 +53,7 @@ const Work = () => {
     <React.Fragment>
       <Grid className={classes.root}>
         <SubTitle />
+        <CardList list={apps} />
       </Grid>
     </React.Fragment>
   )
