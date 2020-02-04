@@ -1,4 +1,4 @@
-const apps = [
+const works = [
   {
     img: '/static/images/portfolio.png',
     alt: 'Apps',
@@ -15,4 +15,4 @@ const apps = [
   },
 ]
 
-export default apps
+export default works
