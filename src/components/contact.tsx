@@ -86,12 +86,18 @@ const MailForm = () => {
     setValues(initialState)
   }
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
     try {
       if (process.env.MAIL_URL != undefined) {
         const body = JSON.stringify(values)
         const headers = { 'Content-Type': 'application/json' }
         const url: RequestInfo = process.env.MAIL_URL
-        const option: RequestInit = { method: 'POST', headers, body }
+        const option: RequestInit = {
+          method: 'POST',
+          mode: 'no-cors',
+          headers,
+          body,
+        }
         await fetch(url, option)
       } else {
         console.log('submit mail')
