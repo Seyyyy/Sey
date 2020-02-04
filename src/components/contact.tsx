@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Grid from '@material-ui/core/Grid'
 import TextField from '@material-ui/core/TextField'
 import { makeStyles } from '@material-ui/core'
 import theme from '../GlobalTheme'
+import Button from '@material-ui/core/Button'
 
 const useStyles = makeStyles({
   root: {
@@ -65,33 +66,75 @@ const Paragraph = () => {
   )
 }
 
+type ContactValues = {
+  name: string
+  email: string
+  message: string
+}
+
+const initialState = {
+  name: 'Name',
+  email: 'Your Email Address',
+  message: 'Message',
+}
+
 const MailForm = () => {
+  const [values, setValues] = useState<ContactValues>(initialState)
   const classes = useStyles()
+  const clear = () => {
+    setValues(initialState)
+  }
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    try {
+      if (process.env.MAIL_URL != undefined) {
+        const body = JSON.stringify(values)
+        const headers = { 'Content-Type': 'application/json' }
+        const url: RequestInfo = process.env.MAIL_URL
+        const option: RequestInit = { method: 'POST', headers, body }
+        await fetch(url, option)
+      } else {
+        console.log('submit mail')
+        console.log(JSON.stringify(values))
+      }
+      clear()
+    } catch (error) {}
+  }
+
+  const handleKeyDown = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setValues(values)
+  }
+
   return (
     <Grid className={classes.container}>
-      <Grid className={classes.container}>
-        <TextField
-          className={classes.textField}
-          variant="filled"
-          label="Name"
-        />
-      </Grid>
-      <Grid className={classes.container}>
-        <TextField
-          className={classes.textField}
-          variant="filled"
-          label="Your Email Address"
-        />
-      </Grid>
-      <Grid className={classes.container}>
-        <TextField
-          className={classes.textField}
-          variant="filled"
-          label="Message"
-          multiline
-          rows="10"
-        />
-      </Grid>
+      <form onSubmit={handleSubmit}>
+        <Grid className={classes.container}>
+          <TextField
+            onChange={handleKeyDown}
+            className={classes.textField}
+            variant="filled"
+            label="Name"
+          >
+            {values.name}
+          </TextField>
+        </Grid>
+        <Grid className={classes.container}>
+          <TextField
+            className={classes.textField}
+            variant="filled"
+            label="Your Email Address"
+          />
+        </Grid>
+        <Grid className={classes.container}>
+          <TextField
+            className={classes.textField}
+            variant="filled"
+            label="Message"
+            multiline
+            rows="10"
+          />
+        </Grid>
+        <input type="submit" value="sousin" />
+      </form>
     </Grid>
   )
 }
