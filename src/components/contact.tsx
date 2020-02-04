@@ -3,6 +3,7 @@ import Grid from '@material-ui/core/Grid'
 import TextField from '@material-ui/core/TextField'
 import { makeStyles } from '@material-ui/core'
 import theme from '../GlobalTheme'
+import Input from '@material-ui/core/Input'
 import Button from '@material-ui/core/Button'
 
 const useStyles = makeStyles({
@@ -133,7 +134,7 @@ const MailForm = () => {
             rows="10"
           />
         </Grid>
-        <input type="submit" value="sousin" />
+        <Input type="submit" value="SUBMIT" />
       </form>
     </Grid>
   )
