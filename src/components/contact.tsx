@@ -88,10 +88,10 @@ const MailForm = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     try {
-      if (process.env.MAIL_URL != undefined) {
+      if (process.env.NODE_ENV === 'production') {
         const body = JSON.stringify(values)
         const headers = { 'Content-Type': 'application/json' }
-        const url: RequestInfo = process.env.MAIL_URL
+        const url: RequestInfo = `${process.env.MAIL_URL}`
         const option: RequestInit = {
           method: 'POST',
           mode: 'no-cors',
