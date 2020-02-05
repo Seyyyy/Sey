@@ -74,9 +74,9 @@ type ContactValues = {
 }
 
 const initialState = {
-  name: 'Name',
-  email: 'Your Email Address',
-  message: 'Message',
+  name: '',
+  email: '',
+  message: '',
 }
 
 const MailForm = () => {
@@ -88,11 +88,9 @@ const MailForm = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     try {
-      if (
-        process.env.NODE_ENV === 'production' &&
-        process.env.MAIL_URL !== undefined
-      ) {
-        const body = JSON.stringify(values)
+      if (process.env.MAIL_URL) {
+        const text = JSON.stringify({ values })
+        const body = JSON.stringify({ text: text })
         const headers = { 'Content-Type': 'application/json' }
         const url: RequestInfo = process.env.MAIL_URL
         const option: RequestInit = {
@@ -105,13 +103,32 @@ const MailForm = () => {
       } else {
         console.log('submit mail')
         console.log(JSON.stringify(values))
+        console.log(process.env.MAIL_URL)
       }
       clear()
     } catch (error) {}
   }
 
   const handleKeyDown = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setValues(values)
+    if (e.target.id === 'name') {
+      setValues({
+        name: e.target.value,
+        email: values.email,
+        message: values.message,
+      })
+    } else if (e.target.id === 'email') {
+      setValues({
+        name: values.name,
+        email: e.target.value,
+        message: values.message,
+      })
+    } else if (e.target.id === 'message') {
+      setValues({
+        name: values.name,
+        email: values.email,
+        message: e.target.value,
+      })
+    }
   }
 
   return (
@@ -119,28 +136,34 @@ const MailForm = () => {
       <form onSubmit={handleSubmit}>
         <Grid className={classes.container}>
           <TextField
+            id="name"
             onChange={handleKeyDown}
             className={classes.textField}
             variant="filled"
             label="Name"
-          >
-            {values.name}
-          </TextField>
+            value={values.name}
+          ></TextField>
         </Grid>
         <Grid className={classes.container}>
           <TextField
+            id="email"
+            onChange={handleKeyDown}
             className={classes.textField}
             variant="filled"
             label="Your Email Address"
+            value={values.email}
           />
         </Grid>
         <Grid className={classes.container}>
           <TextField
+            id="message"
+            onChange={handleKeyDown}
             className={classes.textField}
             variant="filled"
             label="Message"
             multiline
             rows="10"
+            value={values.message}
           />
         </Grid>
         <Input type="submit" value="SUBMIT" />
