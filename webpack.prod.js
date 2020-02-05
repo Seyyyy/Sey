@@ -23,8 +23,8 @@ module.exports = {
         from: path.resolve(__dirname, 'static'),
         to: 'static',
       },
-      new webpack.EnvironmentPlugin(['MAIL_URL']),
     ]),
+    new webpack.EnvironmentPlugin(['MAIL_URL']),
   ],
   module: {
     rules: [
