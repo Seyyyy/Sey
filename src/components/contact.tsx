@@ -40,6 +40,9 @@ const useStyles = makeStyles({
   },
   textField: {
     width: '400px',
+    [theme.breakpoints.down('xs')]: {
+      width: '80vw',
+    },
   },
 })
 
