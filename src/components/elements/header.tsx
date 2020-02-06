@@ -12,9 +12,9 @@ const useStyles = makeStyles({
     display: 'flex',
     justifyContent: 'center',
     margin: 0,
-    [theme.breakpoints.down('xs')]: {
-      display: 'none',
-    },
+    // [theme.breakpoints.down('xs')]: {
+    //   display: 'none',
+    // },
   },
   gridItem: {
     marginLeft: '4vw',
