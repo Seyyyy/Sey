@@ -1,6 +1,8 @@
 import React from 'react'
+import Link from '@material-ui/core/Link'
 import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core'
+import { Twitter, GitHub } from '@material-ui/icons'
 import theme from '../GlobalTheme'
 
 const useStyles = makeStyles({
@@ -32,6 +34,12 @@ const useStyles = makeStyles({
   paragraph: {
     color: theme.palette.primary.contrastText,
     fontSize: theme.typography.fontSize,
+    marginRight: '10px',
+    marginLeft: '10px',
+  },
+  icon: {
+    color: theme.palette.primary.contrastText,
+    fontSize: 24,
     marginRight: '10px',
     marginLeft: '10px',
   },
@@ -78,6 +86,21 @@ const Paragraph = () => {
   )
 }
 
+const SNS = () => {
+  const classes = useStyles()
+
+  return (
+    <Grid className={classes.container}>
+      <Link className={classes.icon} href="https://twitter.com/eurekano">
+        <Twitter />
+      </Link>
+      <Link className={classes.icon} href="https://github.com/Seyyyy">
+        <GitHub />
+      </Link>
+    </Grid>
+  )
+}
+
 const About = () => {
   const classes = useStyles()
 
@@ -87,6 +110,7 @@ const About = () => {
         <SubTitle />
         <Heading />
         <Paragraph />
+        <SNS />
       </Grid>
     </React.Fragment>
   )
