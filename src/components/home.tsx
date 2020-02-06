@@ -18,6 +18,9 @@ const useStyles = makeStyles({
     width: '250px',
     height: '250px',
     color: theme.palette.primary.contrastText,
+    [theme.breakpoints.down('xs')]: {
+      width: '200px',
+    },
   },
   title: {
     margin: '0 auto',
