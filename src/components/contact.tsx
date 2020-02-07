@@ -87,6 +87,7 @@ const initialState = {
 
 const MailForm = () => {
   const [values, setValues] = useState<ContactValues>(initialState)
+  const [available, setAvailable] = useState<boolean>(true)
   const classes = useStyles()
   const clear = () => {
     setValues(initialState)
@@ -95,8 +96,15 @@ const MailForm = () => {
     e.preventDefault()
     try {
       if (process.env.MAIL_URL) {
-        const text = JSON.stringify({ values })
-        const body = JSON.stringify({ text: text })
+        const body = JSON.stringify({
+          text:
+            '名前：' +
+            values.name +
+            '\n連絡先：' +
+            values.email +
+            '\nメッセージ：' +
+            values.message,
+        })
         const headers = { 'Content-Type': 'application/json' }
         const url: RequestInfo = process.env.MAIL_URL
         const option: RequestInit = {
@@ -106,6 +114,7 @@ const MailForm = () => {
           body,
         }
         await fetch(url, option)
+        setAvailable(true)
       } else {
         console.log('submit mail')
         console.log(JSON.stringify(values))
@@ -135,6 +144,17 @@ const MailForm = () => {
         message: e.target.value,
       })
     }
+    toggleAvailable(values)
+  }
+
+  const toggleAvailable = (values: ContactValues) => {
+    if (
+      values.name.length > 0 &&
+      values.email.length > 0 &&
+      values.message.length > 9
+    ) {
+      setAvailable(false)
+    }
   }
 
   return (
@@ -156,7 +176,7 @@ const MailForm = () => {
             onChange={handleKeyDown}
             className={classes.textField}
             variant="filled"
-            label="Your Email Address"
+            label="Email or TwitterID"
             value={values.email}
           />
         </Grid>
@@ -166,13 +186,13 @@ const MailForm = () => {
             onChange={handleKeyDown}
             className={classes.textField}
             variant="filled"
-            label="Message"
+            label="Message(More than 10 words)"
             multiline
             rows="10"
             value={values.message}
           />
         </Grid>
-        <Input type="submit" value="SUBMIT" />
+        <Input type="submit" value="SUBMIT" disabled={available} />
       </form>
     </Grid>
   )
