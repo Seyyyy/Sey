@@ -1,5 +1,7 @@
 import { createMuiTheme } from '@material-ui/core'
 
+const defaultTheme = createMuiTheme()
+
 const theme = createMuiTheme({
   palette: {
     primary: {
@@ -54,6 +56,9 @@ const theme = createMuiTheme({
       fontSize: '2.125rem',
       lineHeight: 1.235,
       letterSpacing: '0.00735em',
+      [defaultTheme.breakpoints.down('sm')]: {
+        fontSize: '1.8rem',
+      },
     },
     h5: {
       fontFamily: 'Arial',
@@ -61,6 +66,9 @@ const theme = createMuiTheme({
       fontSize: '1.5rem',
       lineHeight: 1.334,
       letterSpacing: '0em',
+      [defaultTheme.breakpoints.down('sm')]: {
+        fontSize: '1.3rem',
+      },
     },
     h6: {
       fontFamily: 'Arial',
@@ -86,16 +94,12 @@ const theme = createMuiTheme({
     body1: {
       fontFamily: 'Arial',
       fontWeight: 400,
-      fontSize: '1rem',
-      lineHeight: 1.5,
-      letterSpacing: '0.00938em',
-    },
-    body2: {
-      fontFamily: 'Arial',
-      fontWeight: 400,
       fontSize: '0.875rem',
       lineHeight: 1.43,
       letterSpacing: '0.01071em',
+      [defaultTheme.breakpoints.down('sm')]: {
+        fontSize: '0.7rem',
+      },
     },
     button: {
       fontFamily: 'Arial',
