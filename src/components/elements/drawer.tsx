@@ -52,6 +52,7 @@ const Menu = () => {
           <ListItem
             className={classes.listItem}
             button
+            onClick={handleDrawerClose}
             component={RouterLink}
             to="/"
           >
@@ -60,6 +61,7 @@ const Menu = () => {
           <ListItem
             className={classes.listItem}
             button
+            onClick={handleDrawerClose}
             component={RouterLink}
             to="/about"
           >
@@ -68,6 +70,7 @@ const Menu = () => {
           <ListItem
             className={classes.listItem}
             button
+            onClick={handleDrawerClose}
             component={RouterLink}
             to="/work"
           >
@@ -76,6 +79,7 @@ const Menu = () => {
           <ListItem
             className={classes.listItem}
             button
+            onClick={handleDrawerClose}
             component={RouterLink}
             to="/contact"
           >
