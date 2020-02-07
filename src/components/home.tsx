@@ -18,8 +18,8 @@ const useStyles = makeStyles({
     width: '250px',
     height: '250px',
     color: theme.palette.primary.contrastText,
-    [theme.breakpoints.down('xs')]: {
-      width: '200px',
+    [theme.breakpoints.down('sm')]: {
+      width: ' 150px',
     },
   },
   title: {
@@ -31,6 +31,11 @@ const useStyles = makeStyles({
     letterSpacing: '20px',
     textIndent: '20px',
     color: theme.palette.primary.contrastText,
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '30px',
+      marginTop: '10px',
+      marginBottom: '10px',
+    },
   },
 })
 
