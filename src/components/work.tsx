@@ -1,6 +1,7 @@
 import React from 'react'
 import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core'
+import Typography from '@material-ui/core/Typography'
 import theme from '../GlobalTheme'
 import CardList from './elements/cardList'
 import works from '../config/workList'
@@ -21,19 +22,20 @@ const useStyles = makeStyles({
   },
   subTitle: {
     color: theme.palette.primary.contrastText,
-    fontSize: theme.typography.h4.fontSize,
-    fontWeight: theme.typography.h4.fontWeight,
     textTransform: 'uppercase',
     marginBottom: '80px',
+    [theme.breakpoints.down('sm')]: {
+      marginBottom: '20px',
+    },
   },
   heading: {
     color: theme.palette.primary.contrastText,
-    fontSize: theme.typography.h5.fontSize,
-    fontWeight: theme.typography.h5.fontWeight,
   },
   paragraph: {
     color: theme.palette.primary.contrastText,
-    fontSize: theme.typography.fontSize,
+    marginRight: '25px',
+    marginLeft: '25px',
+    marginBottom: '10px',
   },
 })
 
@@ -41,7 +43,9 @@ const SubTitle = () => {
   const classes = useStyles()
   return (
     <Grid className={classes.container}>
-      <Grid className={classes.subTitle}>Work</Grid>
+      <Typography variant="h4" className={classes.subTitle}>
+        Work
+      </Typography>
     </Grid>
   )
 }
