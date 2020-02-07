@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Header from './components/elements/header'
+import Menu from './components/elements/drawer'
 import Home from './components/home'
 import Work from './components/work'
 import About from './components/about'
@@ -49,6 +50,7 @@ const App = () => {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Header />
+        <Menu />
         <Switch>
           <Route path="/" exact component={RouteHome} />
           <Route path="/work" exact component={RouteWork} />
