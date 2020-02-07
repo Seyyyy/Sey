@@ -8,8 +8,8 @@ ENV APP_ROOT /app_name
 WORKDIR $APP_ROOT
 
 ADD ./package.json $APP_ROOT/package.json
-ADD ./package-lock.json $APP_ROOT/package-lock.json 
+ADD ./yarn.lock $APP_ROOT/yarn.lock 
 
-RUN npm install
+RUN yarn
 
 ADD . $APP_ROOT

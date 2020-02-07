@@ -1,9 +1,9 @@
 dev:
   build: .
   ports:
-    - "8080:8080"
+    - '8080:8080'
   tty: true
-  volumes: 
+  volumes:
     - .:/app_name
     - /app_name/node_modules
-  command: "npm run dev"
+  command: 'yarn dev'
