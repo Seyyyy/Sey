@@ -26,23 +26,23 @@ const useStyles = makeStyles({
   },
   expandMore: {
     width: '100vw',
-    backgroundColor: theme.palette.primary.contrastText,
-    color: theme.palette.primary.main,
+    backgroundColor: theme.palette.primary.main,
+    color: theme.palette.primary.contrastText,
   },
   list: {
     padding: 0,
-    backgroundColor: theme.palette.primary.contrastText,
+    backgroundColor: theme.palette.primary.main,
   },
   listItem: {
     justifyContent: 'center',
-    color: theme.palette.primary.main,
+    color: theme.palette.primary.contrastText,
   },
   listItemTitle: {
-    color: theme.palette.primary.main,
+    color: theme.palette.primary.contrastText,
     textTransform: 'uppercase',
   },
   divider: {
-    backgroundColor: theme.palette.primary.main,
+    backgroundColor: theme.palette.primary.contrastText,
   },
 })
 
