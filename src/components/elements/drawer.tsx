@@ -2,12 +2,14 @@ import React, { useState } from 'react'
 import { Link as RouterLink } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core'
 import Drawer from '@material-ui/core/Drawer'
-import IconButton from '@material-ui/core/IconButton'
 import Divider from '@material-ui/core/Divider'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import ExpandMore from '@material-ui/icons/ExpandMore'
 import ExpandLess from '@material-ui/icons/ExpandLess'
+import AppBar from '@material-ui/core/AppBar'
+import ButtonBase from '@material-ui/core/ButtonBase'
+import Typography from '@material-ui/core/Typography'
 import theme from '../../GlobalTheme'
 
 const useStyles = makeStyles({
@@ -22,11 +24,25 @@ const useStyles = makeStyles({
       display: 'none',
     },
   },
+  expandMore: {
+    width: '100vw',
+    backgroundColor: theme.palette.primary.contrastText,
+    color: theme.palette.primary.main,
+  },
   list: {
     padding: 0,
+    backgroundColor: theme.palette.primary.contrastText,
   },
   listItem: {
     justifyContent: 'center',
+    color: theme.palette.primary.main,
+  },
+  listItemTitle: {
+    color: theme.palette.primary.main,
+    textTransform: 'uppercase',
+  },
+  divider: {
+    backgroundColor: theme.palette.primary.main,
   },
 })
 
@@ -44,9 +60,11 @@ const Menu = () => {
 
   return (
     <div className={classes.root}>
-      <IconButton onClick={handleDrawerOpen}>
-        <ExpandMore />
-      </IconButton>
+      <AppBar>
+        <ButtonBase className={classes.expandMore} onClick={handleDrawerOpen}>
+          <ExpandMore />
+        </ButtonBase>
+      </AppBar>
       <Drawer anchor="top" open={open} onClose={handleDrawerClose}>
         <List className={classes.list}>
           <ListItem
@@ -56,7 +74,9 @@ const Menu = () => {
             component={RouterLink}
             to="/"
           >
-            {'Home'}
+            <Typography variant="subtitle2" className={classes.listItemTitle}>
+              {'Home'}
+            </Typography>
           </ListItem>
           <ListItem
             className={classes.listItem}
@@ -65,7 +85,10 @@ const Menu = () => {
             component={RouterLink}
             to="/about"
           >
-            {'About'}
+            <Typography variant="subtitle2" className={classes.listItemTitle}>
+              {' '}
+              {'About'}
+            </Typography>
           </ListItem>
           <ListItem
             className={classes.listItem}
@@ -74,7 +97,10 @@ const Menu = () => {
             component={RouterLink}
             to="/work"
           >
-            {'Work'}
+            <Typography variant="subtitle2" className={classes.listItemTitle}>
+              {' '}
+              {'Work'}
+            </Typography>
           </ListItem>
           <ListItem
             className={classes.listItem}
@@ -83,9 +109,12 @@ const Menu = () => {
             component={RouterLink}
             to="/contact"
           >
-            {'Contact'}
+            <Typography variant="subtitle2" className={classes.listItemTitle}>
+              {' '}
+              {'Contact'}
+            </Typography>
           </ListItem>
-          <Divider />
+          <Divider className={classes.divider} />
           <ListItem
             className={classes.listItem}
             button

@@ -86,8 +86,8 @@ const theme = createMuiTheme({
     },
     subtitle2: {
       fontFamily: 'Arial',
-      fontWeight: 500,
-      fontSize: '0.875rem',
+      fontWeight: 800,
+      fontSize: '0.8rem',
       lineHeight: 1.57,
       letterSpacing: '0.00714em',
     },
