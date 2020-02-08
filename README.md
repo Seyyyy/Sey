@@ -1,4 +1,6 @@
+<p align="center">
 <img align="center" src="./static/icons/kyoryu.svg" alt="" title="icon" width="150px">
+</p>
 <h1 align="center">Sey</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
