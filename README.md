@@ -7,6 +7,18 @@
   <a href="#" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
   </a>
+  <a href="#" target="_blank">
+    <img alt="code style: prettier" src="https://img.shields.io/badge/code style-prettier-ff69b4.svg" />
+  </a>
+  <a href="#" target="_blank">
+    <img alt="linter: eslint" src="https://img.shields.io/badge/linter-eslint-blueviolet.svg" />
+  </a>
+  <a href="#" target="_blank">
+    <img alt="style: material ui" src="https://img.shields.io/badge/style-material ui-blue.svg" />
+  </a>
+  <a href="#" target="_blank">
+    <img alt="Dependabot: enabled" src="https://img.shields.io/badge/Dependabot-enabled-sccess.svg" />
+  </a>
   <a href="https://twitter.com/eurekano" target="_blank">
     <img alt="Twitter: eurekano" src="https://img.shields.io/twitter/follow/eurekano.svg?style=social" />
   </a>
