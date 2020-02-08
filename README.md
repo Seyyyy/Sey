@@ -24,10 +24,6 @@
   </a>
 </p>
 
-> My Portfolio
-
-### 🏠 [Homepage](https://seyyyy.com)
-
 ## Install
 
 ```sh
