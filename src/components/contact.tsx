@@ -154,6 +154,8 @@ const MailForm = () => {
       values.message.length > 9
     ) {
       setAvailable(false)
+    } else {
+      setAvailable(true)
     }
   }
 
