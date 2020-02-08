@@ -1,24 +1,43 @@
-<div align="center">
-<!--   <img src="./static/icons/kyouryu_b.png" alt="" title="icon" width="150px"> -->
-  <h1 align="center">
-    Sey
-  </h1>
-  <sup align="center">portfolio</sup>
-  <br />
-  <br />
-  <br />
-</div>
-<div align="center">
-    <a href="https://circleci.com/gh/Seyyyy/Sey">
-    <img alt="CircleCI" src="https://img.shields.io/circleci/build/github/Seyyyy/Sey?label=circleci&logo=circleci">
-    </a>
-    <a>
-    <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/Seyyyy/Sey.svg">
-    </a>
-    <a href="https://github.com/Seyyyy/Sey/network/alerts">
-    <img alt="Snyk Vulnerabilities for GitHub Repo" src="https://img.shields.io/snyk/vulnerabilities/github/Seyyyy/Sey">
-    </a>
-    <a>
-    <img alt="" src="https://img.shields.io/badge/dependabot-enable-green.svg?logo=dependabot">
-    </a>
-</div>
+<img align="center" src="./static/icons/kyoryu.svg" alt="" title="icon" width="150px">
+<h1 align="center">Sey</h1>
+<p>
+  <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
+  <a href="#" target="_blank">
+    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
+  </a>
+  <a href="https://twitter.com/eurekano" target="_blank">
+    <img alt="Twitter: eurekano" src="https://img.shields.io/twitter/follow/eurekano.svg?style=social" />
+  </a>
+</p>
+
+> My Portfolio
+
+### 🏠 [Homepage](seyyyy.com)
+
+## Install
+
+```sh
+yarn install
+```
+
+## Usage
+
+```sh
+yarn build
+```
+
+## Author
+
+👤 **Sey**
+
+- Website: seyyyy.com
+- Twitter: [@eurekano](https://twitter.com/eurekano)
+- Github: [@Seyyyy](https://github.com/Seyyyy)
+
+## Show your support
+
+Give a ⭐️ if this project helped you!
+
+---
+
+_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
