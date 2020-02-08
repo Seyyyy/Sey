@@ -26,7 +26,7 @@
 
 > My Portfolio
 
-### 🏠 [Homepage](seyyyy.com)
+### 🏠 [Homepage](https://seyyyy.com)
 
 ## Install
 
