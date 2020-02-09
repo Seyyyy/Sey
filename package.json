@@ -51,7 +51,7 @@
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.10.2",
-    "yarn": "^1.21.1"
+    "yarn": "^1.22.0"
   },
   "husky": {
     "hooks": {
