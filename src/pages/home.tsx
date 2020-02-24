@@ -7,8 +7,11 @@ import theme from '../GlobalTheme'
 
 const useStyles = makeStyles({
   root: {
-    width: '100vw',
-    height: window.innerHeight,
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    margin: 'auto',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
