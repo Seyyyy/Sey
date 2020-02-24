@@ -5,6 +5,7 @@ import { makeStyles } from '@material-ui/core'
 import theme from '../GlobalTheme'
 import Input from '@material-ui/core/Input'
 import Typography from '@material-ui/core/Typography'
+import SubTitle from '../components/SubTitle'
 
 const useStyles = makeStyles({
   root: {
@@ -19,14 +20,6 @@ const useStyles = makeStyles({
     margin: '0 auto',
     marginTop: '20px',
     marginBottom: '20px',
-  },
-  subTitle: {
-    color: theme.palette.primary.contrastText,
-    textTransform: 'uppercase',
-    marginBottom: '80px',
-    [theme.breakpoints.down('sm')]: {
-      marginBottom: '20px',
-    },
   },
   heading: {
     color: theme.palette.primary.contrastText,
@@ -44,17 +37,6 @@ const useStyles = makeStyles({
     },
   },
 })
-
-const SubTitle = () => {
-  const classes = useStyles()
-  return (
-    <Grid className={classes.container}>
-      <Typography variant="h4" className={classes.subTitle}>
-        Contact
-      </Typography>
-    </Grid>
-  )
-}
 
 const Paragraph = () => {
   const classes = useStyles()
@@ -206,7 +188,7 @@ const Contact = () => {
   return (
     <React.Fragment>
       <Grid className={classes.root}>
-        <SubTitle />
+        <SubTitle title="Contact" />
         <Paragraph />
         <MailForm />
       </Grid>

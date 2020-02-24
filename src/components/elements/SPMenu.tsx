@@ -20,9 +20,6 @@ const useStyles = makeStyles({
     display: 'flex',
     justifyContent: 'center',
     margin: 0,
-    [theme.breakpoints.up('sm')]: {
-      display: 'none',
-    },
   },
   expandMore: {
     width: '100vw',
@@ -46,7 +43,7 @@ const useStyles = makeStyles({
   },
 })
 
-const Menu = () => {
+const SPMenu = () => {
   const classes = useStyles()
   const [open, setOpen] = useState(false)
 
@@ -128,4 +125,4 @@ const Menu = () => {
   )
 }
 
-export default Menu
+export default SPMenu

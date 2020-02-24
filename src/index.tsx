@@ -1,12 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import Header from './components/elements/header'
-import Menu from './components/elements/drawer'
-import Home from './components/home'
-import Work from './components/work'
-import About from './components/about'
-import Contact from './components/contact'
+import Header from './components/header'
+import Home from './pages/home'
+import Work from './pages/work'
+import About from './pages/about'
+import Contact from './pages/contact'
 import Fade from './animations/fade'
 import { ThemeProvider } from '@material-ui/core/styles'
 import theme from './GlobalTheme'
@@ -50,7 +49,6 @@ const App = () => {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Header />
-        <Menu />
         <Switch>
           <Route path="/" exact component={RouteHome} />
           <Route path="/work" exact component={RouteWork} />

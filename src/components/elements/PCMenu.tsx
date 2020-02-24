@@ -11,10 +11,7 @@ const useStyles = makeStyles({
     zIndex: 1,
     display: 'flex',
     justifyContent: 'center',
-    margin: 0,
-    [theme.breakpoints.down('xs')]: {
-      display: 'none',
-    },
+    marginTop: '20px',
   },
   gridItem: {
     marginLeft: '4vw',
@@ -28,7 +25,7 @@ const useStyles = makeStyles({
   },
 })
 
-const Header = () => {
+const PCMenu = () => {
   const classes = useStyles()
 
   return (
@@ -59,4 +56,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default PCMenu

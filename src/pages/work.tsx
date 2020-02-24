@@ -1,10 +1,10 @@
 import React from 'react'
 import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core'
-import Typography from '@material-ui/core/Typography'
 import theme from '../GlobalTheme'
-import CardList from './elements/cardList'
+import CardList from '../components/cardList'
 import works from '../config/workList'
+import SubTitle from '../components/SubTitle'
 
 const useStyles = makeStyles({
   root: {
@@ -20,14 +20,6 @@ const useStyles = makeStyles({
     marginTop: '20px',
     marginBottom: '20px',
   },
-  subTitle: {
-    color: theme.palette.primary.contrastText,
-    textTransform: 'uppercase',
-    marginBottom: '80px',
-    [theme.breakpoints.down('sm')]: {
-      marginBottom: '20px',
-    },
-  },
   heading: {
     color: theme.palette.primary.contrastText,
   },
@@ -39,24 +31,13 @@ const useStyles = makeStyles({
   },
 })
 
-const SubTitle = () => {
-  const classes = useStyles()
-  return (
-    <Grid className={classes.container}>
-      <Typography variant="h4" className={classes.subTitle}>
-        Work
-      </Typography>
-    </Grid>
-  )
-}
-
 const Work = () => {
   const classes = useStyles()
 
   return (
     <React.Fragment>
       <Grid className={classes.root}>
-        <SubTitle />
+        <SubTitle title="Work" />
         <CardList list={works} />
       </Grid>
     </React.Fragment>
