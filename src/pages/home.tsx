@@ -8,7 +8,7 @@ import theme from '../GlobalTheme'
 const useStyles = makeStyles({
   root: {
     width: '100vw',
-    height: '100vh',
+    height: window.innerHeight,
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
