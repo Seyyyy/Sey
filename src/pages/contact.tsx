@@ -106,6 +106,18 @@ const MailForm = () => {
     } catch (error) {}
   }
 
+  const toggleAvailable = (values: ContactValues) => {
+    if (
+      values.name.length > 0 &&
+      values.email.length > 0 &&
+      values.message.length > 9
+    ) {
+      setAvailable(false)
+    } else {
+      setAvailable(true)
+    }
+  }
+
   const handleKeyDown = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     if (e.target.id === 'name') {
       setValues({
@@ -127,18 +139,6 @@ const MailForm = () => {
       })
     }
     toggleAvailable(values)
-  }
-
-  const toggleAvailable = (values: ContactValues) => {
-    if (
-      values.name.length > 0 &&
-      values.email.length > 0 &&
-      values.message.length > 9
-    ) {
-      setAvailable(false)
-    } else {
-      setAvailable(true)
-    }
   }
 
   return (

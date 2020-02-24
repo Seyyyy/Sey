@@ -1,22 +1,19 @@
 import React, { useState } from 'react'
 import { Link as RouterLink } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core'
-import Drawer from '@material-ui/core/Drawer'
 import Divider from '@material-ui/core/Divider'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
-import ExpandMore from '@material-ui/icons/ExpandMore'
-import ExpandLess from '@material-ui/icons/ExpandLess'
-import AppBar from '@material-ui/core/AppBar'
-import ButtonBase from '@material-ui/core/ButtonBase'
 import Typography from '@material-ui/core/Typography'
 import theme from '../../GlobalTheme'
+import Hamburger from './Hamburger'
+import Dialog from '@material-ui/core/Dialog'
+import Grid from '@material-ui/core/Grid'
 
 const useStyles = makeStyles({
   root: {
     position: 'absolute',
     width: '100vw',
-    zIndex: 1,
     display: 'flex',
     justifyContent: 'center',
     margin: 0,
@@ -29,6 +26,7 @@ const useStyles = makeStyles({
   list: {
     padding: 0,
     backgroundColor: theme.palette.primary.main,
+    margin: 'auto',
   },
   listItem: {
     justifyContent: 'center',
@@ -40,6 +38,15 @@ const useStyles = makeStyles({
   },
   divider: {
     backgroundColor: theme.palette.primary.contrastText,
+  },
+  dialog: {
+    zIndex: 1,
+  },
+  menu: {
+    zIndex: 1400,
+    position: 'absolute',
+    top: '30px',
+    left: '30px',
   },
 })
 
@@ -57,12 +64,14 @@ const SPMenu = () => {
 
   return (
     <div className={classes.root}>
-      <AppBar>
-        <ButtonBase className={classes.expandMore} onClick={handleDrawerOpen}>
-          <ExpandMore />
-        </ButtonBase>
-      </AppBar>
-      <Drawer anchor="top" open={open} onClose={handleDrawerClose}>
+      <Grid className={classes.menu}>
+        <Hamburger
+          handleClick={handleDrawerOpen}
+          handleClose={handleDrawerClose}
+          transform={open}
+        />
+      </Grid>
+      <Dialog className={classes.dialog} fullScreen={true} open={open}>
         <List className={classes.list}>
           <ListItem
             className={classes.listItem}
@@ -111,16 +120,8 @@ const SPMenu = () => {
               {'Contact'}
             </Typography>
           </ListItem>
-          <Divider className={classes.divider} />
-          <ListItem
-            className={classes.listItem}
-            button
-            onClick={handleDrawerClose}
-          >
-            <ExpandLess />
-          </ListItem>
         </List>
-      </Drawer>
+      </Dialog>
     </div>
   )
 }
