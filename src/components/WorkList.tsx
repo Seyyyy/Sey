@@ -4,6 +4,7 @@ import Grid from '@material-ui/core/Grid'
 import ButtonBase from '@material-ui/core/ButtonBase'
 import Typography from '@material-ui/core/Typography'
 import theme from '../GlobalTheme'
+import { Link as RouterLink } from 'react-router-dom'
 
 const useStyles = makeStyles({
   root: {
@@ -85,11 +86,13 @@ const images = [
     url: '/static/images/work_thumb.gif',
     title: 'Illustration',
     width: '80%',
+    to: '/',
   },
   {
     url: '/static/images/portfolio.png',
     title: 'Apps',
     width: '80%',
+    to: '/',
   },
 ]
 
@@ -106,6 +109,8 @@ const WorkList = () => {
           style={{
             width: image.width,
           }}
+          component={RouterLink}
+          to={image.to}
         >
           <span
             className={classes.imageSrc}
