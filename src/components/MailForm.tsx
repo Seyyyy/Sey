@@ -31,6 +31,12 @@ const initialState = {
   message: '',
 }
 
+const textFieldProps = {
+  style: {
+    fontSize: 16,
+  },
+}
+
 const MailForm = () => {
   const [values, setValues] = useState<ContactValues>(initialState)
   const [available, setAvailable] = useState<boolean>(true)
@@ -112,6 +118,7 @@ const MailForm = () => {
             variant="filled"
             label="Name"
             value={values.name}
+            inputProps={textFieldProps}
           ></TextField>
         </Grid>
         <Grid className={classes.container}>
@@ -122,6 +129,7 @@ const MailForm = () => {
             variant="filled"
             label="Email or TwitterID"
             value={values.email}
+            inputProps={textFieldProps}
           />
         </Grid>
         <Grid className={classes.container}>
@@ -134,6 +142,7 @@ const MailForm = () => {
             multiline
             rows="10"
             value={values.message}
+            inputProps={textFieldProps}
           />
         </Grid>
         <Input type="submit" value="SUBMIT" disabled={available} />
