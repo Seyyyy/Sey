@@ -13,6 +13,7 @@ type DialogProps = {
   Component: ComponentType
   title: string
   open: boolean
+  onCloseEvent: () => void
   color?: string
 }
 
@@ -20,9 +21,9 @@ const DialogUI: React.FC<DialogProps> = ({
   Component,
   title,
   open,
+  onCloseEvent,
   color = theme.palette.primary.main,
 }) => {
-  const fullScreen = useMediaQuery(theme.breakpoints.down('xs'))
   const paperProps = {
     style: {
       backgroundColor: color,
@@ -31,13 +32,13 @@ const DialogUI: React.FC<DialogProps> = ({
 
   return (
     <Dialog
-      fullScreen={fullScreen}
       fullWidth={true}
-      maxWidth={'sm'}
+      maxWidth={'md'}
       PaperProps={paperProps}
       open={open}
+      onBackdropClick={onCloseEvent}
     >
-      <DialogTitle>{title}</DialogTitle>
+      {/* <DialogTitle>{title}</DialogTitle> */}
       <Component />
     </Dialog>
   )

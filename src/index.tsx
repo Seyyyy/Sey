@@ -6,6 +6,7 @@ import Home from './pages/home'
 import Work from './pages/work'
 import About from './pages/about'
 import Contact from './pages/contact'
+import Illustration from './pages/Illustration'
 import Fade from './animations/fade'
 import { ThemeProvider } from '@material-ui/core/styles'
 import theme from './GlobalTheme'
@@ -43,6 +44,14 @@ const RouteContact = () => {
   )
 }
 
+const RouteIllustration = () => {
+  return (
+    <Fade>
+      <Illustration />
+    </Fade>
+  )
+}
+
 const App = () => {
   return (
     <BrowserRouter>
@@ -54,6 +63,7 @@ const App = () => {
           <Route path="/work" exact component={RouteWork} />
           <Route path="/about" exact component={RouteAbout} />
           <Route path="/contact" exact component={RouteContact} />
+          <Route path="/illustration" exact component={RouteIllustration} />
         </Switch>
       </ThemeProvider>
     </BrowserRouter>

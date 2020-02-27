@@ -1,0 +1,18 @@
+const illustrationList = [
+  {
+    img:
+      'https://lh3.googleusercontent.com/UWCr794HP7Ft7Zxqa9gkXKzmF_-qzawVKg1r2NI1KsyvsMEAIUDGh5DKM67_euE6WDWqjAE9TnqTF4SIiLuRFGZ-ww-a2pVxyhTrD7Ce5pXTYvTMiVaoJ0bvxyTmTQ5inphUMCdQN4H7XP3n1xemUHCqht1J3i06tqVZoJcKJL8uoIWWN6q_yDnIh1Rl-ec0cXLP0WnbGLr0HU-fk8HM_U-rkilPIt8L1pfEXQR2eUSZBmluRgy_zwCpYhtKhfd8Pt3XQRSeNRvsm4YuX55T0Sf44PP7mSoY7FJ-fei4WuB25ontzhLzwNLR-vy_qxq5obRF9sKHOl559mPuJ-9fC8hEa58JSU8ucJOLatcC1TPIVWwDcKU6YlbWmcFD6E3VsyOUODULVEPe_asYhFxJFrG6SM_MycV7Jw2I_RTZal35Jhq0wRnFkebu6DC9PWoQvYfPfoQNQ_EyIVoLYXjqSbixYY4GmbmuKE5IJsO1Ndu9h_7HcZE-NOwETyaG9gSYI8i_PMmtZECcmCTbI4gM0o1AlZp4IiJLQj3VZREjuvi6-JegMDHbnp9flI7z5-PZFSN6vT8a0cBNhwMM8_NOaZDK2u_f8GFqp06TtywVuI42IzRA4Iq83_J7p_bfCZuUX92d0UNVpYwu9mdUwdt03env3oCGG4BkPH6DQyDf3uRODLXFyNS0=w1774-h1103-no',
+    title: 'Sky',
+    author: 'author',
+    cols: 1,
+  },
+  {
+    img:
+      'https://lh3.googleusercontent.com/V6msJYaNQDtpVomJ_FlJbTsToRjr0Ejrb9AfoEGdkK0xv3n9jtEAGxLSWDzCUcP7rhlvkZwTK_fNx-L1BinofGZ6RGW1T378bsv8ulXlcB46H_0O4DRZmG12fV64RZYL4QeEW6OlCcfuSPu2TL0hveBWhkHVtB5Ilrarfgof415wHMSLjntZ5QS7pqfihpXQr_Jf5Qk9iLCxMIo7P7ko5GJU5TGE4VWaz6GafGz3hq3Q_EieEy8lNXIG3LFhgx8R2ysSPwYj5NPCft5655W4kLyLdna7pNvMF-CYsphSWv03HxYcZMqqFNcjuwkjPQfO1RzUKuT1gpDLtPsGqsNGqKIEJIjLuEDxZ8k4uxm0hWfrtUFJOh56Qo-CBYstp9llD4g_RAguPL7EYvAfiZxnblnuVbfC1z8lvr8n6qCx7oLH7A7QFSIP5eT-n8pMc-eNACy0q6HR0DX-3VQEPKYSyHu0cwyxSbOsh37ulDlLSRhVxx4qtMP0MfeDd4NIJmBoaTK-xyTnfCkhEbbBf2LuTpzk7zAuXdJnVAFRzRJ7BP5FvAIXh8-Ubx-pT5InXN7VCffIvnVu85awhPRwQOoQzN-DOG0A7cmpImpIss5K7Gdg1-VklU_5nYnmL2MtSTMQTIunT4aVVwuAGfVuceb87W7XG1RPFjmJcdfuuEwSdLHX0AM_6pIV=s1000-no',
+    title: 'Walking',
+    author: 'author',
+    cols: 2,
+  },
+]
+
+export default illustrationList

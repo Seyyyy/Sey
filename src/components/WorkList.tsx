@@ -86,7 +86,7 @@ const images = [
     url: '/static/images/work_thumb.gif',
     title: 'Illustration',
     width: '80%',
-    to: '/',
+    to: '/illustration',
   },
   {
     url: '/static/images/portfolio.png',
