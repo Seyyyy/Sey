@@ -19,8 +19,8 @@
   <a href="#" target="_blank">
     <img alt="Dependabot: enabled" src="https://img.shields.io/badge/Dependabot-enabled-sccess.svg" />
   </a>
-  <a href="https://twitter.com/eurekano" target="_blank">
-    <img alt="Twitter: eurekano" src="https://img.shields.io/twitter/follow/eurekano.svg?style=social" />
+  <a href="https://twitter.com/seyyyysaid" target="_blank">
+    <img alt="Twitter: seyyyysaid" src="https://img.shields.io/twitter/follow/seyyyysaid.svg?style=social" />
   </a>
 </p>
 
