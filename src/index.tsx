@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import { GlobalStyle } from '~/globalTheme'
+import { GlobalStyle } from './globalTheme'
 import Home from './pages/home'
 import Profile from './pages/profile'
 import Top from './pages/components/top'
