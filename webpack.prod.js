@@ -1,7 +1,6 @@
 const path = require('path')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const webpack = require('webpack')
 
 module.exports = {
   mode: 'production',
@@ -28,7 +27,6 @@ module.exports = {
         to: 'static',
       },
     ]),
-    new webpack.EnvironmentPlugin(['MAIL_URL']),
   ],
   module: {
     rules: [
