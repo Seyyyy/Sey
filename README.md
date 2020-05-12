@@ -14,7 +14,7 @@
     <img alt="linter: eslint" src="https://img.shields.io/badge/linter-eslint-blueviolet.svg" />
   </a>
   <a href="#" target="_blank">
-    <img alt="style: material ui" src="https://img.shields.io/badge/style-material ui-blue.svg" />
+    <img alt="style: styled-components" src="https://img.shields.io/badge/style-styled-components-blue.svg" />
   </a>
   <a href="#" target="_blank">
     <img alt="Dependabot: enabled" src="https://img.shields.io/badge/Dependabot-enabled-sccess.svg" />
