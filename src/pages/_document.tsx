@@ -1,28 +1,30 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-import {ServerStyleSheet} from 'styled-components'
+// import {ServerStyleSheet} from 'styled-components'
+import {GlobalStyle} from '../style/style'
 
-type Props = {
-  styleTags: any;
-}
+// type Props = {
+//   styleTags: any;
+// }
 
-class MyDocument extends Document<Props> {
+class MyDocument extends Document {
+  // jsファイルの読み込みが遅れるために初期レンダリングが崩れる
+  // static getInitialProps({renderPage}) {
+  //   const sheet = new ServerStyleSheet();
 
-  static getInitialProps({renderPage}) {
-    const sheet = new ServerStyleSheet();
+  //   const page = renderPage(App => props =>
+  //     sheet.collectStyles(<App {...props} />),
+  //   )
 
-    const page = renderPage(App => props =>
-      sheet.collectStyles(<App {...props} />),
-    )
-
-    const styleTags = sheet.getStyleElement()
-    return {...page, styleTags}
-  }
+  //   const styleTags = sheet.getStyleElement()
+  //   return {...page, styleTags}
+  // }
 
   render() {
     return (
       <Html lang="ja">
         <Head />
-        {this.props.styleTags}
+        {/* {this.props.styleTags} */}
+        <GlobalStyle />
         <meta charSet="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
