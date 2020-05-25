@@ -1,8 +1,8 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import styled from 'styled-components'
 
-const StyledPageLink = styled(Link)`
+const StyledPageLink = styled.a`
   color: blue;
   font-size: 16px;
   font-weight: bold;
@@ -28,7 +28,7 @@ type attribute = {
 }
 
 export const PageLink: React.FC<attribute> = ({ to, text }) => {
-  return <StyledPageLink to={to}>{text}</StyledPageLink>
+  return <Link href={to}><StyledPageLink>{text}</StyledPageLink></Link>
 }
 
 export const ExternalLink: React.FC<attribute> = ({ to, text }) => {

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useLocation } from 'react-router-dom'
+import { useRouter } from 'next/router'
 import Bread from './parts/bread'
 
 const FlexRoot = styled.div`
@@ -12,12 +12,12 @@ const FlexRoot = styled.div`
 `
 
 const BreadCrumbs = () => {
-  const location = useLocation()
+  const router = useRouter()
   let root = true
   let profile = true
 
-  //この方法は汎用的ではないのでhooksでbooleanがとってこれたら嬉しいよね
-  if (location.pathname == '/') {
+//   この方法は汎用的ではないのでhooksでbooleanがとってこれたら嬉しいよね
+  if (router.asPath == '/') {
     root = true
     profile = false
   } else {

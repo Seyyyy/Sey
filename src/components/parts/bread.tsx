@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 
 type link = {
   active: boolean
@@ -8,7 +8,7 @@ type link = {
 
 // props.activeがタグ付きテンプレートリテラルでbooleanからstringになってる？
 // なのでwarningがでているのでなおす必要あり
-const CustomLink = styled(Link)<link>`
+const CustomLink = styled.a<link>`
   pointer-events: ${(props) => (props.active == true ? 'none' : 'auto')};
   text-decoration: ${(props) =>
     props.active == true ? 'line-through' : 'none'};
@@ -28,9 +28,11 @@ type attribute = {
 const Bread: React.FC<attribute> = ({ to, text, abled }) => {
   return (
     <React.Fragment>
-      <CustomLink to={to} active={abled}>
-        {text}
-      </CustomLink>
+      <Link href={to}>
+        <CustomLink active={abled}>
+          {text}
+        </CustomLink>
+      </Link>
     </React.Fragment>
   )
 }

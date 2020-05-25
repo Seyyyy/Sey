@@ -1,9 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-// import Card from './components/card'
-import Subtitle from './components/subtitle'
-import { PageLink } from './components/parts/link'
-import Sns from './components/sns'
+import Subtitle from '../components/subtitle'
+import { PageLink } from '../components/parts/link'
+import Sns from '../components/sns'
 
 //flexboxにしてコンポーネントの上下間隔を一気に設定したほうが個別にmarginを設定するよりか統一性が取りやすい
 const Root = styled.div`
@@ -26,14 +25,6 @@ const Home = () => {
       </p>
       <PageLink to={'/profile'} text={'Profile >'} />
       <Sns />
-      {/* <Subtitle title={'Work'}/>
-        <Card 
-          imgSrc={''}
-          title={''}
-          description={''}
-          to={''}
-          text={'more info >'}
-        /> */}
     </Root>
   )
 }

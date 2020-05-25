@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Subtitle from './components/subtitle'
+import Subtitle from '../components/subtitle'
 
 //flexboxにしてコンポーネントの上下間隔を一気に設定したほうが個別にmarginを設定するよりか統一性が取りやすい
 const Root = styled.div`

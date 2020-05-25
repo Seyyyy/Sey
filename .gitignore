@@ -22,3 +22,7 @@ yarn-error.log*
 
 # svgr
 svgIcons
+
+# nextjs
+/out
+.next

@@ -76,4 +76,9 @@ export const GlobalStyle = createGlobalStyle`
       padding-bottom: 10px;
     }
   }
+  a{
+    :hover{
+      cursor: pointer;
+    }
+  }
 `
