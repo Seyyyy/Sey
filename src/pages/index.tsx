@@ -4,6 +4,7 @@ import Header from '../components/Header'
 import Subtitle from '../components/Subtitle'
 import Link from '../components/atoms/Link'
 import Sns from '../components/Sns'
+import ImageList from '../components/ImageList'
 
 const Home = () => {
   return (
@@ -27,6 +28,10 @@ const Home = () => {
       <div className={styles.sns}>
         <Subtitle text={'Sns'} />
         <Sns />
+      </div>
+      <div className={styles.illust}>
+        <Subtitle text={'Illust'}/>
+        <ImageList />
       </div>
     </div>
   )
