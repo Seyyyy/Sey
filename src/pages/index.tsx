@@ -1,31 +1,34 @@
 import React from 'react'
-import styled from 'styled-components'
-import Subtitle from '../components/subtitle'
-import { PageLink } from '../components/parts/link'
-import Sns from '../components/sns'
-
-//flexboxにしてコンポーネントの上下間隔を一気に設定したほうが個別にmarginを設定するよりか統一性が取りやすい
-const Root = styled.div`
-  width: 80%;
-  margin: 0 auto;
-  margin-top: 5vh;
-  font-weight: bold;
-`
+import styles from './Index.module.css'
+import Header from '../components/Header'
+import Subtitle from '../components/Subtitle'
+import Link from '../components/atoms/Link'
+import Sns from '../components/Sns'
 
 const Home = () => {
   return (
-    <Root>
-      <Subtitle title={'About'} />
-      <p>{'Hello World!'}</p>
-      <p>{'Sey(セイ)と申します。'}</p>
-      <p>
-        {
-          '普段はイラストやコーディングをしています。波長が合うと思った人はTwitterでDMをくれたら嬉しいです。'
-        }
-      </p>
-      <PageLink to={'/profile'} text={'Profile >'} />
-      <Sns />
-    </Root>
+    <div>
+      <div className={styles.top}>
+        <Header />
+      </div>
+      <div className={styles.profile}>
+        <Subtitle text={'Profile'} />
+        <div className={styles.description}>
+            <p>{'Hello World!'}</p>
+            <p>{'Sey(セイ)と申します。'}</p>
+            <p>
+              {
+                '普段はイラストやコーディングをしています。波長が合うと思った人はTwitterでDMをくれたら嬉しいです。'
+              }
+            </p>
+        </div>
+        <Link label={'more details...'} href={'/profile'} />
+      </div>
+      <div className={styles.sns}>
+        <Subtitle text={'Sns'} />
+        <Sns />
+      </div>
+    </div>
   )
 }
 
