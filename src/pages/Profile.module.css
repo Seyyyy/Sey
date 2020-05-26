@@ -1,0 +1,15 @@
+.details {
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+    text-align: center;
+}
+.table {
+    text-align: left;
+    width: 60%;
+    margin: 0 auto;
+}
+@media screen and (max-width: 600px){
+    .table {
+        width: 90%;
+    }
+}

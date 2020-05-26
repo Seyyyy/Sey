@@ -54,19 +54,19 @@ table{
     margin-bottom: 5vh;
     font-family: 'Arial';
     color: var(--main-color);
+    border-collapse: collapse;
 }
 tr{
     width: auto;
     height: 5vh;
-}
-tr:nth-child(odd) td {
-    background-color: var(--base-color-dark);
 }
 td{
     background-color: var(--base-color);
     padding-left: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
+    border-bottom: 1px solid black;
+
 }
 a:hover{
     cursor: pointer;
