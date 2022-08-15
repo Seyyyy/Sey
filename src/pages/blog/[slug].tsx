@@ -45,7 +45,7 @@ const Post: NextPage<Props> = ({ post }) => {
   return (
     <div className={styles.root}>
       <Head>
-        <title>{'test title'}</title>
+        <title>{post.title}</title>
         <meta name="description" content="blog" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
