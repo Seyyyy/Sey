@@ -1,0 +1,13 @@
+.link {
+  text-decoration: none;
+}
+
+.root {
+  padding-block: 2px;
+  padding-inline: 16px;
+  border: 1px solid #333;
+  display: flex;
+  column-gap: 8px;
+  border-radius: 0.75rem;
+  align-items: center;
+}

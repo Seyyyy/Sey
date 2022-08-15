@@ -1,0 +1,72 @@
+---
+title: 'Google Cloud Storageにカスタムドメインを設定する方法'
+date: '2022/8/16'
+---
+
+# 概要
+
+Google Cloud Storage(以下、GCS)に保存した画像をカスタムドメインで配信できるように設定した。
+カスタムドメインは、DNS の CNAME に`c.storage.googleapis.com.`を指定することで設定可能である。
+また、HTTPS を使用するために Cloudflare CDN のリバースプロキシ機能を用いた。
+
+# はじめに
+
+[個人 Blog](https://seyyyy.com)で使用する画像(GCS に保存済み)をカスタムドメインで配信しようと考えた。
+
+例) storage.googleapis.com/bucket/img → img.example.com/bucket/img
+
+この記事では、GCS で保存した画像をカスタムドメインで配信するための方法を記述する。
+
+# カスタムドメインの設定方法
+
+本記事では Google Domains を用いることを前提とする(ただ、やることは他のサービスも同様だと思う)。  
+まず[マイドメイン](https://domains.google.com/registrar)に遷移し、取得しているドメインをクリックする。
+左メニューに 「DNS」 という項目があるのでクリックする。  
+「デフォルトのネームサーバー」タブを選択し、DNS レコードを下記のように設定する。
+
+![CNAME設定例](https://image.seyyyy.com/gcs-domain.png 'CNAME設定例')
+
+カスタムドメインは、DNS の CNAME に`c.storage.googleapis.com.`を指定することで設定可能である。
+これでカスタムドメインによる GCS に保存した画像の配信が可能である。
+
+# HTTPS で GCS の画像を配信する方法
+
+しかし、このままだと HTTPS で画像の配信ができない。  
+これは GCS が HTTPS を使用するカスタムドメインをサポートしていないからである([ドキュメント](https://cloud.google.com/storage/docs/hosting-static-website))。  
+これを回避するために以下の方法が挙げられる。
+
+- Cloud Load Balancing を使用する[1]
+- サードパーティの CDN を使用する[2]
+- GCS の代わりに Firebase Hosting を使用する[3]
+
+今回はなるべく費用を抑えつつ GCS を使用した画像配信がしたかったので[2]の方法を選択した。
+
+## Cloudflare CDN で HTTPS を使用する方法
+
+Cloudflare CDN を用いることで、HTTPS で画像配信するように設定できる。  
+まず、[ダッシュボード](https://dash.cloudflare.com/?to=/:account/)にサインインする。  
+右上に「Add a Site」ボタンがあるのでクリックする。  
+そのまま進めていくと、Cloudflare のネームサーバを設定するように要求されるので、Google Domains で設定する。  
+「カスタムネームサーバー」タブを選択し、ネームサーバを Cloudflare で指定されたものに設定する(Google Domains で設定した内容と同じ)。
+
+![CloudflareにおけるCNAME設定例](https://image.seyyyy.com/cloudflare-domain.png 'CloudflareにおけるCNAME設定例')
+
+しばらく待つと設定が反映され、HTTPS が使用できるようになる。
+
+## 安全に静的コンテンツを配信するための設定
+
+上記の設定では、リンクの設定ミスで HTTP を使用してしまう可能性がある。
+これを避けるために、HTTP から HTTPS にリダイレクトする設定が存在する。
+まず、[ダッシュボード](https://dash.cloudflare.com/?to=/:account/)にサインインする。  
+設定したドメインをクリックする。  
+左メニューに「SSL/TLS」という項目があるのでクリックする。  
+ドロップダウンリストに「Edge Certificates」という項目が表示されるのでクリックする。  
+「Always Use HTTPS」という項目のラジオボタンをクリックして ON にする。  
+これで、HTTP から HTTPS へリダイレクトされるようになる。
+
+# おわりに
+
+今回は、GCS に保存された画像をカスタムドメインから HTTPS で配信するように設定した。
+カスタムドメインを設定するだけであれば手順は少ないのだが、HTTPS に対応させるために一工夫必要であった。
+ただ、悪意ある攻撃者から身を守るためには、手順を省略せずに HTTPS に対応しておきたい。
+また、今回使用しなかった Cloud Load Balancing や Firebase Hosting は同じようなことをする機会があれば使用してみたいと思う。

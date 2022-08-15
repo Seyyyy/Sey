@@ -1,0 +1,21 @@
+.root {
+  display: flex;
+  flex-direction: row;
+  margin-inline: 24px;
+  margin-block: 16px;
+}
+
+.root a {
+  text-decoration: none;
+}
+
+.titleRoot {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.titleText {
+  font-size: 18px;
+  margin-inline: 8px;
+}

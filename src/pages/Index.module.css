@@ -1,0 +1,23 @@
+.section {
+  text-align: center;
+}
+.blogList {
+  margin-left: 25vw;
+  margin-right: 25vw;
+  margin-bottom: 10vh;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+}
+@media screen and (max-width: 1200px) {
+  .blogList {
+    margin-left: 7vw;
+    margin-right: 7vw;
+  }
+}
+.sns {
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+  text-align: center;
+}
