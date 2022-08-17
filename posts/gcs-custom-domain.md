@@ -1,6 +1,10 @@
 ---
 title: 'Google Cloud Storageにカスタムドメインを設定する方法'
-date: '2022/8/16'
+createdAt: '2022/8/16'
+updatedAt: ''
+tags:
+  - 'Google Cloud Storage'
+  - 'Cloudflare'
 ---
 
 # 概要

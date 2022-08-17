@@ -23,7 +23,14 @@ export const getStaticPaths = async () => {
 }
 
 export const getStaticProps = async ({ params }: any) => {
-  const post = getPostBySlug(params.slug, ['slug', 'title', 'date', 'content'])
+  const post = getPostBySlug(params.slug, [
+    'slug',
+    'title',
+    'createdAt',
+    'content',
+    'updatedAt',
+    'tags',
+  ])
   const content = await markdownToHtml(post.content)
 
   return {
@@ -53,7 +60,12 @@ const Post: NextPage<Props> = ({ post }) => {
         <article>
           <h1 className={styles.title}>{post.title}</h1>
           <div>
-            <p className={styles.date}>{`作成日：${post.date}`}</p>
+            <p className={styles.date}>{`作成日：${post.createdAt}`}</p>
+            {post.updatedAt ? (
+              <p className={styles.date}>{`更新日：${post.updatedAt}`}</p>
+            ) : (
+              <></>
+            )}
             <div dangerouslySetInnerHTML={{ __html: post.content }} />
           </div>
         </article>

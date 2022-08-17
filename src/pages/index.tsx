@@ -8,7 +8,13 @@ import Card from '../components/Card'
 type Props = InferGetStaticPropsType<typeof getStaticProps>
 
 export const getStaticProps = async () => {
-  const allPosts = getAllPosts(['slug', 'title', 'date', 'tags'])
+  const allPosts = getAllPosts([
+    'slug',
+    'title',
+    'createdAt',
+    'updatedAt',
+    'tags',
+  ])
   return {
     props: { allPosts },
   }
@@ -25,7 +31,8 @@ const Home: NextPage<Props> = ({ allPosts }) => {
               key={post.slug}
               href={`/blog/${post.slug}`}
               title={post.title}
-              summary={post.date}
+              createdAt={post.createdAt}
+              tags={post.tags}
             />
           ))}
         </div>

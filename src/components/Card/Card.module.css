@@ -1,13 +1,45 @@
 .link {
   text-decoration: none;
-}
-
-.root {
-  padding-block: 2px;
+  padding-block: 1rem;
   padding-inline: 16px;
   border: 1px solid #333;
   display: flex;
-  column-gap: 8px;
+  flex-direction: column;
   border-radius: 0.75rem;
-  align-items: center;
+}
+
+.root {
+  margin-block: 1rem;
+  display: flex;
+  /* align-items: center; */
+}
+
+.title {
+  margin: 0;
+  width: 80%;
+}
+
+.createdAt {
+  margin: 0;
+  width: 20%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.tags {
+  display: flex;
+  column-gap: 12px;
+}
+
+.tagButton {
+  padding-inline: 2px;
+  padding-block: 2px;
+}
+
+.tag {
+  font-size: 14px;
+  background-color: #bbb;
+  border-radius: 1rem;
+  line-height: 1.5rem;
+  padding-inline: 0.75rem;
 }

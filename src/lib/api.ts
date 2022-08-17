@@ -6,7 +6,9 @@ type Post = {
   slug: string
   content: string
   title: string
-  date: string
+  createdAt: string
+  updatedAt: string
+  tags: string[]
 }
 
 const postsDir = path.join(process.cwd(), 'posts')
@@ -27,7 +29,9 @@ export const getPostBySlug = (slug: string, fields: string[] = []) => {
     slug: '',
     content: '',
     title: '',
-    date: '',
+    createdAt: '',
+    updatedAt: '',
+    tags: [],
   }
 
   fields.forEach((field) => {
@@ -37,7 +41,12 @@ export const getPostBySlug = (slug: string, fields: string[] = []) => {
     if (field === 'content') {
       items[field] = content
     }
-    if (field === 'title' || field === 'date') {
+    if (
+      field === 'title' ||
+      field === 'createdAt' ||
+      field === 'updatedAt' ||
+      field === 'tags'
+    ) {
       items[field] = data[field]
     }
   })
@@ -49,7 +58,7 @@ export const getAllPosts = (fields: string[] = []) => {
   const slugs = getPostSlugs()
   const posts = slugs
     .map((slug) => getPostBySlug(slug, fields))
-    .sort((a, b) => (a.date > b.date ? -1 : 1))
+    .sort((a, b) => (a.createdAt > b.createdAt ? -1 : 1))
 
   return posts
 }
