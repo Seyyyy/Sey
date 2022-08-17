@@ -31,7 +31,8 @@ const Home: NextPage<Props> = ({ allPosts }) => {
               key={post.slug}
               href={`/blog/${post.slug}`}
               title={post.title}
-              summary={post.createdAt}
+              createdAt={post.createdAt}
+              tags={post.tags}
             />
           ))}
         </div>
