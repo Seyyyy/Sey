@@ -1,0 +1,35 @@
+---
+title: 'Netlifyでカスタムドメインを設定する方法'
+createdAt: '2022/8/19'
+updatedAt: ''
+tags:
+  - 'Netlify'
+---
+
+# 概要
+
+Netlify でデプロイした静的サイトをカスタムドメインで配信出来るように設定した。
+今回は[1]Netlify 外部の DNS を使用する方法、[2]Netlify の DNS を使用する方法の２通りを試した。
+
+# はじめに
+
+Netlify でホスティングしている[個人 Blog](https://seyyyy.com)をカスタムドメインで配信しようと考えた。
+そのときに行った設定を下記に記載していく。
+
+# Netlify の DNS を使用してカスタムドメイン配信
+
+まず、Netlify の「Team overview 画面」に表示されるナビバーの「Domains」をクリックする。  
+Netlify にカスタムドメインを新規に登録する場合は「Add or register domain」ボタンをクリックして説明通りに追加する。  
+Netlify にすでに登録している場合は、該当ドメインを選択して「DNS settings 画面」に進む。（今回はすでに登録している前提で進める。）
+「Name Servers」の項目に、Netlify DNS のドメインが設定されているので、これを設定したいドメインが管理されているサイト（Google Domains なら「カスタムネームサーバ」）に設定する。  
+以上でカスタムドメインを用いて配信できるようになる。
+
+# Netlify 外部の DNS を使用してカスタムドメイン配信
+
+この方法では、外部の DNS の A レコードに Netlify のロードバランサを設定することでカスタムドメイン配信をする。([ドキュメント](https://docs.netlify.com/domains-https/custom-domains/configure-external-dns/#configure-an-apex-domain))  
+このときに設定する Netlify のロードバランサの IP アドレスは`75.2.60.5`である。  
+以上でカスタムドメインを用いて配信できるようになる。
+
+# おわりに
+
+どちらも手数的には少ないので、設定は容易であると感じた。ただ、2021/3/25 にロードバランサの IP アドレスが変更されており、今後この IP アドレスが変更されていないかをチェックする必要があることに気をつけないといけないと思った。
