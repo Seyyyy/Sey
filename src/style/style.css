@@ -76,3 +76,35 @@ td {
 a:hover {
   cursor: pointer;
 }
+
+code {
+  padding-inline: 0.25rem;
+  border-radius: 0.2rem;
+  background-color: #c7d3d9;
+  font-size: 1rem;
+}
+
+/* remark prism */
+.token {
+  color: white;
+}
+.token.keyword {
+  color: #d285de;
+}
+.token.string {
+  color: #db9e58;
+}
+.token.literal-property,
+.token.property,
+.token.maybe-class-name,
+.token.class-name {
+  color: #708fff;
+}
+.remark-highlight pre,
+.remark-highlight code {
+  border-radius: 10px;
+  background-color: var(--main-color) !important;
+  padding-inline: 0rem;
+  font-size: 1rem;
+}
+/* end */
