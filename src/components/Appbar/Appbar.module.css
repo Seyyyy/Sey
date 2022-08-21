@@ -1,7 +1,6 @@
 .root {
   display: flex;
   flex-direction: row;
-  margin-inline: 24px;
   margin-block: 16px;
 }
 

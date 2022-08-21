@@ -10,6 +10,7 @@ html {
 body {
   margin: 0;
   background-color: var(--base-color);
+  margin-inline: 4vw;
 }
 p {
   font-family: 'Arial';
