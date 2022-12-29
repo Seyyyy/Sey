@@ -1,15 +1,11 @@
 .root {
-  margin-left: 25vw;
-  width: 50vw;
-  margin-right: 25vw;
+  margin-inline: 25vw;
   margin-bottom: 10vh;
 }
 
 @media screen and (max-width: 1200px) {
   .root {
-    margin-left: 7vw;
-    width: 86vw;
-    margin-right: 7vw;
+    margin-inline: 0vw;
   }
 }
 

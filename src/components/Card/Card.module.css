@@ -6,6 +6,10 @@
   display: flex;
   flex-direction: column;
   border-radius: 0.75rem;
+
+  animation-name: pop;
+  animation-duration: 220ms;
+  animation-timing-function: ease-in;
 }
 
 .root {
@@ -15,15 +19,28 @@
   width: 100%;
 }
 
+@media screen and (max-width: 600px) {
+  .root {
+    margin-block: 0.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 .title {
   margin: 0;
-  width: 80%;
+  flex-grow: 1;
 }
 
 .createdAt {
   margin: 0;
-  width: 20%;
+  font-size: 1rem;
   text-align: end;
+}
+@media screen and (max-width: 600px) {
+  .createdAt {
+    font-size: 0.9rem;
+  }
 }
 
 .tags {
@@ -44,4 +61,16 @@
   border-radius: 1rem;
   line-height: 1.5rem;
   padding-inline: 0.75rem;
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0);
+  }
+  80% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
 }

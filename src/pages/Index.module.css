@@ -1,21 +1,24 @@
 .section {
   text-align: center;
-}
-.blogList {
-  margin-left: 25vw;
-  margin-right: 25vw;
+  margin-inline: 25vw;
   margin-bottom: 10vh;
+}
+
+@media screen and (max-width: 1200px) {
+  .section {
+    text-align: center;
+    margin-inline: 0vw;
+  }
+}
+
+.blogList {
+  width: 100%;
   text-align: left;
   display: flex;
   flex-direction: column;
   row-gap: 8px;
 }
-@media screen and (max-width: 1200px) {
-  .blogList {
-    margin-left: 7vw;
-    margin-right: 7vw;
-  }
-}
+
 .sns {
   padding-top: 5vh;
   padding-bottom: 5vh;
