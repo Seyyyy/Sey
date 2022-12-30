@@ -1,10 +1,9 @@
-name: Playwright Tests
+name: E2ETests
 on:
-  workflow_dispatch:
-  # push:
-  #   branches: [main]
-  # pull_request:
-  #   branches: [main]
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
 jobs:
   test:
     timeout-minutes: 60
