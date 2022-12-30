@@ -1,6 +1,7 @@
 import fs from 'fs'
 import path, { join } from 'path'
 import matter from 'gray-matter'
+import { environment, env } from '@utils/constants/environments'
 
 type Post = {
   slug: string
@@ -11,17 +12,22 @@ type Post = {
   tags: string[]
 }
 
-const postsDir = path.join(process.cwd(), 'posts')
+const postsDir = () => {
+  if (environment.env === env.TEST) {
+    return path.join(process.cwd(), 'mock-posts')
+  }
+  return path.join(process.cwd(), 'posts')
+}
 
 export const getPostSlugs = () => {
   const allFileName = fs
-    .readdirSync(postsDir)
+    .readdirSync(postsDir())
     .map((fileNameWithExtension) => fileNameWithExtension.replace(/\.md$/, ''))
   return allFileName
 }
 
 export const getPostBySlug = (slug: string, fields: string[] = []) => {
-  const fullPath = join(postsDir, `${slug}.md`)
+  const fullPath = join(postsDir(), `${slug}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf-8')
   const { data, content } = matter(fileContents)
 

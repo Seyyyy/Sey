@@ -1,12 +1,21 @@
-:root {
+html {
+  font-size: 16px;
+}
+
+html.dark:root {
+  --main-color: #eceff1;
+  --base-color: #263238;
+  --base-color-dark: #131a1e;
+  --accent-color: #928c82;
+}
+
+html.light:root {
   --main-color: #263238;
   --base-color: #eceff1;
   --base-color-dark: #daddde;
   --accent-color: #928c82;
 }
-html {
-  font-size: 16px;
-}
+
 body {
   margin: 0;
   background-color: var(--base-color);
@@ -81,8 +90,12 @@ a:hover {
 code {
   padding-inline: 0.25rem;
   border-radius: 0.2rem;
-  background-color: #c7d3d9;
+  background-color: var(--base-color-dark);
   font-size: 1rem;
+}
+
+li {
+  color: var(--main-color);
 }
 
 /* remark prism */
