@@ -27,5 +27,11 @@ svgIcons
 /out
 .next
 
+# playwright
+tests-examples
+
 # personal
 draft
+/test-results/
+/playwright-report/
+/playwright/.cache/
