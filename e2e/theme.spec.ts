@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test'
 
 test.describe('UIのテーマをダークモードとライトモードにスイッチできる', () => {
-  test('ナビゲーションバーのテーマチェンジボタンを謳歌するとダークモードが表示される', async ({
+  test('ナビゲーションバーのテーマチェンジボタンを押下するとダークモードが表示される', async ({
     page,
   }) => {
     await page.goto('http://localhost:3000/')
@@ -10,7 +10,7 @@ test.describe('UIのテーマをダークモードとライトモードにスイ
     await expect(result.length).toBe(1)
   })
 
-  test('ナビゲーションバーのテーマチェンジボタンを謳歌するとライトモードが表示される', async ({
+  test('ナビゲーションバーのテーマチェンジボタンを押下するとライトモードが表示される', async ({
     page,
   }) => {
     await page.goto('http://localhost:3000/')
