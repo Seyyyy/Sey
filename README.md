@@ -3,4 +3,4 @@
 </p>
 <h1 align="center">Sey</h1>
 
-[![E2ETests](https://github.com/Seyyyy/Sey/actions/workflows/e2e.yml/badge.svg?branch=main)](https://github.com/Seyyyy/Sey/actions/workflows/e2e.yml)
+[![CI](https://github.com/Seyyyy/Sey/actions/workflows/ci.yml/badge.svg?branch=develop)](https://github.com/Seyyyy/Sey/actions/workflows/ci.yml)
