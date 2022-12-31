@@ -117,7 +117,7 @@ li {
 .remark-highlight pre,
 .remark-highlight code {
   border-radius: 10px;
-  background-color: var(--main-color) !important;
+  background-color: #131a1e !important;
   padding-inline: 0rem;
   font-size: 1rem;
   white-space: break-spaces;
