@@ -16,7 +16,11 @@ const Card = (props: CardProps) => {
       </div>
       <div className={styles.tags}>
         {props.tags ? (
-          props.tags.map((tag) => <span className={styles.tag}>{tag}</span>)
+          props.tags.map((tag) => (
+            <span key={tag} className={styles.tag}>
+              {tag}
+            </span>
+          ))
         ) : (
           <></>
         )}

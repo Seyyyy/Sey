@@ -3,6 +3,11 @@
   flex-direction: row;
   margin-block: 16px;
   justify-content: space-between;
+  height: 30px;
+}
+
+.root li {
+  list-style: none;
 }
 
 .root a {
@@ -13,6 +18,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  height: 100%;
 }
 
 .titleText {
@@ -21,13 +27,13 @@
 }
 
 .themeToggle {
-  font-size: 14px;
-  /* background-color: #bbb; */
+  width: 40px;
+  height: 100%;
   background-color: transparent;
   color: var(--main-color);
-  font-weight: bold;
-  border-radius: 1rem;
-  line-height: 1.5rem;
-  padding-inline: 0.75rem;
   border-style: none;
+}
+
+.icon {
+  height: 100%;
 }

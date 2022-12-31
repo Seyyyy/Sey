@@ -1,0 +1,35 @@
+.tooltip {
+  position: relative;
+  cursor: pointer;
+}
+
+.tooltipText {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -30px;
+  display: inline-block;
+  padding: 5px;
+  white-space: nowrap;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  font-weight: lighter;
+  background: #222;
+  color: #fff;
+  border-radius: 4px;
+  transition: 0.2s ease-in;
+}
+
+.tooltip:hover .tooltipText {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* スマホサイズのときはtooltipを表示させない */
+@media screen and (max-width: 600px) {
+  .tooltipText {
+    display: none;
+  }
+}

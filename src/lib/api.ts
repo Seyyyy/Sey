@@ -64,7 +64,10 @@ export const getAllPosts = (fields: string[] = []) => {
   const slugs = getPostSlugs()
   const posts = slugs
     .map((slug) => getPostBySlug(slug, fields))
-    .sort((a, b) => (a.createdAt > b.createdAt ? -1 : 1))
+    .sort(
+      (a, b) =>
+        -(new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime())
+    )
 
   return posts
 }
