@@ -120,5 +120,6 @@ li {
   background-color: var(--main-color) !important;
   padding-inline: 0rem;
   font-size: 1rem;
+  white-space: break-spaces;
 }
 /* end */
