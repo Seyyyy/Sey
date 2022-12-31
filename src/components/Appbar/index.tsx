@@ -17,7 +17,7 @@ const Appbar = () => {
       <li>
         <a href={'/'}>
           <div className={styles.titleRoot}>
-            <SvgKyoryu width={'auto'} height={'100%'} />
+            <SvgKyoryu width={'40px'} height={'100%'} />
             <h1 className={styles.titleText}>Sey</h1>
           </div>
         </a>
