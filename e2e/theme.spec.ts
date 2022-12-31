@@ -5,7 +5,7 @@ test.describe('UIのテーマをダークモードとライトモードにスイ
     page,
   }) => {
     await page.goto('http://localhost:3000/')
-    await page.getByRole('button', { name: 'Light Theme' }).click()
+    await page.getByRole('button', { name: 'Change Theme' }).click()
     const result = await page.locator('html.dark').all()
     await expect(result.length).toBe(1)
   })
@@ -14,8 +14,8 @@ test.describe('UIのテーマをダークモードとライトモードにスイ
     page,
   }) => {
     await page.goto('http://localhost:3000/')
-    await page.getByRole('button', { name: 'Light Theme' }).click()
-    await page.getByRole('button', { name: 'Dark Theme' }).click()
+    await page.getByRole('button', { name: 'Change Theme' }).click()
+    await page.getByRole('button', { name: 'Change Theme' }).click()
     const result = await page.locator('html.light').all()
     await expect(result.length).toBe(1)
   })

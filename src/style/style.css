@@ -20,6 +20,7 @@ body {
   margin: 0;
   background-color: var(--base-color);
   margin-inline: 4vw;
+  overflow-x: hidden;
 }
 p {
   font-family: 'Arial';
@@ -44,7 +45,7 @@ h2 {
   color: var(--main-color);
 }
 button {
-  font-size: 1rem;
+  /* font-size: 1rem; */
   color: black;
   background-color: unset;
   cursor: pointer;
@@ -96,6 +97,10 @@ code {
 
 li {
   color: var(--main-color);
+}
+
+svg path {
+  fill: var(--main-color);
 }
 
 /* remark prism */
