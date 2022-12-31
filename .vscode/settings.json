@@ -1,0 +1,6 @@
+{
+  "vitest.exclude": ["**/node_modules/**", "**/e2e/**"],
+  "vitest.nodeEnv": {
+    "APP_ENV": "test"
+  }
+}
