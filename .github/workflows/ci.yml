@@ -16,6 +16,7 @@ jobs:
       - name: Unit tests
         run: yarn test
   e2e:
+    needs: unittests
     timeout-minutes: 30
     runs-on: ubuntu-latest
     steps:
