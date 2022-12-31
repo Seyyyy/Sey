@@ -4,16 +4,18 @@ html {
 
 html.dark:root {
   --main-color: #eceff1;
+  --base-color-light: #374349;
   --base-color: #263238;
-  --base-color-dark: #131a1e;
-  --accent-color: #928c82;
+  --base-color-dark: #212a2f;
+  --accent-color: #e4c184;
 }
 
 html.light:root {
   --main-color: #263238;
+  --base-color-light: #ffffff;
   --base-color: #eceff1;
   --base-color-dark: #daddde;
-  --accent-color: #928c82;
+  --accent-color: #7e7a53;
 }
 
 body {
