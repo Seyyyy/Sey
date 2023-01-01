@@ -12,13 +12,21 @@ const changeTheme = (isDark: boolean) => {
   }
 }
 
+const readyLocalStorage = () => {
+  if (typeof localStorage !== 'undefined') {
+    return true
+  }
+  return false
+}
+
 export const useTheme = () => {
   const [theme, setTheme] = useState(false)
+  const isReady = readyLocalStorage()
 
-  const toggleTheme = useCallback((theme: boolean) => {
+  const toggleTheme = (theme: boolean) => {
     changeTheme(theme)
     setTheme(theme)
-  }, [])
+  }
 
   useEffect(() => {
     const storageTheme = localStorage.getItem('theme')
@@ -27,7 +35,7 @@ export const useTheme = () => {
     } else if (storageTheme === 'light') {
       toggleTheme(false)
     }
-  }, [])
+  }, [isReady])
 
   return {
     theme,

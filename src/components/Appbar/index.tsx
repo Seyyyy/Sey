@@ -4,6 +4,7 @@ import { useTheme } from '@utils/useThemeProvider'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons'
 import { Tooltip } from '@components/Tooltip'
+import Link from 'next/link'
 
 const Appbar = () => {
   const { theme, toggleTheme } = useTheme()
@@ -16,12 +17,12 @@ const Appbar = () => {
     <nav>
       <ul className={styles.root}>
         <li>
-          <a href={'/'}>
+          <Link href={'/'}>
             <div className={styles.titleRoot}>
               <SvgKyoryu width={'40px'} height={'100%'} />
               <h1 className={styles.titleText}>Sey</h1>
             </div>
-          </a>
+          </Link>
         </li>
 
         <li>

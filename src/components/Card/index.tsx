@@ -1,4 +1,5 @@
 import styles from './Card.module.css'
+import Link from 'next/link'
 
 type CardProps = {
   title: string
@@ -9,7 +10,7 @@ type CardProps = {
 
 const Card = (props: CardProps) => {
   return (
-    <a href={props.href} className={styles.link}>
+    <Link href={props.href} className={styles.link}>
       <div className={styles.root}>
         <p className={styles.title}>{props.title}</p>
         <p className={styles.createdAt}>{props.createdAt}</p>
@@ -25,7 +26,7 @@ const Card = (props: CardProps) => {
           <></>
         )}
       </div>
-    </a>
+    </Link>
   )
 }
 
