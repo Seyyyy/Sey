@@ -105,6 +105,16 @@ svg path {
   fill: var(--main-color);
 }
 
+blockquote {
+  border-left: 4px solid gray;
+  margin-inline: 0px;
+  padding-inline-start: 12px;
+}
+blockquote p,
+blockquote li {
+  color: gray;
+}
+
 /* remark prism */
 .token {
   color: white;
