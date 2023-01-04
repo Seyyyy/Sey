@@ -4,6 +4,7 @@ on:
     branches: [main]
 jobs:
   unittests:
+    name: Unit tests
     timeout-minutes: 30
     runs-on: ubuntu-latest
     steps:
@@ -17,6 +18,7 @@ jobs:
         run: yarn test
   e2e:
     needs: unittests
+    name: E2E tests
     timeout-minutes: 30
     runs-on: ubuntu-latest
     steps:
