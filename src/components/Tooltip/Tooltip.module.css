@@ -22,9 +22,18 @@
   transition: 0.2s ease-in;
 }
 
-.tooltip:hover .tooltipText {
-  opacity: 1;
-  visibility: visible;
+@media (hover: hover) {
+  .tooltip:hover .tooltipText {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@media (hover: none) {
+  .tooltip:active .tooltipText {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 /* スマホサイズのときはtooltipを表示させない */
