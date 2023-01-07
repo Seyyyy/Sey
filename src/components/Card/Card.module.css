@@ -12,8 +12,16 @@
   animation-timing-function: ease-in; */
 }
 
-.link:hover {
-  background-color: var(--base-color-dark);
+@media (hover: hover) {
+  .link:hover {
+    background-color: var(--base-color-dark);
+  }
+}
+
+@media (hover: none) {
+  .link:active {
+    background-color: var(--base-color-dark);
+  }
 }
 
 .root {
