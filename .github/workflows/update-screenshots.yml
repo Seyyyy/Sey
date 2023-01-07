@@ -1,0 +1,48 @@
+name: Update ScreenShot
+on:
+  workflow_dispatch:
+
+jobs:
+  screenshots:
+    runs-on: ubuntu-latest
+    name: Update ScreenShots
+    timeout-minutes: 30
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setting User
+        run: |
+          git config user.name "Seyyyy"
+          git config user.email "20811739+Seyyyy@users.noreply.github.com"
+
+      - name: Create new branch
+        run: git checkout -b update-screenshots/${GITHUB_REF##*/}
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+          cache: yarn
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Install Playwright Browsers
+        run: yarn playwright install --with-deps
+
+      - name: Run Update ScreenShot
+        run: yarn test:e2e --update-snapshots
+
+      - name: Commit ScreenShot
+        run: |
+          git add .
+          git commit -m "test: update screenshots. ${GITHUB_REF##*/}"
+
+      - name: Push to remote branch
+        run: git push origin update-screenshots/${GITHUB_REF##*/}
+
+      - name: Create PR
+        run: gh pr create --base ${GITHUB_REF##*/} --head update-screenshots/${GITHUB_REF##*/} --title "update-screenshots\":\" ${GITHUB_REF##*/}" --body "" --label "test"
