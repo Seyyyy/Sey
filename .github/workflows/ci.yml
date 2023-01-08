@@ -2,6 +2,9 @@ name: CI
 on:
   pull_request:
     branches: [main]
+    paths-ignore:
+      - 'posts/**'
+      - 'README.md'
 jobs:
   unittests:
     name: Unit tests
