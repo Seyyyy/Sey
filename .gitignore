@@ -26,6 +26,7 @@ svgIcons
 # nextjs
 /out
 .next
+.swc
 
 # playwright
 tests-examples
