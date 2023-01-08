@@ -1,10 +1,10 @@
 ---
-title: '変化に強くなるための自動テスト環境構築'
+title: 'PlaywrightでE2Eテストを自動化してみた'
 createdAt: '2022/12/30'
-updatedAt: ''
+updatedAt: '2022/1/8'
 tags:
-  - 'Playwright'
-  - '自動テスト'
+  - 'ソフトウェアテスト'
+  - 'CI/CD'
 ---
 
 # 概要
