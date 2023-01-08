@@ -24,6 +24,21 @@ body {
   margin-inline: 4vw;
   overflow-x: hidden;
 }
+
+html.light a {
+  color: #0000ee;
+}
+html.light a:visited {
+  color: #551a8b;
+}
+html.dark a {
+  color: #779df6;
+}
+
+html.dark a:visited {
+  color: #d093e5;
+}
+
 p {
   font-family: 'Arial';
   font-size: 1rem;
@@ -44,6 +59,11 @@ h1 {
 h2 {
   font-family: 'Arial';
   font-size: 1.5rem;
+  color: var(--main-color);
+}
+h3 {
+  font-family: 'Arial';
+  font-size: 1.25rem;
   color: var(--main-color);
 }
 button {
