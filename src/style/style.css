@@ -1,5 +1,6 @@
 html {
   font-size: 16px;
+  font-family: 'Arial';
 }
 
 html.dark:root {
@@ -40,29 +41,24 @@ html.dark a:visited {
 }
 
 p {
-  font-family: 'Arial';
   font-size: 1rem;
   color: var(--main-color);
   word-wrap: break-word;
 }
 span {
-  font-family: 'Arial';
   font-size: 1rem;
   color: var(--main-color);
   word-wrap: break-word;
 }
 h1 {
-  font-family: 'Arial';
   font-size: 2rem;
   color: var(--main-color);
 }
 h2 {
-  font-family: 'Arial';
   font-size: 1.5rem;
   color: var(--main-color);
 }
 h3 {
-  font-family: 'Arial';
   font-size: 1.25rem;
   color: var(--main-color);
 }
@@ -91,7 +87,6 @@ table {
   width: 100%;
   margin-top: 5vh;
   margin-bottom: 5vh;
-  font-family: 'Arial';
   color: var(--main-color);
   border-collapse: collapse;
 }

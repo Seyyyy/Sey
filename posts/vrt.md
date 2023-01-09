@@ -1,7 +1,7 @@
 ---
 title: 'PlaywrightとGithub Actionsでビジュアルリグレッションテストをやってみた'
 createdAt: '2023/1/8'
-updatedAt: ''
+updatedAt: '2023/1/9'
 tags:
   - 'ソフトウェアテスト'
   - 'CI/CD'
@@ -190,6 +190,14 @@ develop
 ```
 
 これでブランチ名が取得できる。
+
+### 追記(2023/1/9)
+
+上記の方法(`${GITHUB_REF##*/}`)ではブランチ名`feature/style`のように`/`が入ると置換してほしくない`feature/`の部分が消えてしまうので、下記のように修正した。
+
+```sh
+${GITHUB_REF##refs/heads/}
+```
 
 # 最終的な構成
 

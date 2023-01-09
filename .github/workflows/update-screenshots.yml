@@ -19,7 +19,7 @@ jobs:
           git config user.email "20811739+Seyyyy@users.noreply.github.com"
 
       - name: Create new branch
-        run: git checkout -b update-screenshots/${GITHUB_REF##*/}
+        run: git checkout -b update-screenshots/${GITHUB_REF##refs/heads/}
 
       - name: Setup Node
         uses: actions/setup-node@v3
@@ -39,10 +39,10 @@ jobs:
       - name: Commit ScreenShot
         run: |
           git add .
-          git commit -m "test: update screenshots. ${GITHUB_REF##*/}"
+          git commit -m "test: update screenshots. ${GITHUB_REF##refs/heads/}"
 
       - name: Push to remote branch
-        run: git push origin update-screenshots/${GITHUB_REF##*/}
+        run: git push origin update-screenshots/${GITHUB_REF##refs/heads/}
 
       - name: Create PR
-        run: gh pr create --base ${GITHUB_REF##*/} --head update-screenshots/${GITHUB_REF##*/} --title "update-screenshots\":\" ${GITHUB_REF##*/}" --body "" --label "test"
+        run: gh pr create --base ${GITHUB_REF##refs/heads/} --head update-screenshots/${GITHUB_REF##refs/heads/} --title "update-screenshots ${GITHUB_REF##refs/heads/}" --body "" --label "test"
