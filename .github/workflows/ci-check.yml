@@ -1,0 +1,20 @@
+# ブランチ保護をバイパスさせるためのワークフロー
+# https://docs.github.com/ja/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/troubleshooting-required-status-checks
+name: CI NoCheck
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'posts/**'
+      - 'README.md'
+jobs:
+  unittests:
+    name: Unit tests
+    runs-on: ubuntu-latest
+    steps:
+      - run: 'echo "No build required"'
+  e2e:
+    name: E2E tests
+    runs-on: ubuntu-latest
+    steps:
+      - run: 'echo "No build required"'
