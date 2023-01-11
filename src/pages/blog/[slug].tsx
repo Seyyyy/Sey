@@ -54,7 +54,11 @@ const Post: NextPage<Props> = ({ post }) => {
       <Head>
         <title>{post.title}</title>
         <meta name="description" content="blog" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta property="og:title" content={post.title} />
+        <meta
+          property="og:url"
+          content={`https://seyyyy.com/blog/${post.slug}`}
+        />
       </Head>
       <main>
         <article>
