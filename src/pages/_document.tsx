@@ -41,6 +41,10 @@ class MyDocument extends Document {
           sizes="62x62"
           type="image/png"
         />
+        <link
+          href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet"
+        ></link>
         {/* <link rel="apple-touch-icon-precomposed" href="画像のURL" /> */}
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />

@@ -5,6 +5,7 @@
   justify-content: space-between;
   height: 30px;
   padding-inline: 0px;
+  align-items: center;
 }
 
 .root li {
@@ -28,17 +29,9 @@
 }
 
 .themeToggle {
-  width: 40px;
   height: 100%;
   background-color: transparent;
   color: var(--main-color);
   border-style: none;
-}
-
-.icon {
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  display: flex;
 }
