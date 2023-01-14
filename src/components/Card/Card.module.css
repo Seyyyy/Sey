@@ -15,12 +15,14 @@
 @media (hover: hover) {
   .link:hover {
     background-color: var(--base-color-dark);
+    transition: 0.1s ease-in;
   }
 }
 
 @media (hover: none) {
   .link:active {
     background-color: var(--base-color-dark);
+    transition: 0.1s ease-in;
   }
 }
 
