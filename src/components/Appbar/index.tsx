@@ -1,8 +1,6 @@
 import styles from './Appbar.module.css'
 import { SvgKyoryu } from '../atoms/Icons'
 import { useTheme } from '@utils/useThemeProvider'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons'
 import { Tooltip } from '@components/Tooltip'
 import Link from 'next/link'
 
@@ -19,7 +17,7 @@ const Appbar = () => {
         <li>
           <Link href={'/'}>
             <div className={styles.titleRoot}>
-              <SvgKyoryu width={'40px'} height={'100%'} />
+              <SvgKyoryu width={'32px'} height={'100%'} />
               <h1 className={styles.titleText}>Sey</h1>
             </div>
           </Link>
@@ -36,9 +34,9 @@ const Appbar = () => {
             data-testid="theme-button"
           >
             {theme ? (
-              <FontAwesomeIcon icon={faMoon} className={styles.icon} />
+              <span className="material-icons">dark_mode</span>
             ) : (
-              <FontAwesomeIcon icon={faSun} className={styles.icon} />
+              <span className="material-icons">light_mode</span>
             )}
           </Tooltip>
         </li>
