@@ -1,11 +1,13 @@
 .link {
   text-decoration: none;
-  padding-block: 1rem;
+  padding-block-start: 24px;
+  padding-block-end: 16px;
   padding-inline: 16px;
   display: flex;
   flex-direction: column;
-  border-radius: 0.75rem;
+  border-radius: 0.4rem;
   background-color: var(--base-color-light);
+  gap: 12px;
 
   /* animation-name: pop;
   animation-duration: 220ms;
@@ -15,6 +17,7 @@
 @media (hover: hover) {
   .link:hover {
     background-color: var(--base-color-dark);
+    transform: scale(1.01, 1.01);
     transition: 0.1s ease-in;
   }
 }
@@ -22,16 +25,16 @@
 @media (hover: none) {
   .link:active {
     background-color: var(--base-color-dark);
+    transform: scale(1.02, 1.02);
     transition: 0.1s ease-in;
   }
 }
 
 .root {
-  margin-block: 1rem;
   display: flex;
   justify-content: space-between;
   width: 100%;
-  gap: 4px;
+  gap: 8px;
 }
 
 @media screen and (max-width: 600px) {
@@ -49,7 +52,8 @@
 
 .createdAt {
   margin: 0;
-  font-size: 1rem;
+  opacity: 0.6;
+  font-size: 14px;
   text-align: end;
 }
 @media screen and (max-width: 600px) {
@@ -71,12 +75,15 @@
 }
 
 .tag {
-  font-size: 14px;
-  background-color: var(--accent-color);
-  color: var(--base-color);
   border-radius: 1rem;
-  line-height: 1.5rem;
-  padding-inline: 0.75rem;
+  line-height: 1.25rem;
+  opacity: 0.6;
+  border: solid 0.6px;
+  border-color: var(--main-color);
+  border-radius: 0.8rem;
+  padding-inline: 8px;
+  font-size: 11px;
+  font-weight: bold;
 }
 
 /* @keyframes pop {
