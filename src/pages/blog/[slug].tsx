@@ -5,6 +5,7 @@ import { getAllPosts, getPostBySlug } from '../../lib/api'
 import { markdownToHtml } from '../../lib/markdownToHtml'
 import Head from 'next/head'
 import styles from './slug.module.css'
+import { Fade } from '@components/Animation/Fade'
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>
 
@@ -54,22 +55,28 @@ const Post: NextPage<Props> = ({ post }) => {
       <Head>
         <title>{post.title}</title>
         <meta name="description" content="blog" />
-        <link rel="icon" href="/favicon.ico" />
+        <meta property="og:title" content={post.title} />
+        <meta
+          property="og:url"
+          content={`https://seyyyy.com/blog/${post.slug}`}
+        />
       </Head>
-      <main>
-        <article>
-          <h1 className={styles.title}>{post.title}</h1>
-          <div>
-            <p className={styles.date}>{`作成日：${post.createdAt}`}</p>
-            {post.updatedAt ? (
-              <p className={styles.date}>{`更新日：${post.updatedAt}`}</p>
-            ) : (
-              <></>
-            )}
-            <div dangerouslySetInnerHTML={{ __html: post.content }} />
-          </div>
-        </article>
-      </main>
+      <Fade>
+        <main>
+          <article>
+            <h1 className={styles.title}>{post.title}</h1>
+            <div>
+              <p className={styles.date}>{`作成日：${post.createdAt}`}</p>
+              {post.updatedAt ? (
+                <p className={styles.date}>{`更新日：${post.updatedAt}`}</p>
+              ) : (
+                <></>
+              )}
+              <div dangerouslySetInnerHTML={{ __html: post.content }} />
+            </div>
+          </article>
+        </main>
+      </Fade>
     </div>
   )
 }

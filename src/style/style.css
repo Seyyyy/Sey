@@ -1,6 +1,6 @@
 html {
   font-size: 16px;
-  font-family: 'Arial';
+  font-family: 'Arial', 'sans-serif';
 }
 
 html.dark:root {
@@ -152,6 +152,6 @@ blockquote li {
   background-color: #131a1e !important;
   padding-inline: 0rem;
   font-size: 1rem;
-  white-space: break-spaces;
+  overflow-x: auto;
 }
 /* end */

@@ -3,13 +3,16 @@ import { AppProps } from 'next/app'
 import Footer from '../components/Footer'
 import Appbar from '@components/Appbar'
 import '../style/style.css'
+import { Fade } from '@components/Animation/Fade'
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
     <React.Fragment>
-      <Appbar />
-      <Component {...pageProps} />
-      <Footer />
+      <Fade>
+        <Appbar />
+        <Component {...pageProps} />
+        <Footer />
+      </Fade>
     </React.Fragment>
   )
 }
