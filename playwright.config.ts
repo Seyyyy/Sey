@@ -102,7 +102,7 @@ const config: PlaywrightTestConfig = {
 
   /* Run your local dev server before starting the tests */
   webServer: {
-    command: 'yarn start:e2e',
+    command: 'npm run start:e2e',
     port: 3000,
   },
 }

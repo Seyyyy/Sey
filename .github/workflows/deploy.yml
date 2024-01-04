@@ -14,7 +14,7 @@ on:
       - 'public/**'
       - 'next.config.js'
       - 'package.json'
-      - 'yarn.lock'
+      - 'package-lock.json'
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -40,8 +40,8 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
-          cache: yarn
+          node-version: '18'
+          cache: npm
       - name: Setup Pages
         uses: actions/configure-pages@v3
         with:
@@ -56,14 +56,14 @@ jobs:
           path: |
             .next/cache
           # Generate a new cache whenever packages or source files change.
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
           # If source files changed but packages didn't, rebuild from a prior cache.
           restore-keys: |
-            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
       - name: Install dependencies
-        run: yarn install
+        run: npm ci
       - name: Build with Next.js
-        run: yarn deploy
+        run: npm run deploy
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:

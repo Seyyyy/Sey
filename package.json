@@ -8,10 +8,10 @@
     "build": "next build",
     "start": "next start",
     "export": "next export",
-    "deploy": "APP_ENV=production yarn build && yarn export",
+    "deploy": "APP_ENV=production npm run build && npm run export",
     "lint": "next lint",
     "test": "APP_ENV=test vitest",
-    "start:e2e": "APP_ENV=test yarn build && yarn start",
+    "start:e2e": "APP_ENV=test npm run build && npm run start",
     "test:e2e": "playwright test"
   },
   "dependencies": {
