@@ -1,5 +1,6 @@
 import { defineConfig, configDefaults } from 'vitest/config'
 import react from '@vitejs/plugin-react'
+import path from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -10,8 +11,8 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@utils': 'src/utils',
-      '@components': 'src/components',
+      '@utils': path.resolve(__dirname, 'src/utils'),
+      '@components': path.resolve(__dirname, 'src/components'),
     },
   },
 })

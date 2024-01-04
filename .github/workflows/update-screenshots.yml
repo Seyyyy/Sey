@@ -24,17 +24,17 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
-          cache: yarn
+          node-version: 20
+          cache: npm
 
       - name: Install dependencies
-        run: yarn install
+        run: npm ci
 
       - name: Install Playwright Browsers
-        run: yarn playwright install --with-deps
+        run: npx playwright install --with-deps
 
       - name: Run Update ScreenShot
-        run: yarn test:e2e --update-snapshots
+        run: npm run test:e2e --update-snapshots
 
       - name: Commit ScreenShot
         run: |
