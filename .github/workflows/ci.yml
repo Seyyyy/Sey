@@ -4,6 +4,7 @@ on:
     branches: [main, 'develop']
     paths-ignore:
       - 'posts/**'
+      - 'docs/**'
       - 'README.md'
 jobs:
   unittests:
