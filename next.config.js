@@ -7,6 +7,7 @@ const nextConfig = {
   compiler: {
     reactRemoveProperties: process.env.APP_ENV !== 'production',
   },
+  output: 'export',
 }
 
 module.exports = nextConfig
