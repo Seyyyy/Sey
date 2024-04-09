@@ -3,15 +3,18 @@ import { AppProps } from 'next/app'
 import Footer from '../components/Footer'
 import Appbar from '@components/Appbar'
 import '../style/style.css'
+import styles from './_app.module.css'
 import { Fade } from '@components/Animation/Fade'
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
     <React.Fragment>
       <Fade>
-        <Appbar />
-        <Component {...pageProps} />
-        <Footer />
+        <div className={styles.root}>
+          <Appbar />
+          <Component {...pageProps} />
+          <Footer />
+        </div>
       </Fade>
     </React.Fragment>
   )

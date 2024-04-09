@@ -1,7 +1,7 @@
 .root {
   display: flex;
   flex-direction: row;
-  margin-block: 16px;
+  margin: 0px;
   justify-content: space-between;
   height: 30px;
   padding-inline: 0px;
