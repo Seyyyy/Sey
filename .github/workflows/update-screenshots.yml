@@ -34,7 +34,7 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Run Update ScreenShot
-        run: npm run test:e2e --update-snapshots
+        run: npm run test:update-snapshots --update-snapshots
 
       - name: Commit ScreenShot
         run: |
