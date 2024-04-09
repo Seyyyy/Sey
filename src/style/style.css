@@ -21,6 +21,8 @@ html.light:root {
 
 body {
   margin: 0;
+  padding-block: 16px;
+  min-height: 100vh;
   background-color: var(--base-color);
   margin-inline: 4vw;
   overflow-x: hidden;
