@@ -5,6 +5,7 @@ import { getAllPosts } from '../lib/api'
 import { NextPage, InferGetStaticPropsType } from 'next'
 import Card from '../components/Card'
 import { Fade } from '../components/Animation/Fade'
+import Head from 'next/head'
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>
 
@@ -23,22 +24,29 @@ export const getStaticProps = async () => {
 
 const Home: NextPage<Props> = ({ allPosts }) => {
   return (
-    <Fade>
-      <div className={styles.section}>
-        <Subtitle text={'Blog'} />
-        <div className={styles.blogList}>
-          {allPosts.map((post) => (
-            <Card
-              key={post.slug}
-              href={`/blog/${post.slug}`}
-              title={post.title}
-              createdAt={post.createdAt}
-              tags={post.tags}
-            />
-          ))}
+    <>
+      <Head>
+        <title>{'Sey'}</title>
+        <meta name="description" content="blog" />
+        <meta property="og:title" content={'Sey'} />
+      </Head>
+      <Fade>
+        <div className={styles.section}>
+          <Subtitle text={'Blog'} />
+          <div className={styles.blogList}>
+            {allPosts.map((post) => (
+              <Card
+                key={post.slug}
+                href={`/blog/${post.slug}`}
+                title={post.title}
+                createdAt={post.createdAt}
+                tags={post.tags}
+              />
+            ))}
+          </div>
         </div>
-      </div>
-    </Fade>
+      </Fade>
+    </>
   )
 }
 
