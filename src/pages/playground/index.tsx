@@ -20,7 +20,7 @@ const Playground: NextPage = () => {
                         <Card
                             href={`/playground/1`}
                             title={"Gemini Nano"}
-                            createdAt={"2024-09-14"}
+                            createdAt={"2024/09/14"}
                             tags={["Google Chrome"]}
                         />
                     </div>
