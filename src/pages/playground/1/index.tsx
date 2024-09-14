@@ -60,6 +60,9 @@ const Playground1: NextPage = () => {
                 <div className={styles.section}>
                     <Subtitle text={'Gemini Nano'} />
                     <div>
+                        <p>動作環境: Google Chrome Version 130.0.6710.0 (Official Build) dev (x86_64)</p>
+                    </div>
+                    <div>
                         <Playground />
                     </div>
                 </div>
