@@ -6,21 +6,45 @@ import Subtitle from '@components/Subtitle'
 import styles from "./index.module.css"
 
 const Playground = () => {
-    const [text, setText] = React.useState<string>("")
+    const [text, setText] = React.useState<string>("");
+    const [result, setResult] = React.useState<string>("");
 
-    const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const onChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         setText(e.target.value)
     }
 
-    const onClick = () => {
-        console.log(text)
+    const onClick = async () => {
+        // @ts-ignore
+        if (!window.ai) {
+            return;
+        }
+        // @ts-ignore
+        const session = await window.ai.assistant.create();
+        const res = await session.promptStreaming(text);
+        stream(res);
+    }
+
+    const stream = async (readableStream: ReadableStream) => {
+        const reader = readableStream.getReader();
+        while (true) {
+            const { done, value } = await reader.read();
+            if (done) {
+                break;
+            }
+            setResult(value);
+        }
     }
 
     return (
-        <>
-            <input type="text" value={text} onChange={onChange} />
-            <button onClick={onClick}>submit</button>
-        </>
+        <div className={styles.playground_root}>
+            <div className={styles.playground_input}>
+                <textarea className={styles.playground_input_textarea} value={text} onChange={onChange} rows={3} cols={50} />
+                <button onClick={onClick}>submit</button>
+            </div>
+            <div className={styles.playground_output}>
+                <p className={styles.playground_output_paragraph}>{result}</p>
+            </div>
+        </div>
     )
 }
 
