@@ -19,9 +19,9 @@ const Playground: NextPage = () => {
                     <div className={styles.list}>
                         <Card
                             href={`/playground/1`}
-                            title={"1"}
-                            createdAt={"2021-08-01"}
-                            tags={["tag1", "tag2"]}
+                            title={"Gemini Nano"}
+                            createdAt={"2024-09-14"}
+                            tags={["Google Chrome"]}
                         />
                     </div>
                 </div>
