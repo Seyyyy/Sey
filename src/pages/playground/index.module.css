@@ -1,0 +1,20 @@
+.section {
+    text-align: center;
+    margin-inline: 15vw;
+    margin-bottom: 10vh;
+}
+
+@media screen and (max-width: 1200px) {
+    .section {
+        text-align: center;
+        margin-inline: 0vw;
+    }
+}
+
+.list {
+    width: 100%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+}
