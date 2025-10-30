@@ -8,12 +8,16 @@ import styles from "./index.module.css"
 const Playground = () => {
     const [viewportHeight, setViewportHeight] = React.useState<number>(0);
     const [innerHeight, setInnerHeight] = React.useState<number>(0);
+    const [keyboardTop, setKeyboardTop] = React.useState<number>(0);
     const inputRef = React.useRef<HTMLInputElement>(null);
 
     React.useEffect(() => {
         const updateViewportHeight = () => {
             if (window.visualViewport) {
                 setViewportHeight(window.visualViewport.height);
+
+                const keyboardTopPosition = window.visualViewport.offsetTop + window.visualViewport.height;
+                setKeyboardTop(keyboardTopPosition);
             }
         };
 
@@ -46,24 +50,6 @@ const Playground = () => {
         };
     }, []);
 
-    // React.useEffect(() => {
-    //     document.documentElement.style.overflow = 'hidden';
-    //     document.documentElement.style.overscrollBehavior = "contain";
-    //     document.body.style.overflow = 'hidden';
-    //     const preventTouchMove = (e: TouchEvent) => {
-    //         e.preventDefault();
-    //     };
-
-    //     document.addEventListener('touchmove', preventTouchMove, { passive: false });
-
-    //     return () => {
-    //         document.documentElement.style.overflow = '';
-    //         document.documentElement.style.overscrollBehavior = "";
-    //         document.body.style.overflow = '';
-    //         document.removeEventListener('touchmove', preventTouchMove);
-    //     };
-    // }, []);
-
     return (
         <div className={styles.playground_root}>
             <div
@@ -80,6 +66,14 @@ const Playground = () => {
             >
                 <div className={styles.viewport_label}>
                     visualViewport.height: {viewportHeight.toFixed(2)}px
+                </div>
+            </div>
+            <div
+                className={styles.keyboard_top_line}
+                style={{ top: `${keyboardTop}px` }}
+            >
+                <div className={styles.keyboard_top_label}>
+                    Keyboard Top (offsetTop + height): {keyboardTop.toFixed(2)}px
                 </div>
             </div>
             <div className={styles.form_container}>

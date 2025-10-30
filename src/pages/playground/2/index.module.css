@@ -83,6 +83,37 @@
     pointer-events: auto;
 }
 
+.keyboard_top_line {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+    z-index: 10003;
+    transition: top 0.3s ease;
+}
+
+.keyboard_top_line::after {
+    content: '';
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    top: -10px;
+    height: 3px;
+    background-color: blue;
+    pointer-events: none;
+}
+
+.keyboard_top_label {
+    position: absolute;
+    top: -30px;
+    left: 20px;
+    font-family: monospace;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: blue;
+    pointer-events: auto;
+}
+
 .form_container {
     position: absolute;
     top: 40vh;
