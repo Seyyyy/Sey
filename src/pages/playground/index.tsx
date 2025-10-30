@@ -23,6 +23,12 @@ const Playground: NextPage = () => {
                             createdAt={"2024/09/14"}
                             tags={["Google Chrome"]}
                         />
+                        <Card
+                            href={`/playground/2`}
+                            title={"Visual Viewport API"}
+                            createdAt={"2025/10/30"}
+                            tags={["Browser API"]}
+                        />
                     </div>
                 </div>
             </Fade>
