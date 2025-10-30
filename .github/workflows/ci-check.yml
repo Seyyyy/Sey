@@ -14,11 +14,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: 'echo "No build required"'
-  e2e:
-    name: E2E tests
-    runs-on: ubuntu-latest
-    steps:
-      - run: 'echo "No build required"'
+  # e2e:
+  #   name: E2E tests
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - run: 'echo "No build required"'
   build:
     name: Build
     runs-on: ubuntu-latest
