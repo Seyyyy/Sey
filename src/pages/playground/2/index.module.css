@@ -114,6 +114,38 @@
     pointer-events: auto;
 }
 
+.keyboard_bottom_line {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+    z-index: 10004;
+    transition: bottom 0.3s ease;
+}
+
+.keyboard_bottom_line::after {
+    content: '';
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 5px;
+    height: 3px;
+    background-color: red;
+    pointer-events: none;
+}
+
+.keyboard_bottom_label {
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+    font-family: monospace;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: red;
+    pointer-events: auto;
+    text-align: right;
+}
+
 .form_container {
     position: absolute;
     top: 40vh;

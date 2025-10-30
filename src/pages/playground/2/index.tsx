@@ -9,6 +9,7 @@ const Playground = () => {
     const [viewportHeight, setViewportHeight] = React.useState<number>(0);
     const [innerHeight, setInnerHeight] = React.useState<number>(0);
     const [keyboardTop, setKeyboardTop] = React.useState<number>(0);
+    const [keyboardBottomOffset, setKeyboardBottomOffset] = React.useState<number>(0);
     const inputRef = React.useRef<HTMLInputElement>(null);
 
     React.useEffect(() => {
@@ -18,6 +19,9 @@ const Playground = () => {
 
                 const keyboardTopPosition = window.visualViewport.offsetTop + window.visualViewport.height;
                 setKeyboardTop(keyboardTopPosition);
+
+                const bottomOffset = window.innerHeight - keyboardTopPosition;
+                setKeyboardBottomOffset(bottomOffset);
             }
         };
 
@@ -74,6 +78,14 @@ const Playground = () => {
             >
                 <div className={styles.keyboard_top_label}>
                     Keyboard Top (offsetTop + height): {keyboardTop.toFixed(2)}px
+                </div>
+            </div>
+            <div
+                className={styles.keyboard_bottom_line}
+                style={{ bottom: `${keyboardBottomOffset}px` }}
+            >
+                <div className={styles.keyboard_bottom_label}>
+                    Bottom Offset (innerHeight - keyboardTop): {keyboardBottomOffset.toFixed(2)}px
                 </div>
             </div>
             <div className={styles.form_container}>
