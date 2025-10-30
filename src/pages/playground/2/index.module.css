@@ -1,0 +1,110 @@
+.section {
+    text-align: center;
+    margin-inline: 15vw;
+    margin-bottom: 10vh;
+}
+
+@media screen and (max-width: 1200px) {
+    .section {
+        text-align: center;
+        margin-inline: 0vw;
+    }
+}
+
+.playground_root {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.inner_height_visualizer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 100, 255, 0.15);
+    pointer-events: none;
+    z-index: 9998;
+    transition: height 0.3s ease;
+}
+
+.inner_height_visualizer::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border: 3px dashed rgb(0, 100, 255);
+    pointer-events: none;
+}
+
+.inner_height_label {
+    position: absolute;
+    top: 40px;
+    left: 20px;
+    font-family: monospace;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: rgb(0, 100, 255);
+    pointer-events: auto;
+}
+
+.viewport_visualizer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 0, 0.3);
+    pointer-events: none;
+    z-index: 9999;
+    transition: height 0.3s ease;
+}
+
+.viewport_visualizer::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    border: 3px dashed var(--main-color);
+    pointer-events: none;
+}
+
+.viewport_label {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-family: monospace;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--main-color);
+    pointer-events: auto;
+}
+
+.form_container {
+    position: absolute;
+    top: 10vh;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10000;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.input_field {
+    padding: 12px 16px;
+    font-size: 1rem;
+    border: 2px solid var(--main-color);
+    border-radius: 4px;
+    outline: none;
+    min-width: 250px;
+}
+
+.input_field:focus {
+    border-color: var(--main-color);
+    box-shadow: 0 0 0 3px rgba(var(--main-color-rgb), 0.1);
+}
