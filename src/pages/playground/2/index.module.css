@@ -85,7 +85,7 @@
 
 .form_container {
     position: absolute;
-    top: 10vh;
+    top: 40vh;
     left: 50%;
     transform: translateX(-50%);
     z-index: 10000;
@@ -107,4 +107,22 @@
 .input_field:focus {
     border-color: var(--main-color);
     box-shadow: 0 0 0 3px rgba(var(--main-color-rgb), 0.1);
+}
+
+.long_content {
+    margin-top: 40px;
+    padding: 20px;
+    line-height: 1.8;
+}
+
+.long_content h2 {
+    font-size: 1.8rem;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: var(--main-color);
+}
+
+.long_content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
 }
