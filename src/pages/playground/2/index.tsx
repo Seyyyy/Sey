@@ -7,6 +7,7 @@ import styles from "./index.module.css"
 
 const Playground = () => {
     const [viewportHeight, setViewportHeight] = React.useState<number>(0);
+    const [innerHeight, setInnerHeight] = React.useState<number>(0);
     const inputRef = React.useRef<HTMLInputElement>(null);
 
     React.useEffect(() => {
@@ -32,6 +33,20 @@ const Playground = () => {
     }, []);
 
     React.useEffect(() => {
+        const updateInnerHeight = () => {
+            setInnerHeight(window.innerHeight);
+        };
+
+        updateInnerHeight();
+
+        window.addEventListener('resize', updateInnerHeight);
+
+        return () => {
+            window.removeEventListener('resize', updateInnerHeight);
+        };
+    }, []);
+
+    React.useEffect(() => {
         document.documentElement.style.overflow = 'hidden';
         document.documentElement.style.overscrollBehavior = "contain";
         document.body.style.overflow = 'hidden';
@@ -51,6 +66,14 @@ const Playground = () => {
 
     return (
         <div className={styles.playground_root}>
+            <div
+                className={styles.inner_height_visualizer}
+                style={{ height: `${innerHeight}px` }}
+            >
+                <div className={styles.inner_height_label}>
+                    window.innerHeight: {innerHeight.toFixed(2)}px
+                </div>
+            </div>
             <div
                 className={styles.viewport_visualizer}
                 style={{ height: `${viewportHeight}px` }}
