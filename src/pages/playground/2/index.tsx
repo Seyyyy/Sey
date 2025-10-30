@@ -46,23 +46,23 @@ const Playground = () => {
         };
     }, []);
 
-    React.useEffect(() => {
-        document.documentElement.style.overflow = 'hidden';
-        document.documentElement.style.overscrollBehavior = "contain";
-        document.body.style.overflow = 'hidden';
-        const preventTouchMove = (e: TouchEvent) => {
-            e.preventDefault();
-        };
+    // React.useEffect(() => {
+    //     document.documentElement.style.overflow = 'hidden';
+    //     document.documentElement.style.overscrollBehavior = "contain";
+    //     document.body.style.overflow = 'hidden';
+    //     const preventTouchMove = (e: TouchEvent) => {
+    //         e.preventDefault();
+    //     };
 
-        document.addEventListener('touchmove', preventTouchMove, { passive: false });
+    //     document.addEventListener('touchmove', preventTouchMove, { passive: false });
 
-        return () => {
-            document.documentElement.style.overflow = '';
-            document.documentElement.style.overscrollBehavior = "";
-            document.body.style.overflow = '';
-            document.removeEventListener('touchmove', preventTouchMove);
-        };
-    }, []);
+    //     return () => {
+    //         document.documentElement.style.overflow = '';
+    //         document.documentElement.style.overscrollBehavior = "";
+    //         document.body.style.overflow = '';
+    //         document.removeEventListener('touchmove', preventTouchMove);
+    //     };
+    // }, []);
 
     return (
         <div className={styles.playground_root}>
@@ -107,6 +107,69 @@ const Playground2: NextPage = () => {
                     <Subtitle text={'Visual Viewport API'} />
                     <div>
                         <Playground />
+                    </div>
+                    <div className={styles.long_content}>
+                        <h2>Test</h2>
+                        <p>
+                            Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+                            Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+                        </p>
+                        <p>
+                            Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+                            Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+                        </p>
+                        <h2>Test</h2>
+                        <p>
+                            Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+                            Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+                        </p>
+                        <p>
+                            Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+                            Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+                        </p>
+                        <p>
+                            Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+                            Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+                        </p>
+                        <h2>Test</h2>
+                        <p>
+                            Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+                            Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+                        </p>
+                        <p>
+                            Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+                            Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+                        </p>
+                        <p>
+                            Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+                            Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+                        </p>
+                        <h2>Test</h2>
+                        <p>
+                            Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+                            Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+                        </p>
+                        <p>
+                            Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+                            Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+                        </p>
+                        <p>
+                            Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+                            Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+                        </p>
+                        <h2>Test</h2>
+                        <p>
+                            Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+                            Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+                        </p>
+                        <p>
+                            Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+                            Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+                        </p>
+                        <p>
+                            Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+                            Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+                        </p>
                     </div>
                 </div>
             </Fade>
