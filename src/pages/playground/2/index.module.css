@@ -142,6 +142,7 @@
     font-weight: 600;
     color: blue;
     pointer-events: auto;
+    text-align: left;
 }
 
 .keyboard_bottom_line {

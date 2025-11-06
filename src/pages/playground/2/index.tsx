@@ -98,7 +98,8 @@ const Playground = () => {
                 }}
             >
                 <div className={styles.keyboard_top_label}>
-                    Keyboard Top (offsetTop + height): {keyboardTop.toFixed(2)}px
+                    offsetTop + height: {keyboardTop.toFixed(2)}px<br />
+                    offsetLeft: {viewportOffsetLeft.toFixed(2)}px
                 </div>
             </div>
             <div className={styles.form_container}>
