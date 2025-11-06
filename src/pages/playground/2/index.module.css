@@ -44,16 +44,16 @@
     background-color: rgba(0, 100, 255, 0.15);
     pointer-events: none;
     z-index: 9998;
-    transition: height 0.3s ease;
+    transition: height 0.3s ease, width 0.3s ease;
 }
 
 .inner_height_visualizer::after {
     content: '';
     position: absolute;
-    top: 10px;
-    left: 10px;
-    right: 10px;
-    bottom: 10px;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
     border: 3px dashed rgb(0, 100, 255);
     pointer-events: none;
 }

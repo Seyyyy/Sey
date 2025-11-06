@@ -11,6 +11,7 @@ const Playground = () => {
     const [viewportOffsetTop, setViewportOffsetTop] = React.useState<number>(0);
     const [viewportOffsetLeft, setViewportOffsetLeft] = React.useState<number>(0);
     const [innerHeight, setInnerHeight] = React.useState<number>(0);
+    const [innerWidth, setInnerWidth] = React.useState<number>(0);
     const [keyboardTop, setKeyboardTop] = React.useState<number>(0);
     const inputRef = React.useRef<HTMLInputElement>(null);
 
@@ -45,6 +46,7 @@ const Playground = () => {
     React.useEffect(() => {
         const updateInnerHeight = () => {
             setInnerHeight(window.innerHeight);
+            setInnerWidth(window.innerWidth);
         };
 
         updateInnerHeight();
@@ -66,6 +68,7 @@ const Playground = () => {
                 }}
             >
                 window.innerHeight: {innerHeight.toFixed(2)}px<br />
+                window.innerWidth: {innerWidth.toFixed(2)}px<br />
                 visualViewport.height: {viewportHeight.toFixed(2)}px<br />
                 visualViewport.width: {viewportWidth.toFixed(2)}px<br />
                 visualViewport.offsetTop: {viewportOffsetTop.toFixed(2)}px<br />
@@ -73,7 +76,7 @@ const Playground = () => {
             </div>
             <div
                 className={styles.inner_height_visualizer}
-                style={{ height: `${innerHeight}px` }}
+                style={{ height: `${innerHeight}px`, width: `${innerWidth}px` }}
             >
             </div>
             <div
