@@ -22,7 +22,7 @@ const Playground = () => {
                 setViewportOffsetTop(window.visualViewport.offsetTop);
                 setViewportOffsetLeft(window.visualViewport.offsetLeft);
 
-                const keyboardTopPosition = window.visualViewport.offsetTop + window.visualViewport.height;
+                const keyboardTopPosition = window.visualViewport.offsetTop + window.visualViewport.height - 10;
                 setKeyboardTop(keyboardTopPosition);
             }
         };
