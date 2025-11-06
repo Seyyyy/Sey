@@ -89,18 +89,29 @@
     width: 100%;
     pointer-events: none;
     z-index: 10003;
-    transition: top 0.3s ease;
+    transition: top 0.3s ease, left 0.3s ease, width 0.3s ease;
+    border-top: 3px solid blue;
+    height: 0;
+}
+
+.keyboard_top_line::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: -10px;
+    width: 3px;
+    height: 20px;
+    background-color: blue;
 }
 
 .keyboard_top_line::after {
     content: '';
     position: absolute;
-    left: 10px;
-    right: 10px;
+    right: 0;
     top: -10px;
-    height: 3px;
+    width: 3px;
+    height: 20px;
     background-color: blue;
-    pointer-events: none;
 }
 
 .keyboard_top_label {

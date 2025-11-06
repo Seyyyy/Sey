@@ -84,7 +84,11 @@ const Playground = () => {
             </div>
             <div
                 className={styles.keyboard_top_line}
-                style={{ top: `${keyboardTop}px` }}
+                style={{
+                    top: `${keyboardTop}px`,
+                    left: `${viewportOffsetLeft + 10}px`,
+                    width: `${viewportWidth - 20}px`
+                }}
             >
                 <div className={styles.keyboard_top_label}>
                     Keyboard Top (offsetTop + height): {keyboardTop.toFixed(2)}px
