@@ -17,6 +17,25 @@
     gap: 16px;
 }
 
+.params_display {
+    position: fixed;
+    top: 10px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border: 2px solid var(--main-color);
+    border-radius: 8px;
+    padding: 8px 12px;
+    z-index: 10005;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    pointer-events: auto;
+    transform: translateX(-100%);
+    transition: top 0.3s ease, left 0.3s ease;
+    font-family: monospace;
+    font-size: 10px;
+    font-weight: 600;
+    color: #333;
+    line-height: 1.6;
+}
+
 .inner_height_visualizer {
     position: fixed;
     top: 0;

@@ -59,12 +59,22 @@ const Playground = () => {
     return (
         <div className={styles.playground_root}>
             <div
+                className={styles.params_display}
+                style={{
+                    top: `${viewportOffsetTop + 10}px`,
+                    left: `${viewportOffsetLeft + viewportWidth - 10}px`
+                }}
+            >
+                window.innerHeight: {innerHeight.toFixed(2)}px<br />
+                visualViewport.height: {viewportHeight.toFixed(2)}px<br />
+                visualViewport.width: {viewportWidth.toFixed(2)}px<br />
+                visualViewport.offsetTop: {viewportOffsetTop.toFixed(2)}px<br />
+                visualViewport.offsetLeft: {viewportOffsetLeft.toFixed(2)}px
+            </div>
+            <div
                 className={styles.inner_height_visualizer}
                 style={{ height: `${innerHeight}px` }}
             >
-                <div className={styles.inner_height_label}>
-                    window.innerHeight: {innerHeight.toFixed(2)}px
-                </div>
             </div>
             <div
                 className={styles.viewport_visualizer}
@@ -75,12 +85,6 @@ const Playground = () => {
                     left: `${viewportOffsetLeft}px`
                 }}
             >
-                <div className={styles.viewport_label}>
-                    visualViewport.height: {viewportHeight.toFixed(2)}px<br />
-                    visualViewport.width: {viewportWidth.toFixed(2)}px<br />
-                    visualViewport.offsetTop: {viewportOffsetTop.toFixed(2)}px<br />
-                    visualViewport.offsetLeft: {viewportOffsetLeft.toFixed(2)}px
-                </div>
             </div>
             <div
                 className={styles.keyboard_top_line}
