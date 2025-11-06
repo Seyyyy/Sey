@@ -7,21 +7,24 @@ import styles from "./index.module.css"
 
 const Playground = () => {
     const [viewportHeight, setViewportHeight] = React.useState<number>(0);
+    const [viewportWidth, setViewportWidth] = React.useState<number>(0);
+    const [viewportOffsetTop, setViewportOffsetTop] = React.useState<number>(0);
+    const [viewportOffsetLeft, setViewportOffsetLeft] = React.useState<number>(0);
     const [innerHeight, setInnerHeight] = React.useState<number>(0);
+    const [innerWidth, setInnerWidth] = React.useState<number>(0);
     const [keyboardTop, setKeyboardTop] = React.useState<number>(0);
-    const [keyboardBottomOffset, setKeyboardBottomOffset] = React.useState<number>(0);
     const inputRef = React.useRef<HTMLInputElement>(null);
 
     React.useEffect(() => {
         const updateViewportHeight = () => {
             if (window.visualViewport) {
                 setViewportHeight(window.visualViewport.height);
+                setViewportWidth(window.visualViewport.width);
+                setViewportOffsetTop(window.visualViewport.offsetTop);
+                setViewportOffsetLeft(window.visualViewport.offsetLeft);
 
-                const keyboardTopPosition = window.visualViewport.offsetTop + window.visualViewport.height;
+                const keyboardTopPosition = window.visualViewport.offsetTop + window.visualViewport.height - 10;
                 setKeyboardTop(keyboardTopPosition);
-
-                const bottomOffset = window.innerHeight - keyboardTopPosition;
-                setKeyboardBottomOffset(bottomOffset);
             }
         };
 
@@ -43,6 +46,7 @@ const Playground = () => {
     React.useEffect(() => {
         const updateInnerHeight = () => {
             setInnerHeight(window.innerHeight);
+            setInnerWidth(window.innerWidth);
         };
 
         updateInnerHeight();
@@ -57,35 +61,45 @@ const Playground = () => {
     return (
         <div className={styles.playground_root}>
             <div
-                className={styles.inner_height_visualizer}
-                style={{ height: `${innerHeight}px` }}
+                className={styles.params_display}
+                style={{
+                    top: `${viewportOffsetTop + 10}px`,
+                    left: `${viewportOffsetLeft + viewportWidth - 10}px`
+                }}
             >
-                <div className={styles.inner_height_label}>
-                    window.innerHeight: {innerHeight.toFixed(2)}px
-                </div>
+                window.innerHeight: {innerHeight.toFixed(2)}px<br />
+                window.innerWidth: {innerWidth.toFixed(2)}px<br />
+                visualViewport.height: {viewportHeight.toFixed(2)}px<br />
+                visualViewport.width: {viewportWidth.toFixed(2)}px<br />
+                visualViewport.offsetTop: {viewportOffsetTop.toFixed(2)}px<br />
+                visualViewport.offsetLeft: {viewportOffsetLeft.toFixed(2)}px
+            </div>
+            <div
+                className={styles.inner_height_visualizer}
+                style={{ height: `${innerHeight}px`, width: `${innerWidth}px` }}
+            >
             </div>
             <div
                 className={styles.viewport_visualizer}
-                style={{ height: `${viewportHeight}px` }}
+                style={{
+                    height: `${viewportHeight}px`,
+                    width: `${viewportWidth}px`,
+                    top: `${viewportOffsetTop}px`,
+                    left: `${viewportOffsetLeft}px`
+                }}
             >
-                <div className={styles.viewport_label}>
-                    visualViewport.height: {viewportHeight.toFixed(2)}px
-                </div>
             </div>
             <div
                 className={styles.keyboard_top_line}
-                style={{ top: `${keyboardTop}px` }}
+                style={{
+                    top: `${keyboardTop}px`,
+                    left: `${viewportOffsetLeft + 10}px`,
+                    width: `${viewportWidth - 20}px`
+                }}
             >
                 <div className={styles.keyboard_top_label}>
-                    Keyboard Top (offsetTop + height): {keyboardTop.toFixed(2)}px
-                </div>
-            </div>
-            <div
-                className={styles.keyboard_bottom_line}
-                style={{ bottom: `${keyboardBottomOffset}px` }}
-            >
-                <div className={styles.keyboard_bottom_label}>
-                    Bottom Offset (innerHeight - keyboardTop): {keyboardBottomOffset.toFixed(2)}px
+                    offsetTop + height: {keyboardTop.toFixed(2)}px<br />
+                    offsetLeft: {viewportOffsetLeft.toFixed(2)}px
                 </div>
             </div>
             <div className={styles.form_container}>
