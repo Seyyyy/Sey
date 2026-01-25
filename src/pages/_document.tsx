@@ -18,30 +18,6 @@ class MyDocument extends Document {
         {/* <meta property="og:image" content=" サムネイル画像の URL" /> */}
         <meta name="description" content="Sey's Portfolio" />
         <link
-          rel="icon"
-          href="/icons/fabicon.png"
-          sizes="16x16"
-          type="image/png"
-        />
-        <link
-          rel="icon"
-          href="/icons/fabicon.png"
-          sizes="32x32"
-          type="image/png"
-        />
-        <link
-          rel="icon"
-          href="/icons/fabicon.png"
-          sizes="48x48"
-          type="image/png"
-        />
-        <link
-          rel="icon"
-          href="/icons/fabicon.png"
-          sizes="62x62"
-          type="image/png"
-        />
-        <link
           href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet"
         ></link>
