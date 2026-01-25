@@ -174,8 +174,8 @@ jobs:
         run: gh pr create --base ${GITHUB_REF##*/} --head update-screenshots/${GITHUB_REF##*/} --title "update-screenshots ${GITHUB_REF##*/}" --body "" --label "test"
 ```
 
-update-screenshots/<PR 先のブランチ名>というわかりやすい(主観)名前のブランチを作成し、自分が画像更新をかけたいブランチへ PR を送るために、少々工夫が必要だった。  
-それが`${GITHUB_REF##*/}`という記述である。  
+update-screenshots/`<PR 先のブランチ名>`というわかりやすい(主観)名前のブランチを作成し、自分が画像更新をかけたいブランチへ PR を送るために、少々工夫が必要だった。
+それが`${GITHUB_REF##*/}`という記述である。
 まず、`${GITHUB_REF}`を参照することで`workflow_dispatch`を実行した[ブランチの HEAD への参照](https://git-scm.com/book/ja/v2/Git%E3%81%AE%E5%86%85%E5%81%B4-Git%E3%81%AE%E5%8F%82%E7%85%A7)が取得できる。文字列で表すと次のようになる(実行したブランチが develop だと仮定)。
 
 ```sh

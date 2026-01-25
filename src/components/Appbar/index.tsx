@@ -1,5 +1,4 @@
 import styles from './Appbar.module.css'
-import { SvgKyoryu } from '../atoms/Icons'
 import { useTheme } from '@utils/useThemeProvider'
 import { Tooltip } from '@components/Tooltip'
 import Link from 'next/link'
@@ -17,7 +16,6 @@ const Appbar = () => {
         <li>
           <Link href={'/'}>
             <div className={styles.titleRoot}>
-              <SvgKyoryu width={'32px'} height={'100%'} />
               <h1 className={styles.titleText}>Sey</h1>
             </div>
           </Link>
