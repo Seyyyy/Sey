@@ -13,6 +13,11 @@ describe('postディレクトリからブログを取得する', () => {
       expect(result.title).toBe('sample')
     })
 
+    it('マークダウンから選択したslugの本文を取得', () => {
+      const result = getPostBySlug('sample2', ['content'])
+      expect(result.content).toBe(['', '# Sample', '', 'sample', ''].join('\n'))
+    })
+
     it('マークダウンから選択したslugの作成日を取得', () => {
       const result = getPostBySlug('sample2', ['createdAt'])
       expect(result.createdAt).toBe('2029/11/12')

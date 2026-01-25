@@ -2,11 +2,10 @@ import { NextPage, InferGetStaticPropsType } from 'next'
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
 import { getAllPosts, getPostBySlug } from '../../lib/api'
+import { markdownToHtml } from '../../lib/markdownToHtml'
 import Head from 'next/head'
 import styles from './slug.module.css'
 import { Fade } from '@components/Animation/Fade'
-import { MDXProvider } from '@mdx-js/react'
-import dynamic from 'next/dynamic'
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>
 
@@ -29,13 +28,18 @@ export const getStaticProps = async ({ params }: any) => {
     'slug',
     'title',
     'createdAt',
+    'content',
     'updatedAt',
     'tags',
   ])
+  const content = await markdownToHtml(post.content)
 
   return {
     props: {
-      post,
+      post: {
+        ...post,
+        content,
+      },
     },
   }
 }
@@ -45,9 +49,6 @@ const Post: NextPage<Props> = ({ post }) => {
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
   }
-
-  // MDXコンポーネントを動的インポート
-  const MDXContent = dynamic(() => import(`../../../posts/${post.slug}.mdx`))
 
   return (
     <div className={styles.root}>
@@ -71,9 +72,7 @@ const Post: NextPage<Props> = ({ post }) => {
               ) : (
                 <></>
               )}
-              <MDXProvider>
-                <MDXContent />
-              </MDXProvider>
+              <div dangerouslySetInnerHTML={{ __html: post.content }} />
             </div>
           </article>
         </main>

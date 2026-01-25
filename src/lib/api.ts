@@ -5,6 +5,7 @@ import { environment, env } from '@utils/constants/environments'
 
 type Post = {
   slug: string
+  content: string
   title: string
   createdAt: string
   updatedAt: string
@@ -21,17 +22,18 @@ const postsDir = () => {
 export const getPostSlugs = () => {
   const allFileName = fs
     .readdirSync(postsDir())
-    .map((fileNameWithExtension) => fileNameWithExtension.replace(/\.mdx?$/, ''))
+    .map((fileNameWithExtension) => fileNameWithExtension.replace(/\.md$/, ''))
   return allFileName
 }
 
 export const getPostBySlug = (slug: string, fields: string[] = []) => {
-  const fullPath = join(postsDir(), `${slug}.mdx`)
+  const fullPath = join(postsDir(), `${slug}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf-8')
-  const { data } = matter(fileContents)
+  const { data, content } = matter(fileContents)
 
   const items: Post = {
     slug: '',
+    content: '',
     title: '',
     createdAt: '',
     updatedAt: '',
@@ -41,6 +43,9 @@ export const getPostBySlug = (slug: string, fields: string[] = []) => {
   fields.forEach((field) => {
     if (field === 'slug') {
       items[field] = slug
+    }
+    if (field === 'content') {
+      items[field] = content
     }
     if (
       field === 'title' ||

@@ -3,7 +3,6 @@ import { AppProps } from 'next/app'
 import Footer from '../components/Footer'
 import Appbar from '@components/Appbar'
 import '../style/style.css'
-import 'prismjs/themes/prism-okaidia.css'
 import styles from './_app.module.css'
 import { Fade } from '@components/Animation/Fade'
 

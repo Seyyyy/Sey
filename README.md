@@ -1,6 +1,4 @@
-<p align="center">
-</p>
-<h1 align="center">Sey</h1>
+# Sey
 
 [Sey](https://seyyyy.com) is my portfolio web site.
 
