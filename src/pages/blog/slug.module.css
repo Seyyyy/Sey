@@ -32,33 +32,3 @@
   background-color: black;
   color: aliceblue;
 }
-
-.root table {
-  border-collapse: collapse;
-  margin: 1.5rem 0;
-}
-
-.root th,
-.root td {
-  padding: 0.75rem 1.5rem;
-  border: 1px solid #ddd;
-}
-
-/* 外枠を削除 */
-.root th:first-child,
-.root td:first-child {
-  border-left: none;
-}
-
-.root th:last-child,
-.root td:last-child {
-  border-right: none;
-}
-
-.root thead tr:first-child th {
-  border-top: none;
-}
-
-.root tbody tr:last-child td {
-  border-bottom: none;
-}

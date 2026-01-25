@@ -1,4 +1,5 @@
 <p align="center">
+<img align="center" src="./public/icons/fabicon.png" alt="" title="icon" width="150px">
 </p>
 <h1 align="center">Sey</h1>
 
