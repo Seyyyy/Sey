@@ -1,0 +1,28 @@
+[     461ms] [WARNING] Module "buffer" has been externalized for browser compatibility. Cannot access "buffer.Buffer" in client code. See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details. @ http://localhost:5173/@vite/client:509
+[     698ms] [WARNING] Module "fs" has been externalized for browser compatibility. Cannot access "fs.readFileSync" in client code. See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details. @ http://localhost:5173/@vite/client:509
+[     698ms] [WARNING] Module "fs" has been externalized for browser compatibility. Cannot access "fs.promises" in client code. See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details. @ http://localhost:5173/@vite/client:509
+[     845ms] [WARNING] Module "buffer" has been externalized for browser compatibility. Cannot access "buffer.Buffer" in client code. See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details. @ http://localhost:5173/@vite/client:509
+[     857ms] TypeError: Cannot read properties of undefined (reading 'prototype')
+    at http://localhost:5173/node_modules/.vite/deps/remark-prism.js?v=5297e306:27063:34
+    at http://localhost:5173/node_modules/.vite/deps/chunk-olfrzTEO.js?v=5297e306:9:48
+    at http://localhost:5173/node_modules/.vite/deps/remark-prism.js?v=5297e306:35181:15
+    at http://localhost:5173/node_modules/.vite/deps/chunk-olfrzTEO.js?v=5297e306:9:48
+    at http://localhost:5173/node_modules/.vite/deps/remark-prism.js?v=5297e306:35518:18
+    at http://localhost:5173/node_modules/.vite/deps/chunk-olfrzTEO.js?v=5297e306:9:48
+    at http://localhost:5173/node_modules/.vite/deps/remark-prism.js?v=5297e306:35546:23
+    at http://localhost:5173/node_modules/.vite/deps/chunk-olfrzTEO.js?v=5297e306:9:48
+    at http://localhost:5173/node_modules/.vite/deps/remark-prism.js?v=5297e306:167210:26
+    at http://localhost:5173/node_modules/.vite/deps/chunk-olfrzTEO.js?v=5297e306:9:48
+[   26693ms] [WARNING] Module "fs" has been externalized for browser compatibility. Cannot access "fs.readFileSync" in client code. See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details. @ http://localhost:5173/@vite/client:509
+[   26694ms] [WARNING] Module "fs" has been externalized for browser compatibility. Cannot access "fs.promises" in client code. See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details. @ http://localhost:5173/@vite/client:509
+[   26760ms] ReferenceError: SharedArrayBuffer is not defined
+    at http://localhost:5173/node_modules/.vite/deps/remark-prism.js?v=a56dd98e:35919:60
+    at http://localhost:5173/node_modules/.vite/deps/chunk-olfrzTEO.js?v=a56dd98e:9:48
+    at http://localhost:5173/node_modules/.vite/deps/remark-prism.js?v=a56dd98e:72877:20
+    at http://localhost:5173/node_modules/.vite/deps/chunk-olfrzTEO.js?v=a56dd98e:9:48
+    at http://localhost:5173/node_modules/.vite/deps/remark-prism.js?v=a56dd98e:73119:12
+    at http://localhost:5173/node_modules/.vite/deps/chunk-olfrzTEO.js?v=a56dd98e:9:48
+    at http://localhost:5173/node_modules/.vite/deps/remark-prism.js?v=a56dd98e:73127:33
+    at http://localhost:5173/node_modules/.vite/deps/chunk-olfrzTEO.js?v=a56dd98e:9:48
+    at http://localhost:5173/node_modules/.vite/deps/remark-prism.js?v=a56dd98e:167212:18
+    at http://localhost:5173/node_modules/.vite/deps/chunk-olfrzTEO.js?v=a56dd98e:9:48

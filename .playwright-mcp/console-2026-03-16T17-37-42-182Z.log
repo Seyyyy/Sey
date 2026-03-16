@@ -1,0 +1,30 @@
+[    1369ms] [WARNING] Module "buffer" has been externalized for browser compatibility. Cannot access "buffer.Buffer" in client code. See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details. @ http://localhost:5173/@vite/client:509
+[    1879ms] [WARNING] Module "fs" has been externalized for browser compatibility. Cannot access "fs.readFileSync" in client code. See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details. @ http://localhost:5173/@vite/client:509
+[    1889ms] [WARNING] Module "fs" has been externalized for browser compatibility. Cannot access "fs.promises" in client code. See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details. @ http://localhost:5173/@vite/client:509
+[    2308ms] ReferenceError: global is not defined
+    at http://localhost:5173/node_modules/.vite/deps/remark-prism.js?v=f504b0d5:15352:105
+    at Array.filter (<anonymous>)
+    at http://localhost:5173/node_modules/.vite/deps/remark-prism.js?v=f504b0d5:15352:59
+    at http://localhost:5173/node_modules/.vite/deps/chunk-olfrzTEO.js?v=1553adb5:9:48
+    at http://localhost:5173/node_modules/.vite/deps/remark-prism.js?v=f504b0d5:167208:11
+    at http://localhost:5173/node_modules/.vite/deps/chunk-olfrzTEO.js?v=1553adb5:9:48
+    at http://localhost:5173/node_modules/.vite/deps/remark-prism.js?v=f504b0d5:169777:18
+    at http://localhost:5173/node_modules/.vite/deps/chunk-olfrzTEO.js?v=1553adb5:9:48
+    at http://localhost:5173/node_modules/.vite/deps/remark-prism.js?v=f504b0d5:169895:26
+    at http://localhost:5173/node_modules/.vite/deps/chunk-olfrzTEO.js?v=1553adb5:9:48
+[    2622ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:5173/favicon.ico:0
+[   24114ms] [WARNING] Module "buffer" has been externalized for browser compatibility. Cannot access "buffer.Buffer" in client code. See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details. @ http://localhost:5173/@vite/client:509
+[   24354ms] [WARNING] Module "fs" has been externalized for browser compatibility. Cannot access "fs.readFileSync" in client code. See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details. @ http://localhost:5173/@vite/client:509
+[   24373ms] [WARNING] Module "fs" has been externalized for browser compatibility. Cannot access "fs.promises" in client code. See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details. @ http://localhost:5173/@vite/client:509
+[   24531ms] [WARNING] Module "buffer" has been externalized for browser compatibility. Cannot access "buffer.Buffer" in client code. See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details. @ http://localhost:5173/@vite/client:509
+[   24600ms] TypeError: Cannot read properties of undefined (reading 'prototype')
+    at http://localhost:5173/node_modules/.vite/deps/remark-prism.js?v=5297e306:27063:34
+    at http://localhost:5173/node_modules/.vite/deps/chunk-olfrzTEO.js?v=5297e306:9:48
+    at http://localhost:5173/node_modules/.vite/deps/remark-prism.js?v=5297e306:35181:15
+    at http://localhost:5173/node_modules/.vite/deps/chunk-olfrzTEO.js?v=5297e306:9:48
+    at http://localhost:5173/node_modules/.vite/deps/remark-prism.js?v=5297e306:35518:18
+    at http://localhost:5173/node_modules/.vite/deps/chunk-olfrzTEO.js?v=5297e306:9:48
+    at http://localhost:5173/node_modules/.vite/deps/remark-prism.js?v=5297e306:35546:23
+    at http://localhost:5173/node_modules/.vite/deps/chunk-olfrzTEO.js?v=5297e306:9:48
+    at http://localhost:5173/node_modules/.vite/deps/remark-prism.js?v=5297e306:167210:26
+    at http://localhost:5173/node_modules/.vite/deps/chunk-olfrzTEO.js?v=5297e306:9:48

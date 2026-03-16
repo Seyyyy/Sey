@@ -1,0 +1,54 @@
+[    2340ms] [ERROR] %o
+
+%s
+
+%s
+ Error: Cannot handle unknown node `element`
+    at Object.unknown (http://localhost:5173/node_modules/.vite/deps/remark.js?v=a9450606:10527:8)
+    at Object.one [as handle] (http://localhost:5173/node_modules/.vite/deps/zwitch-Dw9mn_y-.js?v=46de58b7:98:21)
+    at containerFlow (http://localhost:5173/node_modules/.vite/deps/remark.js?v=a9450606:8635:37)
+    at Object.root (http://localhost:5173/node_modules/.vite/deps/remark.js?v=a9450606:10083:9)
+    at Object.one [as handle] (http://localhost:5173/node_modules/.vite/deps/zwitch-Dw9mn_y-.js?v=46de58b7:98:21)
+    at toMarkdown (http://localhost:5173/node_modules/.vite/deps/remark.js?v=a9450606:10495:23)
+    at compiler (http://localhost:5173/node_modules/.vite/deps/remark.js?v=a9450606:10545:10)
+    at processor.stringify (http://localhost:5173/node_modules/.vite/deps/remark.js?v=a9450606:1167:10)
+    at http://localhost:5173/node_modules/.vite/deps/remark.js?v=a9450606:1247:31
+    at done (http://localhost:5173/node_modules/.vite/deps/remark.js?v=a9450606:1201:10) The above error occurred in the <MatchInnerImpl> component. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundaryImpl. @ http://localhost:5173/@vite/client:509
+[    2417ms] [WARNING] Warning: The following error wasn't caught by any route! At the very least, consider setting an 'errorComponent' in your RootRoute! @ http://localhost:5173/@vite/client:509
+[    2451ms] [WARNING] Warning: Cannot handle unknown node `element` @ http://localhost:5173/@vite/client:509
+[    6550ms] [ERROR] %o
+
+%s
+
+%s
+ Error: Cannot handle unknown node `element`
+    at Object.unknown (http://localhost:5173/node_modules/.vite/deps/remark.js?v=a9450606:10527:8)
+    at Object.one [as handle] (http://localhost:5173/node_modules/.vite/deps/zwitch-Dw9mn_y-.js?v=46de58b7:98:21)
+    at containerFlow (http://localhost:5173/node_modules/.vite/deps/remark.js?v=a9450606:8635:37)
+    at Object.root (http://localhost:5173/node_modules/.vite/deps/remark.js?v=a9450606:10083:9)
+    at Object.one [as handle] (http://localhost:5173/node_modules/.vite/deps/zwitch-Dw9mn_y-.js?v=46de58b7:98:21)
+    at toMarkdown (http://localhost:5173/node_modules/.vite/deps/remark.js?v=a9450606:10495:23)
+    at compiler (http://localhost:5173/node_modules/.vite/deps/remark.js?v=a9450606:10545:10)
+    at processor.stringify (http://localhost:5173/node_modules/.vite/deps/remark.js?v=a9450606:1167:10)
+    at http://localhost:5173/node_modules/.vite/deps/remark.js?v=a9450606:1247:31
+    at done (http://localhost:5173/node_modules/.vite/deps/remark.js?v=a9450606:1201:10) The above error occurred in the <MatchInnerImpl> component. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundaryImpl. @ http://localhost:5173/@vite/client:509
+[    6567ms] [WARNING] Warning: The following error wasn't caught by any route! At the very least, consider setting an 'errorComponent' in your RootRoute! @ http://localhost:5173/@vite/client:509
+[    6567ms] [WARNING] Warning: Cannot handle unknown node `element` @ http://localhost:5173/@vite/client:509
+[   38741ms] [ERROR] %o
+
+%s
+
+%s
+ TypeError: Cannot `process` without `Parser`
+    at assertParser (http://localhost:5173/node_modules/.vite/deps/unified-0PpZyBDl.js?v=77b03323:1314:41)
+    at processor.process (http://localhost:5173/node_modules/.vite/deps/unified-0PpZyBDl.js?v=77b03323:1230:3)
+    at markdownToHtml (http://localhost:5173/src/lib/markdownToHtml.ts?t=1773682969846:7:188)
+    at loader (http://localhost:5173/src/routes/blog.$slug.tsx?t=1773682969846:21:25)
+    at runLoader (http://localhost:5173/node_modules/.vite/deps/@tanstack_react-router.js?v=44f36cbf:2735:33)
+    at handleLoader (http://localhost:5173/node_modules/.vite/deps/@tanstack_react-router.js?v=44f36cbf:2825:66)
+    at loadRouteMatch (http://localhost:5173/node_modules/.vite/deps/@tanstack_react-router.js?v=44f36cbf:2857:10)
+    at loadMatches (http://localhost:5173/node_modules/.vite/deps/@tanstack_react-router.js?v=44f36cbf:2902:65)
+    at http://localhost:5173/node_modules/.vite/deps/@tanstack_react-router.js?v=44f36cbf:3949:13
+    at http://localhost:5173/node_modules/.vite/deps/@tanstack_react-router.js?v=44f36cbf:6644:4 The above error occurred in the <MatchInnerImpl> component. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundaryImpl. @ http://localhost:5173/@vite/client:509
+[   38748ms] [WARNING] Warning: The following error wasn't caught by any route! At the very least, consider setting an 'errorComponent' in your RootRoute! @ http://localhost:5173/@vite/client:509
+[   38755ms] [WARNING] Warning: Cannot `process` without `Parser` @ http://localhost:5173/@vite/client:509

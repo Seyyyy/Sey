@@ -1,0 +1,19 @@
+[    7661ms] [ERROR] %o
+
+%s
+
+%s
+ TypeError: Cannot `process` without `Parser`
+    at assertParser (http://localhost:5173/node_modules/.vite/deps/unified-0PpZyBDl.js?v=77b03323:1314:41)
+    at processor.process (http://localhost:5173/node_modules/.vite/deps/unified-0PpZyBDl.js?v=77b03323:1230:3)
+    at markdownToHtml (http://localhost:5173/src/lib/markdownToHtml.ts?t=1773682969846:7:188)
+    at loader (http://localhost:5173/src/routes/blog.$slug.tsx?t=1773682969846:21:25)
+    at runLoader (http://localhost:5173/node_modules/.vite/deps/@tanstack_react-router.js?v=77b03323:2734:33)
+    at handleLoader (http://localhost:5173/node_modules/.vite/deps/@tanstack_react-router.js?v=77b03323:2824:66)
+    at loadRouteMatch (http://localhost:5173/node_modules/.vite/deps/@tanstack_react-router.js?v=77b03323:2856:10)
+    at loadMatches (http://localhost:5173/node_modules/.vite/deps/@tanstack_react-router.js?v=77b03323:2901:65)
+    at http://localhost:5173/node_modules/.vite/deps/@tanstack_react-router.js?v=77b03323:3948:13
+    at http://localhost:5173/node_modules/.vite/deps/@tanstack_react-router.js?v=77b03323:6644:4 The above error occurred in the <MatchInnerImpl> component. React will try to recreate this component tree from scratch using the error boundary you provided, CatchBoundaryImpl. @ http://localhost:5173/@vite/client:509
+[    7674ms] [WARNING] Warning: The following error wasn't caught by any route! At the very least, consider setting an 'errorComponent' in your RootRoute! @ http://localhost:5173/@vite/client:509
+[    7684ms] [WARNING] Warning: Cannot `process` without `Parser` @ http://localhost:5173/@vite/client:509
+[   81023ms] [ERROR] WebSocket connection to 'ws://localhost:5173/?token=nvxRbYR0L0mT' failed:  @ http://localhost:5173/@vite/client:842

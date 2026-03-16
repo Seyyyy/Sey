@@ -1,73 +1,39 @@
-import fs from 'fs'
-import path, { join } from 'path'
-import matter from 'gray-matter'
-import { environment, env } from '@utils/constants/environments'
+import matter from "gray-matter";
 
-type Post = {
-  slug: string
-  content: string
-  title: string
-  createdAt: string
-  updatedAt: string
-  tags: string[]
-}
+const postModules = import.meta.glob("/posts/*.md", {
+  eager: true,
+  query: "?raw",
+  import: "default",
+}) as Record<string, string>;
 
-const postsDir = () => {
-  if (environment.env === env.TEST) {
-    return path.join(process.cwd(), 'mock-posts')
-  }
-  return path.join(process.cwd(), 'posts')
-}
+let _mockModules: Record<string, string> | null = null;
+export const _setMockModules = (m: Record<string, string>) => {
+  _mockModules = m;
+};
+const getModules = () => _mockModules ?? postModules;
 
-export const getPostSlugs = () => {
-  const allFileName = fs
-    .readdirSync(postsDir())
-    .map((fileNameWithExtension) => fileNameWithExtension.replace(/\.md$/, ''))
-  return allFileName
-}
+const slugFromPath = (p: string) => p.replace(/^\/posts\//, "").replace(/\.md$/, "");
+
+export const getPostSlugs = () => Object.keys(getModules()).map(slugFromPath);
 
 export const getPostBySlug = (slug: string, fields: string[] = []) => {
-  const fullPath = join(postsDir(), `${slug}.md`)
-  const fileContents = fs.readFileSync(fullPath, 'utf-8')
-  const { data, content } = matter(fileContents)
+  const raw = getModules()[`/posts/${slug}.md`];
+  if (!raw)
+    return { slug: "", content: "", title: "", createdAt: "", updatedAt: "", tags: [] as string[] };
+  const { data, content } = matter(raw);
+  const item: Record<string, unknown> = {};
+  fields.forEach((f) => {
+    if (f === "slug") item.slug = slug;
+    else if (f === "content") item.content = content;
+    else item[f] = data[f];
+  });
+  return item;
+};
 
-  const items: Post = {
-    slug: '',
-    content: '',
-    title: '',
-    createdAt: '',
-    updatedAt: '',
-    tags: [],
-  }
-
-  fields.forEach((field) => {
-    if (field === 'slug') {
-      items[field] = slug
-    }
-    if (field === 'content') {
-      items[field] = content
-    }
-    if (
-      field === 'title' ||
-      field === 'createdAt' ||
-      field === 'updatedAt' ||
-      field === 'tags'
-    ) {
-      items[field] = data[field]
-    }
-  })
-
-  return items
-}
-
-export const getAllPosts = (fields: string[] = []) => {
-  const slugs = getPostSlugs()
-  const posts = slugs
+export const getAllPosts = (fields: string[] = []) =>
+  getPostSlugs()
     .map((slug) => getPostBySlug(slug, fields))
     .sort(
       (a, b) =>
-        -(new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime())
-    )
-
-  return posts
-}
+        new Date(b.createdAt as string).getTime() - new Date(a.createdAt as string).getTime(),
+    );
