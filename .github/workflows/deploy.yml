@@ -40,10 +40,6 @@ jobs:
         with:
           node-version: 24
           cache: npm
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-        with:
-          static_site_generator: vite
       - name: Restore cache
         uses: actions/cache@v4
         with:
