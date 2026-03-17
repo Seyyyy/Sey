@@ -6,7 +6,7 @@ import { fileURLToPath } from "url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
-  base: "/Sey/",
+  base: "/",
   plugins: [TanStackRouterVite({ routesDirectory: "./src/routes" }), react()],
   define: {
     global: "globalThis",
