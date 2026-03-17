@@ -1,16 +1,16 @@
-import styles from './Card.module.css'
-import Link from 'next/link'
+import styles from "./Card.module.css";
+import { Link } from "@tanstack/react-router";
 
 type CardProps = {
-  title: string
-  href: string
-  createdAt: string
-  tags?: string[]
-}
+  title: string;
+  href: string;
+  createdAt: string;
+  tags?: string[];
+};
 
 const Card = (props: CardProps) => {
   return (
-    <Link href={props.href} className={styles.link}>
+    <Link to={props.href} className={styles.link}>
       <div className={styles.root}>
         <p className={styles.title}>{props.title}</p>
         <p className={styles.createdAt}>{props.createdAt}</p>
@@ -27,7 +27,7 @@ const Card = (props: CardProps) => {
         )}
       </div>
     </Link>
-  )
-}
+  );
+};
 
-export default Card
+export default Card;

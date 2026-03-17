@@ -1,0 +1,45 @@
+[     202ms] [WARNING] Module "fs" has been externalized for browser compatibility. Cannot access "fs.readFileSync" in client code. See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details. @ http://localhost:5173/@vite/client:509
+[     202ms] [WARNING] Module "fs" has been externalized for browser compatibility. Cannot access "fs.promises" in client code. See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details. @ http://localhost:5173/@vite/client:509
+[     221ms] ReferenceError: SharedArrayBuffer is not defined
+    at http://localhost:5173/node_modules/.vite/deps/remark-prism.js?v=a56dd98e:35919:60
+    at http://localhost:5173/node_modules/.vite/deps/chunk-olfrzTEO.js?v=a56dd98e:9:48
+    at http://localhost:5173/node_modules/.vite/deps/remark-prism.js?v=a56dd98e:72877:20
+    at http://localhost:5173/node_modules/.vite/deps/chunk-olfrzTEO.js?v=a56dd98e:9:48
+    at http://localhost:5173/node_modules/.vite/deps/remark-prism.js?v=a56dd98e:73119:12
+    at http://localhost:5173/node_modules/.vite/deps/chunk-olfrzTEO.js?v=a56dd98e:9:48
+    at http://localhost:5173/node_modules/.vite/deps/remark-prism.js?v=a56dd98e:73127:33
+    at http://localhost:5173/node_modules/.vite/deps/chunk-olfrzTEO.js?v=a56dd98e:9:48
+    at http://localhost:5173/node_modules/.vite/deps/remark-prism.js?v=a56dd98e:167212:18
+    at http://localhost:5173/node_modules/.vite/deps/chunk-olfrzTEO.js?v=a56dd98e:9:48
+[   19475ms] [WARNING] Module "fs" has been externalized for browser compatibility. Cannot access "fs.readFileSync" in client code. See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details. @ http://localhost:5173/@vite/client:509
+[   19476ms] [WARNING] Module "fs" has been externalized for browser compatibility. Cannot access "fs.promises" in client code. See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details. @ http://localhost:5173/@vite/client:509
+[   19613ms] [WARNING] Module "util" has been externalized for browser compatibility. Cannot access "util.TextEncoder" in client code. See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details. @ http://localhost:5173/@vite/client:509
+[   19614ms] [WARNING] Module "util" has been externalized for browser compatibility. Cannot access "util.TextDecoder" in client code. See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details. @ http://localhost:5173/@vite/client:509
+[   19691ms] [WARNING] Module "events" has been externalized for browser compatibility. Cannot access "events.EventEmitter" in client code. See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details. @ http://localhost:5173/@vite/client:509
+[   19704ms] TypeError: Class extends value undefined is not a constructor or null
+    at http://localhost:5173/node_modules/.vite/deps/remark-prism.js?v=a56dd98e:73504:48
+    at http://localhost:5173/node_modules/.vite/deps/chunk-olfrzTEO.js?v=a56dd98e:9:48
+    at http://localhost:5173/node_modules/.vite/deps/remark-prism.js?v=a56dd98e:167217:23
+    at http://localhost:5173/node_modules/.vite/deps/chunk-olfrzTEO.js?v=a56dd98e:9:48
+    at http://localhost:5173/node_modules/.vite/deps/remark-prism.js?v=a56dd98e:169778:18
+    at http://localhost:5173/node_modules/.vite/deps/chunk-olfrzTEO.js?v=a56dd98e:9:48
+    at http://localhost:5173/node_modules/.vite/deps/remark-prism.js?v=a56dd98e:169896:26
+    at http://localhost:5173/node_modules/.vite/deps/chunk-olfrzTEO.js?v=a56dd98e:9:48
+    at http://localhost:5173/node_modules/.vite/deps/remark-prism.js?v=a56dd98e:169969:16
+[   32510ms] [ERROR] WebSocket connection to 'ws://localhost:5173/?token=FxF4JuL8b65g' failed:  @ http://localhost:5173/@vite/client:842
+[   35571ms] [WARNING] Module "fs" has been externalized for browser compatibility. Cannot access "fs.readFileSync" in client code. See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details. @ http://localhost:5173/@vite/client:509
+[   35572ms] [WARNING] Module "fs" has been externalized for browser compatibility. Cannot access "fs.promises" in client code. See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details. @ http://localhost:5173/@vite/client:509
+[   35710ms] [WARNING] Module "util" has been externalized for browser compatibility. Cannot access "util.TextEncoder" in client code. See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details. @ http://localhost:5173/@vite/client:509
+[   35710ms] [WARNING] Module "util" has been externalized for browser compatibility. Cannot access "util.TextDecoder" in client code. See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details. @ http://localhost:5173/@vite/client:509
+[   35722ms] [WARNING] Module "events" has been externalized for browser compatibility. Cannot access "events.EventEmitter" in client code. See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details. @ http://localhost:5173/@vite/client:509
+[   35734ms] TypeError: Class extends value undefined is not a constructor or null
+    at http://localhost:5173/node_modules/.vite/deps/remark-prism.js?v=a56dd98e:73504:48
+    at http://localhost:5173/node_modules/.vite/deps/chunk-olfrzTEO.js?v=a56dd98e:9:48
+    at http://localhost:5173/node_modules/.vite/deps/remark-prism.js?v=a56dd98e:167217:23
+    at http://localhost:5173/node_modules/.vite/deps/chunk-olfrzTEO.js?v=a56dd98e:9:48
+    at http://localhost:5173/node_modules/.vite/deps/remark-prism.js?v=a56dd98e:169778:18
+    at http://localhost:5173/node_modules/.vite/deps/chunk-olfrzTEO.js?v=a56dd98e:9:48
+    at http://localhost:5173/node_modules/.vite/deps/remark-prism.js?v=a56dd98e:169896:26
+    at http://localhost:5173/node_modules/.vite/deps/chunk-olfrzTEO.js?v=a56dd98e:9:48
+    at http://localhost:5173/node_modules/.vite/deps/remark-prism.js?v=a56dd98e:169969:16
+[  141316ms] [ERROR] WebSocket connection to 'ws://localhost:5173/?token=2bUz1iVlWw5l' failed:  @ http://localhost:5173/@vite/client:842

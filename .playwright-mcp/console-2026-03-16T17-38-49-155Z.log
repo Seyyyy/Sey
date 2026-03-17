@@ -1,0 +1,26 @@
+[     377ms] [WARNING] Module "fs" has been externalized for browser compatibility. Cannot access "fs.readFileSync" in client code. See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details. @ http://localhost:5173/@vite/client:509
+[     377ms] [WARNING] Module "fs" has been externalized for browser compatibility. Cannot access "fs.promises" in client code. See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details. @ http://localhost:5173/@vite/client:509
+[     541ms] ReferenceError: SharedArrayBuffer is not defined
+    at http://localhost:5173/node_modules/.vite/deps/remark-prism.js?v=a56dd98e:35919:60
+    at http://localhost:5173/node_modules/.vite/deps/chunk-olfrzTEO.js?v=a56dd98e:9:48
+    at http://localhost:5173/node_modules/.vite/deps/remark-prism.js?v=a56dd98e:72877:20
+    at http://localhost:5173/node_modules/.vite/deps/chunk-olfrzTEO.js?v=a56dd98e:9:48
+    at http://localhost:5173/node_modules/.vite/deps/remark-prism.js?v=a56dd98e:73119:12
+    at http://localhost:5173/node_modules/.vite/deps/chunk-olfrzTEO.js?v=a56dd98e:9:48
+    at http://localhost:5173/node_modules/.vite/deps/remark-prism.js?v=a56dd98e:73127:33
+    at http://localhost:5173/node_modules/.vite/deps/chunk-olfrzTEO.js?v=a56dd98e:9:48
+    at http://localhost:5173/node_modules/.vite/deps/remark-prism.js?v=a56dd98e:167212:18
+    at http://localhost:5173/node_modules/.vite/deps/chunk-olfrzTEO.js?v=a56dd98e:9:48
+[   18077ms] [WARNING] Module "fs" has been externalized for browser compatibility. Cannot access "fs.readFileSync" in client code. See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details. @ http://localhost:5173/@vite/client:509
+[   18077ms] [WARNING] Module "fs" has been externalized for browser compatibility. Cannot access "fs.promises" in client code. See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details. @ http://localhost:5173/@vite/client:509
+[   18119ms] ReferenceError: SharedArrayBuffer is not defined
+    at http://localhost:5173/node_modules/.vite/deps/remark-prism.js?v=a56dd98e:35919:60
+    at http://localhost:5173/node_modules/.vite/deps/chunk-olfrzTEO.js?v=a56dd98e:9:48
+    at http://localhost:5173/node_modules/.vite/deps/remark-prism.js?v=a56dd98e:72877:20
+    at http://localhost:5173/node_modules/.vite/deps/chunk-olfrzTEO.js?v=a56dd98e:9:48
+    at http://localhost:5173/node_modules/.vite/deps/remark-prism.js?v=a56dd98e:73119:12
+    at http://localhost:5173/node_modules/.vite/deps/chunk-olfrzTEO.js?v=a56dd98e:9:48
+    at http://localhost:5173/node_modules/.vite/deps/remark-prism.js?v=a56dd98e:73127:33
+    at http://localhost:5173/node_modules/.vite/deps/chunk-olfrzTEO.js?v=a56dd98e:9:48
+    at http://localhost:5173/node_modules/.vite/deps/remark-prism.js?v=a56dd98e:167212:18
+    at http://localhost:5173/node_modules/.vite/deps/chunk-olfrzTEO.js?v=a56dd98e:9:48
