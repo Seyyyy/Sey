@@ -8,11 +8,12 @@ test.describe('UIのテーマをダークモードとライトモードにスイ
     await page.getByRole('button', { name: 'Change Theme' }).click()
     // const result = await page.locator('html.dark').all()
     // await expect(result.length).toBe(1)
-    expect(
-      await page.screenshot({ animations: 'disabled', fullPage: true })
-    ).toMatchSnapshot('darkmode.png', {
-      threshold: 0.1,
-    })
+    expect(await page.screenshot({ animations: 'disabled', fullPage: true })).toMatchSnapshot(
+      'darkmode.png',
+      {
+        threshold: 0.1,
+      }
+    )
   })
 
   test('ナビゲーションバーのテーマチェンジボタンを押下するとライトモードが表示される', async ({
@@ -23,10 +24,11 @@ test.describe('UIのテーマをダークモードとライトモードにスイ
     await page.getByRole('button', { name: 'Change Theme' }).click()
     // const result = await page.locator('html.light').all()
     // await expect(result.length).toBe(1)
-    expect(
-      await page.screenshot({ animations: 'disabled', fullPage: true })
-    ).toMatchSnapshot('lightmode.png', {
-      threshold: 0.1,
-    })
+    expect(await page.screenshot({ animations: 'disabled', fullPage: true })).toMatchSnapshot(
+      'lightmode.png',
+      {
+        threshold: 0.1,
+      }
+    )
   })
 })
