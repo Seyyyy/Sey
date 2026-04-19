@@ -1,43 +1,43 @@
-import React from "react";
-import { createFileRoute } from "@tanstack/react-router";
-import { useEffect } from "react";
-import { Fade } from "@components/Animation/Fade";
-import Subtitle from "@components/Subtitle";
-import styles from "./index.module.css";
+import React from 'react'
+import { createFileRoute } from '@tanstack/react-router'
+import { Fade } from '@components/Animation/Fade'
+import Subtitle from '@components/Subtitle'
+import styles from './index.module.css'
 
-export const Route = createFileRoute("/playground/1/")({
+export const Route = createFileRoute('/playground/1/')({
+  head: () => ({ meta: [{ title: 'Gemini Nano' }] }),
   component: Playground1,
-});
+})
 
 const PlaygroundContent = () => {
-  const [text, setText] = React.useState<string>("");
-  const [result, setResult] = React.useState<string>("");
+  const [text, setText] = React.useState<string>('')
+  const [result, setResult] = React.useState<string>('')
 
   const onChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setText(e.target.value);
-  };
+    setText(e.target.value)
+  }
 
   const onClick = async () => {
     // @ts-ignore
     if (!window.ai) {
-      return;
+      return
     }
     // @ts-ignore
-    const session = await window.ai.assistant.create();
-    const res = await session.promptStreaming(text);
-    stream(res);
-  };
+    const session = await window.ai.assistant.create()
+    const res = await session.promptStreaming(text)
+    stream(res)
+  }
 
   const stream = async (readableStream: ReadableStream) => {
-    const reader = readableStream.getReader();
+    const reader = readableStream.getReader()
     while (true) {
-      const { done, value } = await reader.read();
+      const { done, value } = await reader.read()
       if (done) {
-        break;
+        break
       }
-      setResult(value);
+      setResult(value)
     }
-  };
+  }
 
   return (
     <div className={styles.playground_root}>
@@ -55,18 +55,14 @@ const PlaygroundContent = () => {
         <p className={styles.playground_output_paragraph}>{result}</p>
       </div>
     </div>
-  );
-};
+  )
+}
 
 function Playground1() {
-  useEffect(() => {
-    document.title = "Gemini Nano";
-  }, []);
-
   return (
     <Fade>
       <div className={styles.section}>
-        <Subtitle text={"Gemini Nano"} />
+        <Subtitle text={'Gemini Nano'} />
         <div>
           <p>動作環境: Google Chrome Version 130.0.6710.0 (Official Build) dev (x86_64)</p>
         </div>
@@ -75,5 +71,5 @@ function Playground1() {
         </div>
       </div>
     </Fade>
-  );
+  )
 }

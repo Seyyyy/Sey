@@ -1,20 +1,20 @@
-import styles from "./Appbar.module.css";
-import { useTheme } from "@utils/useThemeProvider";
-import { Tooltip } from "@components/Tooltip";
-import { Link } from "@tanstack/react-router";
+import styles from './Appbar.module.css'
+import { useTheme } from '@utils/useThemeProvider'
+import { Tooltip } from '@components/Tooltip'
+import { Link } from '@tanstack/react-router'
 
 const Appbar = () => {
-  const { theme, toggleTheme } = useTheme();
+  const { theme, toggleTheme } = useTheme()
 
   const onChangeTheme = () => {
-    toggleTheme(!theme);
-  };
+    toggleTheme(!theme)
+  }
 
   return (
     <nav>
       <ul className={styles.root}>
         <li>
-          <Link to={"/"}>
+          <Link to={'/'}>
             <div className={styles.titleRoot}>
               <h1 className={styles.titleText}>Sey</h1>
             </div>
@@ -24,23 +24,21 @@ const Appbar = () => {
         <li>
           <Tooltip
             buttonProps={{
-              "aria-label": "Change Theme",
+              'aria-label': 'Change Theme',
               className: styles.themeToggle,
               onClick: onChangeTheme,
             }}
-            tootipText={"Change theme"}
+            tootipText={'Change theme'}
             data-testid="theme-button"
           >
-            {theme ? (
-              <span className="material-icons">dark_mode</span>
-            ) : (
-              <span className="material-icons">light_mode</span>
-            )}
+            <span className="material-icons" suppressHydrationWarning>
+              {theme ? 'dark_mode' : 'light_mode'}
+            </span>
           </Tooltip>
         </li>
       </ul>
     </nav>
-  );
-};
+  )
+}
 
-export default Appbar;
+export default Appbar

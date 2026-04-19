@@ -1,44 +1,30 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect } from 'react'
 
-const changeTheme = (isDark: boolean) => {
+const applyTheme = (isDark: boolean) => {
+  if (typeof document === 'undefined') return
+  const html = document.documentElement
   if (isDark) {
+    html.classList.remove('light')
+    html.classList.add('dark')
     localStorage.setItem('theme', 'dark')
-    document.querySelector('html')!.classList.remove('light')
-    document.querySelector('html')!.classList.add('dark')
   } else {
+    html.classList.remove('dark')
+    html.classList.add('light')
     localStorage.setItem('theme', 'light')
-    document.querySelector('html')!.classList.remove('dark')
-    document.querySelector('html')!.classList.add('light')
   }
-}
-
-const readyLocalStorage = () => {
-  if (typeof localStorage !== 'undefined') {
-    return true
-  }
-  return false
 }
 
 export const useTheme = () => {
   const [theme, setTheme] = useState(false)
-  const isReady = readyLocalStorage()
-
-  const toggleTheme = (theme: boolean) => {
-    changeTheme(theme)
-    setTheme(theme)
-  }
 
   useEffect(() => {
-    const storageTheme = localStorage.getItem('theme')
-    if (storageTheme === 'dark') {
-      toggleTheme(true)
-    } else if (storageTheme === 'light') {
-      toggleTheme(false)
-    }
-  }, [isReady])
+    setTheme(document.documentElement.classList.contains('dark'))
+  }, [])
 
-  return {
-    theme,
-    toggleTheme,
+  const toggleTheme = (isDark: boolean) => {
+    applyTheme(isDark)
+    setTheme(isDark)
   }
+
+  return { theme, toggleTheme }
 }

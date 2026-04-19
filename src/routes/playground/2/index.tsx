@@ -1,67 +1,68 @@
-import React from "react";
-import { createFileRoute } from "@tanstack/react-router";
-import { useEffect } from "react";
-import { Fade } from "@components/Animation/Fade";
-import Subtitle from "@components/Subtitle";
-import styles from "./index.module.css";
+import React from 'react'
+import { createFileRoute } from '@tanstack/react-router'
+import { Fade } from '@components/Animation/Fade'
+import Subtitle from '@components/Subtitle'
+import styles from './index.module.css'
 
-export const Route = createFileRoute("/playground/2/")({
+export const Route = createFileRoute('/playground/2/')({
+  head: () => ({ meta: [{ title: 'Visual Viewport API' }] }),
+  ssr: false,
   component: Playground2,
-});
+})
 
 const PlaygroundContent = () => {
-  const [viewportHeight, setViewportHeight] = React.useState<number>(0);
-  const [viewportWidth, setViewportWidth] = React.useState<number>(0);
-  const [viewportOffsetTop, setViewportOffsetTop] = React.useState<number>(0);
-  const [viewportOffsetLeft, setViewportOffsetLeft] = React.useState<number>(0);
-  const [innerHeight, setInnerHeight] = React.useState<number>(0);
-  const [innerWidth, setInnerWidth] = React.useState<number>(0);
-  const [keyboardTop, setKeyboardTop] = React.useState<number>(0);
-  const inputRef = React.useRef<HTMLInputElement>(null);
+  const [viewportHeight, setViewportHeight] = React.useState<number>(0)
+  const [viewportWidth, setViewportWidth] = React.useState<number>(0)
+  const [viewportOffsetTop, setViewportOffsetTop] = React.useState<number>(0)
+  const [viewportOffsetLeft, setViewportOffsetLeft] = React.useState<number>(0)
+  const [innerHeight, setInnerHeight] = React.useState<number>(0)
+  const [innerWidth, setInnerWidth] = React.useState<number>(0)
+  const [keyboardTop, setKeyboardTop] = React.useState<number>(0)
+  const inputRef = React.useRef<HTMLInputElement>(null)
 
   React.useEffect(() => {
     const updateViewportHeight = () => {
       if (window.visualViewport) {
-        setViewportHeight(window.visualViewport.height);
-        setViewportWidth(window.visualViewport.width);
-        setViewportOffsetTop(window.visualViewport.offsetTop);
-        setViewportOffsetLeft(window.visualViewport.offsetLeft);
+        setViewportHeight(window.visualViewport.height)
+        setViewportWidth(window.visualViewport.width)
+        setViewportOffsetTop(window.visualViewport.offsetTop)
+        setViewportOffsetLeft(window.visualViewport.offsetLeft)
 
         const keyboardTopPosition =
-          window.visualViewport.offsetTop + window.visualViewport.height - 10;
-        setKeyboardTop(keyboardTopPosition);
+          window.visualViewport.offsetTop + window.visualViewport.height - 10
+        setKeyboardTop(keyboardTopPosition)
       }
-    };
+    }
 
-    updateViewportHeight();
+    updateViewportHeight()
 
     if (window.visualViewport) {
-      window.visualViewport.addEventListener("resize", updateViewportHeight);
-      window.visualViewport.addEventListener("scroll", updateViewportHeight);
+      window.visualViewport.addEventListener('resize', updateViewportHeight)
+      window.visualViewport.addEventListener('scroll', updateViewportHeight)
     }
 
     return () => {
       if (window.visualViewport) {
-        window.visualViewport.removeEventListener("resize", updateViewportHeight);
-        window.visualViewport.removeEventListener("scroll", updateViewportHeight);
+        window.visualViewport.removeEventListener('resize', updateViewportHeight)
+        window.visualViewport.removeEventListener('scroll', updateViewportHeight)
       }
-    };
-  }, []);
+    }
+  }, [])
 
   React.useEffect(() => {
     const updateInnerHeight = () => {
-      setInnerHeight(window.innerHeight);
-      setInnerWidth(window.innerWidth);
-    };
+      setInnerHeight(window.innerHeight)
+      setInnerWidth(window.innerWidth)
+    }
 
-    updateInnerHeight();
+    updateInnerHeight()
 
-    window.addEventListener("resize", updateInnerHeight);
+    window.addEventListener('resize', updateInnerHeight)
 
     return () => {
-      window.removeEventListener("resize", updateInnerHeight);
-    };
-  }, []);
+      window.removeEventListener('resize', updateInnerHeight)
+    }
+  }, [])
 
   return (
     <div className={styles.playground_root}>
@@ -120,18 +121,14 @@ const PlaygroundContent = () => {
         />
       </div>
     </div>
-  );
-};
+  )
+}
 
 function Playground2() {
-  useEffect(() => {
-    document.title = "Visual Viewport API";
-  }, []);
-
   return (
     <Fade>
       <div className={styles.section}>
-        <Subtitle text={"Visual Viewport API"} />
+        <Subtitle text={'Visual Viewport API'} />
         <div>
           <PlaygroundContent />
         </div>
@@ -214,5 +211,5 @@ function Playground2() {
         </div>
       </div>
     </Fade>
-  );
+  )
 }

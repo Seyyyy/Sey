@@ -45,10 +45,7 @@ test.describe('ブログがマークダウンから生成されている', () =>
     await page.goto('http://localhost:3000/')
     await page.getByRole('link', { name: 'title 2022/2/22 tag1' }).click()
 
-    const list = await page
-      .getByRole('list')
-      .filter({ hasText: 'list1 list2' })
-      .innerHTML()
+    const list = await page.getByRole('list').filter({ hasText: 'list1 list2' }).innerHTML()
     await expect(list).toBe('\n<li>list1\n<ul>\n<li>list2</li>\n</ul>\n</li>\n')
   })
 })
@@ -58,9 +55,7 @@ test.describe('ブログがマークダウンから生成されている', () =>
     await page.goto('http://localhost:3000/')
     await page.getByRole('link', { name: 'title 2022/2/22 tag1' }).click()
 
-    const codeblock = await page
-      .getByText('# code block comment $ code')
-      .innerHTML()
+    const codeblock = await page.getByText('# code block comment $ code').innerHTML()
     await expect(codeblock).toBe('# code block comment\n$ code')
   })
 
@@ -68,10 +63,7 @@ test.describe('ブログがマークダウンから生成されている', () =>
     await page.goto('http://localhost:3000/')
     await page.getByRole('link', { name: 'title 2022/2/22 tag1' }).click()
 
-    const inline = await page
-      .getByRole('paragraph')
-      .filter({ hasText: 'inline code' })
-      .innerText()
+    const inline = await page.getByRole('paragraph').filter({ hasText: 'inline code' }).innerText()
     await expect(inline).toBe('inline code')
   })
 
@@ -79,10 +71,7 @@ test.describe('ブログがマークダウンから生成されている', () =>
     await page.goto('http://localhost:3000/')
     await page.getByRole('link', { name: 'title 2022/2/22 tag1' }).click()
 
-    const bold = await page
-      .getByRole('paragraph')
-      .filter({ hasText: 'bold text' })
-      .innerText()
+    const bold = await page.getByRole('paragraph').filter({ hasText: 'bold text' }).innerText()
     await expect(bold).toBe('bold text')
   })
 
@@ -90,10 +79,7 @@ test.describe('ブログがマークダウンから生成されている', () =>
     await page.goto('http://localhost:3000/')
     await page.getByRole('link', { name: 'title 2022/2/22 tag1' }).click()
 
-    const anchor = await page
-      .getByRole('paragraph')
-      .filter({ hasText: 'Anchor' })
-      .innerText()
+    const anchor = await page.getByRole('paragraph').filter({ hasText: 'Anchor' }).innerText()
     await expect(anchor).toBe('Anchor')
   })
 })

@@ -11,15 +11,9 @@ type Props = {
 
 export const Tooltip: FC<Props> = (props) => {
   return (
-    <button
-      {...props.buttonProps}
-      className={clsx(props.buttonProps?.className, styles.tooltip)}
-    >
+    <button {...props.buttonProps} className={clsx(props.buttonProps?.className, styles.tooltip)}>
       {props.children}
-      <span
-        {...props.spanProps}
-        className={clsx(props.spanProps?.className, styles.tooltipText)}
-      >
+      <span {...props.spanProps} className={clsx(props.spanProps?.className, styles.tooltipText)}>
         {props.tootipText}
       </span>
     </button>
