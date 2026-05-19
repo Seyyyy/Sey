@@ -31,6 +31,7 @@ svgIcons
 
 # playwright
 tests-examples
+.playwright-mcp/
 
 # personal
 draft
