@@ -1,22 +1,34 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
 {
-	"name": "Sey workspace",
-	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
+  "name": "Sey workspace",
+  // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+  "image": "mcr.microsoft.com/devcontainers/base:2.1-trixie",
 
-	// Features to add to the dev container. More info: https://containers.dev/features.
-	// "features": {},
+  "runArgs": ["--name=sey-dev"],
 
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	"forwardPorts": [3000],
+  // Features to add to the dev container. More info: https://containers.dev/features.
+  "features": {
+    "ghcr.io/devcontainers/features/node:2": {
+      "version": "24",
+      "pnpmVersion": "11.1.2"
+    }
+  },
 
-	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "npm i",
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  "forwardPorts": [5173],
 
-	"workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
-	"workspaceFolder": "/workspace"
+  // Use 'postCreateCommand' to run commands after the container is created.
+  "postCreateCommand": "sudo chown -R vscode:vscode /workspace/node_modules",
 
-	// Configure tool-specific properties.
-	// "customizations": {}
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+  "workspaceFolder": "/workspace",
+  "customizations": {
+    "vscode": {
+      "extensions": ["VoidZero.vite-plus-extension-pack"]
+    }
+  },
+
+  // node_modulesをマウントから除外
+  "mounts": ["source=sey-node-modules,target=/workspace/node_modules,type=volume"]
 }

@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+.pnpm-store
 
 # testing
 /coverage
@@ -36,3 +37,6 @@ draft
 /test-results/
 /playwright-report/
 /playwright/.cache/
+
+# Claude
+.claude/settings.local.json
