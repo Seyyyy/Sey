@@ -5,13 +5,13 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "dev": "vp dev",
-    "build": "vp build",
-    "preview": "vp preview",
-    "deploy": "npm run build",
+    "dev": "NODE_OPTIONS=--dns-result-order=ipv4first vp dev",
+    "build": "NODE_OPTIONS=--dns-result-order=ipv4first vp build",
+    "preview": "NODE_OPTIONS=--dns-result-order=ipv4first vp preview",
+    "deploy": "NODE_OPTIONS=--dns-result-order=ipv4first pnpm build",
     "lint": "vp check",
     "test": "vp test",
-    "start:e2e": "vp build && vp preview",
+    "start:e2e": "NODE_OPTIONS=--dns-result-order=ipv4first vp build && vp preview",
     "test:e2e": "playwright test",
     "test:update-snapshots": "playwright test --update-snapshots",
     "prepare": "vp config"
@@ -51,5 +51,5 @@
     "vite": "npm:@voidzero-dev/vite-plus-core@latest",
     "vitest": "npm:@voidzero-dev/vite-plus-test@latest"
   },
-  "packageManager": "npm@11.11.1"
+  "packageManager": "pnpm@11.1.2"
 }

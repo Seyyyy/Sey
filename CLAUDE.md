@@ -74,3 +74,7 @@ These commands map to their corresponding tools. For example, `vp dev --port 300
 - [ ] Run `vp install` after pulling remote changes and before getting started.
 - [ ] Run `vp check` and `vp test` to validate changes.
 <!--VITE PLUS END-->
+
+# コンテナ内の実行
+
+基本的にコマンドはdocker exec -w /workspace sey-dev <command>の形式で実行してください(devcontainerを起動していること前提です。)。
