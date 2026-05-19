@@ -1,4 +1,4 @@
-import { defineConfig, configDefaults } from "vite-plus";
+import { defineConfig, configDefaults } from "vitest/config";
 import react from "@vitejs/plugin-react";
 import path from "path";
 
