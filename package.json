@@ -5,20 +5,16 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "dev": "NODE_OPTIONS=--dns-result-order=ipv4first vp dev",
-    "build": "NODE_OPTIONS=--dns-result-order=ipv4first vp build",
-    "preview": "NODE_OPTIONS=--dns-result-order=ipv4first vp preview",
-    "deploy": "NODE_OPTIONS=--dns-result-order=ipv4first pnpm build",
-    "lint": "vp check",
-    "test": "vp test",
-    "start:e2e": "NODE_OPTIONS=--dns-result-order=ipv4first vp build && vp preview",
-    "test:e2e": "playwright test",
-    "test:update-snapshots": "playwright test --update-snapshots",
-    "prepare": "vp config"
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "pnpm build",
+    "lint": "tsc --noEmit",
+    "test": "vitest run"
   },
   "dependencies": {
-    "@tanstack/react-router": "^1.167.3",
-    "@tanstack/react-start": "^1.167.41",
+    "@tanstack/react-router": "^1.169.2",
+    "@tanstack/react-start": "^1.167.65",
     "buffer": "^6.0.3",
     "clsx": "^2.1.1",
     "gray-matter": "^4.0.3",
@@ -33,23 +29,17 @@
     "unified": "^11.0.5"
   },
   "devDependencies": {
-    "@playwright/test": "^1.48.2",
-    "@tanstack/router-plugin": "^1.166.12",
+    "@tanstack/router-plugin": "^1.167.35",
     "@testing-library/react": "^16.1.0",
-    "@types/node": "^22.10.2",
+    "@types/node": "^24.12.4",
     "@types/react": "^19.0.4",
     "@typescript-eslint/parser": "^8.18.1",
     "@typescript-eslint/typescript-estree": "^8.20.0",
     "@vitejs/plugin-react": "^6.0.1",
     "jsdom": "^25.0.1",
     "typescript": "^5.7.2",
-    "vite": "npm:@voidzero-dev/vite-plus-core@latest",
-    "vite-plus": "latest",
-    "vitest": "npm:@voidzero-dev/vite-plus-test@latest"
-  },
-  "overrides": {
-    "vite": "npm:@voidzero-dev/vite-plus-core@latest",
-    "vitest": "npm:@voidzero-dev/vite-plus-test@latest"
+    "vite": "8.0.12",
+    "vitest": "^4.1.6"
   },
   "packageManager": "pnpm@11.1.2"
 }

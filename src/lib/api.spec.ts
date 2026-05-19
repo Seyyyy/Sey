@@ -1,4 +1,4 @@
-import { describe, expect, it, beforeEach } from "vite-plus/test";
+import { describe, expect, it, beforeEach } from "vitest";
 import { _setMockModules, getPostSlugs, getPostBySlug, getAllPosts } from "./api";
 
 beforeEach(() => {

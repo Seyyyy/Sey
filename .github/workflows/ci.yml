@@ -25,7 +25,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Unit tests
-        run: pnpm exec vp test
+        run: pnpm test
   build:
     name: Build
     timeout-minutes: 15
@@ -44,4 +44,4 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Build
-        run: NODE_OPTIONS=--dns-result-order=ipv4first pnpm exec vp build
+        run: pnpm build
