@@ -41,3 +41,6 @@ draft
 
 # Claude
 .claude/settings.local.json
+
+# tanstack
+.tanstack
