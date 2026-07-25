@@ -1,42 +1,20 @@
 import styles from './Appbar.module.css'
-import { useTheme } from '@utils/useThemeProvider'
-import { Tooltip } from '@components/Tooltip'
 import { Link } from '@tanstack/react-router'
+import NavMenu from './NavMenu'
+
+const NAV_ITEMS = [
+  { label: 'Home', to: '/' },
+  { label: 'Playground', to: '/playground' },
+]
 
 const Appbar = () => {
-  const { theme, toggleTheme } = useTheme()
-
-  const onChangeTheme = () => {
-    toggleTheme(!theme)
-  }
-
   return (
-    <nav>
-      <ul className={styles.root}>
-        <li>
-          <Link to={'/'}>
-            <div className={styles.titleRoot}>
-              <h1 className={styles.titleText}>Sey</h1>
-            </div>
-          </Link>
-        </li>
+    <nav className={styles.root}>
+      <Link to={'/'} className={styles.prompt}>
+        $ sey.blog
+      </Link>
 
-        <li>
-          <Tooltip
-            buttonProps={{
-              'aria-label': 'Change Theme',
-              className: styles.themeToggle,
-              onClick: onChangeTheme,
-            }}
-            tootipText={'Change theme'}
-            data-testid="theme-button"
-          >
-            <span className="material-icons" suppressHydrationWarning>
-              {theme ? 'dark_mode' : 'light_mode'}
-            </span>
-          </Tooltip>
-        </li>
-      </ul>
+      <NavMenu items={NAV_ITEMS} />
     </nav>
   )
 }
