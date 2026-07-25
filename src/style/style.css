@@ -147,33 +147,59 @@ blockquote li {
   color: gray;
 }
 
-/* remark prism */
-.token {
+/* highlight.js theme（自前パーサーが出力する hljs クラスに対応） */
+pre code.hljs {
+  display: block;
+  padding: 0;
+  background: none;
+  border-radius: 0;
+  font-size: 1rem;
   color: white;
 }
 
-.token.keyword {
+.hljs-comment,
+.hljs-quote {
+  color: #6b7b85;
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-literal,
+.hljs-built_in,
+.hljs-type {
   color: #d285de;
 }
 
-.token.string {
+.hljs-string,
+.hljs-regexp,
+.hljs-attr,
+.hljs-symbol,
+.hljs-meta .hljs-string {
   color: #db9e58;
 }
 
-.token.literal-property,
-.token.property,
-.token.maybe-class-name,
-.token.class-name {
+.hljs-title,
+.hljs-title.class_,
+.hljs-title.function_,
+.hljs-property,
+.hljs-attribute,
+.hljs-variable,
+.hljs-name,
+.hljs-selector-class,
+.hljs-selector-id {
   color: #708fff;
 }
 
-.remark-highlight pre,
-.remark-highlight code {
-  border-radius: 10px;
-  background-color: #131a1e !important;
-  padding-inline: 0rem;
-  font-size: 1rem;
-  overflow-x: auto;
+.hljs-number,
+.hljs-meta {
+  color: #56b6c2;
 }
 
-/* end */
+.hljs-deletion {
+  color: #e06c75;
+}
+
+.hljs-addition {
+  color: #98c379;
+}

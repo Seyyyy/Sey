@@ -29,6 +29,7 @@
 
 .root pre {
   padding: 1rem;
-  background-color: black;
-  color: aliceblue;
+  background-color: #131a1e;
+  border-radius: 10px;
+  overflow-x: auto;
 }

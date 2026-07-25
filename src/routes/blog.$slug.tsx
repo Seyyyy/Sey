@@ -1,6 +1,6 @@
 import { createFileRoute, notFound } from '@tanstack/react-router'
 import { getPostBySlug } from '../lib/api'
-import { markdownToHtml } from '../lib/markdownToHtml'
+import { markdownToHtml } from '../lib/markdown'
 import { Fade } from '@components/Animation/Fade'
 import styles from './blog-slug.module.css'
 
@@ -24,7 +24,7 @@ export const Route = createFileRoute('/blog/$slug')({
       'tags',
     ]) as Partial<PostData>
     if (!post.slug) throw notFound()
-    const content = await markdownToHtml(post.content ?? '')
+    const content = markdownToHtml(post.content ?? '')
     return {
       slug: post.slug,
       title: post.title ?? '',
