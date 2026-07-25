@@ -5,19 +5,16 @@
   padding-inline: 16px;
   display: flex;
   flex-direction: column;
-  border-radius: 0.4rem;
+  border-radius: 0;
+  border: solid 1px var(--border-color);
   background-color: var(--base-color-light);
   gap: 12px;
-
-  /* animation-name: pop;
-  animation-duration: 220ms;
-  animation-timing-function: ease-in; */
 }
 
 @media (hover: hover) {
   .link:hover {
     background-color: var(--base-color-dark);
-    transform: scale(1.01, 1.01);
+    border-color: var(--main-color);
     transition: 0.1s ease-in;
   }
 }
@@ -25,7 +22,7 @@
 @media (hover: none) {
   .link:active {
     background-color: var(--base-color-dark);
-    transform: scale(1.02, 1.02);
+    border-color: var(--main-color);
     transition: 0.1s ease-in;
   }
 }
@@ -48,6 +45,11 @@
 .title {
   margin: 0;
   flex-grow: 1;
+}
+
+.title::before {
+  content: '> ';
+  color: var(--accent-color);
 }
 
 .createdAt {
@@ -75,25 +77,12 @@
 }
 
 .tag {
-  border-radius: 1rem;
   line-height: 1.25rem;
-  opacity: 0.6;
-  border: solid 0.6px;
-  border-color: var(--main-color);
-  border-radius: 0.8rem;
+  opacity: 0.8;
+  border: solid 1px var(--border-color);
+  border-radius: 0;
   padding-inline: 8px;
   font-size: 11px;
   font-weight: bold;
+  color: var(--main-color);
 }
-
-/* @keyframes pop {
-  0% {
-    transform: scale(0);
-  }
-  80% {
-    transform: scale(1.2);
-  }
-  100% {
-    transform: scale(1);
-  }
-} */
