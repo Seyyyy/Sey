@@ -1,0 +1,8 @@
+.pending :is(h1, h2, h3, p, li, pre, blockquote, a):not(pre *):not(blockquote *):not(a *) {
+  visibility: hidden;
+}
+
+.pending
+  :is(h1, h2, h3, p, li, pre, blockquote, a):not(pre *):not(blockquote *):not(a *).revealed {
+  visibility: visible;
+}
