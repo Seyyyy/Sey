@@ -1,22 +1,15 @@
 html {
   font-size: 16px;
-  font-family: 'Arial', 'sans-serif';
+  font-family: "IBM Plex Mono", "Courier New", monospace;
 }
 
-html.dark:root {
-  --main-color: #eceff1;
-  --base-color-light: #374349;
-  --base-color: #263238;
-  --base-color-dark: #212a2f;
-  --accent-color: #e4c184;
-}
-
-html.light:root {
-  --main-color: #263238;
-  --base-color-light: #ffffff;
-  --base-color: #eceff1;
-  --base-color-dark: #daddde;
-  --accent-color: #7e7a53;
+:root {
+  --main-color: #43ff70;
+  --base-color-light: #0c0f0b;
+  --base-color: #000000;
+  --base-color-dark: #000000;
+  --accent-color: #8dffab;
+  --border-color: rgba(67, 255, 112, 0.4);
 }
 
 body {
@@ -28,20 +21,12 @@ body {
   overflow-x: hidden;
 }
 
-html.light a {
-  color: #0000ee;
+a {
+  color: var(--accent-color);
 }
 
-html.light a:visited {
-  color: #551a8b;
-}
-
-html.dark a {
-  color: #779df6;
-}
-
-html.dark a:visited {
-  color: #d093e5;
+a:visited {
+  color: var(--main-color);
 }
 
 p {
@@ -154,12 +139,12 @@ pre code.hljs {
   background: none;
   border-radius: 0;
   font-size: 1rem;
-  color: white;
+  color: var(--main-color);
 }
 
 .hljs-comment,
 .hljs-quote {
-  color: #6b7b85;
+  color: #4d7a5a;
   font-style: italic;
 }
 
@@ -168,7 +153,8 @@ pre code.hljs {
 .hljs-literal,
 .hljs-built_in,
 .hljs-type {
-  color: #d285de;
+  color: #7fffa0;
+  font-weight: bold;
 }
 
 .hljs-string,
@@ -176,7 +162,7 @@ pre code.hljs {
 .hljs-attr,
 .hljs-symbol,
 .hljs-meta .hljs-string {
-  color: #db9e58;
+  color: #c7ffd6;
 }
 
 .hljs-title,
@@ -188,18 +174,50 @@ pre code.hljs {
 .hljs-name,
 .hljs-selector-class,
 .hljs-selector-id {
-  color: #708fff;
+  color: #ffffff;
 }
 
 .hljs-number,
 .hljs-meta {
-  color: #56b6c2;
+  color: #39ff6a;
 }
 
 .hljs-deletion {
-  color: #e06c75;
+  color: #ff5f5f;
 }
 
 .hljs-addition {
-  color: #98c379;
+  color: #39ff6a;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9998;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0px,
+    rgba(0, 0, 0, 0) 1px,
+    rgba(57, 255, 106, 0.03) 2px,
+    rgba(57, 255, 106, 0.03) 3px
+  );
+  background-size: 100% 4px;
+  animation: scanline-drift 8s linear infinite;
+}
+
+@keyframes scanline-drift {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 100px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before {
+    animation: none;
+  }
 }

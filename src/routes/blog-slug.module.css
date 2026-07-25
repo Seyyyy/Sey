@@ -1,5 +1,4 @@
 .root {
-  margin-inline: 15vw;
   margin-bottom: 10vh;
 }
 
@@ -9,8 +8,37 @@
   }
 }
 
+.frame {
+  display: block;
+  border: solid 1px var(--border-color);
+  padding: 24px;
+}
+
+.frame::before {
+  content: ">";
+  display: block;
+  color: var(--accent-color);
+  margin-bottom: 8px;
+}
+
 .title {
-  text-align: center;
+  text-align: left;
+  border-bottom: 1px dashed var(--border-color);
+  padding-bottom: 16px;
+}
+
+.root h1:not(.title),
+.root h2,
+.root h3 {
+  border-bottom: 1px dashed var(--border-color);
+  padding-bottom: 8px;
+}
+
+.root h1:not(.title)::before,
+.root h2::before,
+.root h3::before {
+  content: "> ";
+  color: var(--accent-color);
 }
 
 .date {
@@ -29,7 +57,8 @@
 
 .root pre {
   padding: 1rem;
-  background-color: #131a1e;
-  border-radius: 10px;
+  background-color: var(--base-color-dark);
+  border-radius: 0;
+  border: solid 1px var(--border-color);
   overflow-x: auto;
 }

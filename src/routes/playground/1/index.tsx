@@ -1,6 +1,5 @@
 import React from 'react'
 import { createFileRoute } from '@tanstack/react-router'
-import { Fade } from '@components/Animation/Fade'
 import Subtitle from '@components/Subtitle'
 import styles from './index.module.css'
 
@@ -60,16 +59,14 @@ const PlaygroundContent = () => {
 
 function Playground1() {
   return (
-    <Fade>
-      <div className={styles.section}>
-        <Subtitle text={'Gemini Nano'} />
-        <div>
-          <p>動作環境: Google Chrome Version 130.0.6710.0 (Official Build) dev (x86_64)</p>
-        </div>
-        <div>
-          <PlaygroundContent />
-        </div>
+    <div className={styles.section}>
+      <Subtitle text={'Gemini Nano'} />
+      <div>
+        <p>動作環境: Google Chrome Version 130.0.6710.0 (Official Build) dev (x86_64)</p>
       </div>
-    </Fade>
+      <div>
+        <PlaygroundContent />
+      </div>
+    </div>
   )
 }

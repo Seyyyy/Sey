@@ -2,11 +2,8 @@ import type { ReactNode } from 'react'
 import { Outlet, createRootRoute, HeadContent, Scripts } from '@tanstack/react-router'
 import Appbar from '@components/Appbar'
 import Footer from '@components/Footer'
-import { Fade } from '@components/Animation/Fade'
 import styles from './root.module.css'
 import appCssUrl from '../style/style.css?url'
-
-const THEME_INIT_SCRIPT = `;(function(){try{var s=localStorage.getItem('theme');var d=window.matchMedia('(prefers-color-scheme: dark)').matches;var t=s||(d?'dark':'light');if(!s)localStorage.setItem('theme',t);document.documentElement.classList.add(t);}catch(_){}})();`
 
 export const Route = createRootRoute({
   head: () => ({
@@ -21,11 +18,19 @@ export const Route = createRootRoute({
     links: [
       { rel: 'stylesheet', href: appCssUrl },
       {
+        rel: 'preconnect',
+        href: 'https://fonts.googleapis.com',
+      },
+      {
+        rel: 'preconnect',
+        href: 'https://fonts.gstatic.com',
+        crossOrigin: 'anonymous',
+      },
+      {
         rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/icon?family=Material+Icons',
+        href: 'https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap',
       },
     ],
-    scripts: [{ children: THEME_INIT_SCRIPT }],
   }),
   component: RootComponent,
 })
@@ -33,13 +38,11 @@ export const Route = createRootRoute({
 function RootComponent() {
   return (
     <RootDocument>
-      <Fade>
-        <div className={styles.root}>
-          <Appbar />
-          <Outlet />
-          <Footer />
-        </div>
-      </Fade>
+      <div className={styles.root}>
+        <Appbar />
+        <Outlet />
+        <Footer />
+      </div>
     </RootDocument>
   )
 }

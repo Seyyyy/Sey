@@ -1,6 +1,5 @@
 import React from 'react'
 import { createFileRoute } from '@tanstack/react-router'
-import { Fade } from '@components/Animation/Fade'
 import Subtitle from '@components/Subtitle'
 import styles from './index.module.css'
 
@@ -126,90 +125,88 @@ const PlaygroundContent = () => {
 
 function Playground2() {
   return (
-    <Fade>
-      <div className={styles.section}>
-        <Subtitle text={'Visual Viewport API'} />
-        <div>
-          <PlaygroundContent />
-        </div>
-        <div className={styles.long_content}>
-          <h2>Test</h2>
-          <p>
-            Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
-            Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
-            Test Test Test Test Test Test
-          </p>
-          <p>
-            Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
-            Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
-            Test Test Test Test Test Test
-          </p>
-          <h2>Test</h2>
-          <p>
-            Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
-            Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
-            Test Test Test Test Test Test
-          </p>
-          <p>
-            Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
-            Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
-            Test Test Test Test Test Test
-          </p>
-          <p>
-            Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
-            Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
-            Test Test Test Test Test Test
-          </p>
-          <h2>Test</h2>
-          <p>
-            Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
-            Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
-            Test Test Test Test Test Test
-          </p>
-          <p>
-            Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
-            Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
-            Test Test Test Test Test Test
-          </p>
-          <p>
-            Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
-            Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
-            Test Test Test Test Test Test
-          </p>
-          <h2>Test</h2>
-          <p>
-            Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
-            Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
-            Test Test Test Test Test Test
-          </p>
-          <p>
-            Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
-            Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
-            Test Test Test Test Test Test
-          </p>
-          <p>
-            Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
-            Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
-            Test Test Test Test Test Test
-          </p>
-          <h2>Test</h2>
-          <p>
-            Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
-            Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
-            Test Test Test Test Test Test
-          </p>
-          <p>
-            Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
-            Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
-            Test Test Test Test Test Test
-          </p>
-          <p>
-            Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
-            Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
-            Test Test Test Test Test Test
-          </p>
-        </div>
+    <div className={styles.section}>
+      <Subtitle text={'Visual Viewport API'} />
+      <div>
+        <PlaygroundContent />
       </div>
-    </Fade>
+      <div className={styles.long_content}>
+        <h2>Test</h2>
+        <p>
+          Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+          Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+          Test Test Test Test Test Test
+        </p>
+        <p>
+          Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+          Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+          Test Test Test Test Test Test
+        </p>
+        <h2>Test</h2>
+        <p>
+          Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+          Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+          Test Test Test Test Test Test
+        </p>
+        <p>
+          Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+          Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+          Test Test Test Test Test Test
+        </p>
+        <p>
+          Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+          Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+          Test Test Test Test Test Test
+        </p>
+        <h2>Test</h2>
+        <p>
+          Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+          Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+          Test Test Test Test Test Test
+        </p>
+        <p>
+          Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+          Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+          Test Test Test Test Test Test
+        </p>
+        <p>
+          Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+          Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+          Test Test Test Test Test Test
+        </p>
+        <h2>Test</h2>
+        <p>
+          Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+          Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+          Test Test Test Test Test Test
+        </p>
+        <p>
+          Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+          Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+          Test Test Test Test Test Test
+        </p>
+        <p>
+          Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+          Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+          Test Test Test Test Test Test
+        </p>
+        <h2>Test</h2>
+        <p>
+          Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+          Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+          Test Test Test Test Test Test
+        </p>
+        <p>
+          Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+          Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+          Test Test Test Test Test Test
+        </p>
+        <p>
+          Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+          Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test Test
+          Test Test Test Test Test Test
+        </p>
+      </div>
+    </div>
   )
 }
